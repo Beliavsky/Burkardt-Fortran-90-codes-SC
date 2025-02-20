@@ -1,0 +1,23 @@
+17 August 2018  10:24:32.338 PM
+ 
+NAS:
+  FORTRAN90 version
+ 
+                The NAS kernel benchmark program
+ 
+ Program        Error          FP Ops        Seconds     MFLOPS
+ 
+ BTRIX        2.5033E-13     3.2197E+08      0.7560      425.89
+ CFFT2D       1.3326E-13     4.9807E+08      0.8400      592.94
+ CHOLSKY      2.8784E-12     2.2103E+08      0.6520      339.00
+ EMIT         2.0694E-15     2.2604E+08      0.3120      724.50
+ GMTRY        1.8918E-13     2.2650E+08      0.5600      404.46
+ MXM          3.4313E-15     4.1943E+08      0.5080      825.65
+ VPENTA       8.4523E-15     2.5943E+08      0.6160      421.15
+ 
+ Total        3.4651E-12     2.1725E+09      4.2440      511.89
+ 
+NAS:
+  Normal end of execution.
+ 
+17 August 2018  10:24:36.642 PM

@@ -1,0 +1,454 @@
+<html>
+
+  <head>
+    <title>
+      petsc_test
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      petsc_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>petsc_test</b> 
+      FORTRAN90 programs which 
+      demonstrates the use of the PETSc library.
+    </p>
+
+    <p>
+      PETSc is a library of high level mathematical routines
+      that can be executed in a parallel environment, making it
+      easier for a user to gain the advantages of MPI.
+    </p>
+
+    <p>
+      <b>PETSc</b> stands for the Portable Extensible Toolkit for 
+      Scientific Computations.
+    </p>
+
+    <p>
+      PETSc is particularly suitable for the numerical
+      solution of systems of partial differential equations
+      on high performance computers.  <b>PETSc</b> includes 
+      parallel linear and nonlinear equation solvers and
+      time integrators that may be used by application programs
+      written in C, C++, FORTRAN77 or FORTRAN90.
+    </p>
+
+    <p>
+      <b>PETSc</b> consists of a number of libraries which work
+      with a particular family of objects, such as vectors.
+      Some of the <b>PETSc</b> modules deal with
+      <ul>
+        <li>
+          index sets, including permutations;
+        </li>
+        <li>
+          vectors;
+        </li>
+        <li>
+          matrices, especially sparse matrices;
+        </li>
+        <li>
+          distributed arrays, as when the data for a single matrix
+          is distributed over a set of processors;
+        </li>
+        <li>
+          Krylov subspace methods for solving linear systems;
+        </li>
+        <li>
+          preconditioners for linear algebra systems, including
+          multigrid and sparse direct solvers;
+        </li>
+        <li>
+          solvers for systems of nonlinear equations;
+        </li>
+        <li>
+          partial differential equation solvers;
+        </li>
+        <li>
+          timesteppers for solving time-dependent partial differential
+          equations;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>PETSc</b> includes parts of the following software libraries:
+      <ul>
+        <li>
+          BLAS1 vector library,
+        </li>
+        <li>
+          BLAS2 matrix-vector library,
+        </li>
+        <li>
+          BLAS3 matrix-matrix library,
+        </li>
+        <li>
+          LAPACK linear algebra library,
+        </li>
+        <li>
+          LIBTFS, an efficient parallel
+          direct solver of Henry Tufo and Paul Fischer,
+        </li>
+        <li>
+          LINPACK
+          linear algebra library,
+        </li>
+        <li>
+          <a href = "../minpack/minpack.html">MINPACK</a>
+          minimization library,
+        </li>
+        <li>
+          <a href = "../sparsekit/sparsekit.html">SPARSEKIT2</a>,
+          Yousef Saad's sparse matrix library,
+        </li>
+        <li>
+          <a href = "../sparsepak/sparsepak.html">SPARSEPAK</a>, matrix
+          reordering routines.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>PETSC</b> interacts with, complements, or supports a variety
+      of programs including:
+      <ul>
+        <li>
+          <a href = "http://www.mathworks.com/matlab/">MATLAB</a>;
+          <b>PETSC</b> can dump data in a format that <b>MATLAB</b> reads,
+          or a running <b>PETSC</b> process can interact with a running
+          <b>MATLAB</b> process, passing data back and forth "interactively".
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/c_src/metis/metis.html">METIS</a>;
+          the <b>METIS</b> mesh partitioning program is designed to
+          partition a mesh <i>before</i> a parallel process begins;
+          <b>PETSC</b> provides an interface to a parallel version of
+          <b>METIS</b>, called <b>PARMETIS</b>, which can partition the
+          mesh <i>during</i> the parallel computation.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      PETSc runs in parallel by relying on MPI, the message-passing 
+    </p>
+
+    <p>
+      When PETSc is used by a FORTRAN90 program, each FORTRAN90
+      routine must add one or more include statements, so that
+      the constants and functions are properly declared.  Depending on
+      the routines being used, there may be several include statements
+      required.  However, if a FORTRAN90 routine uses any PETSc routine
+      or constant, it is always necessary to have at least the
+      following:
+      <pre>
+      #include "include/finclude/petsc.h"
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      Before using PETSc, the user must set the environment
+      variable <code>PETSC_DIR</code>, indicating the full path of the
+      <b>PETSc</b> home directory.  On Phoenix, for instance, this might
+      be done with the command
+      <blockquote><code>
+        setenv PETSC_DIR /usr/local/petsc
+      </code></blockquote>
+      This command might best be placed in the user's <code>.cshrc</code>
+      file.
+    </p>
+
+    <p>
+      Before using PETSc, the user must set the environment
+      variable <code>PETSC_ARCH</code>, indicating the architecture of the
+      machine on which PETSc is to be run.  On Phoenix, for instance, 
+      this might be done with the command
+      <blockquote><code>
+        setenv PETSC_ARCH linux-gnu
+      </code></blockquote>
+      This command might best be placed in the user's <code>.cshrc</code>
+      file.
+    </p>
+
+    <p>
+      The commands required to compile, link and load a program with
+      PETSc are complicated.  It is best to use a makefile for
+      this purpose, in which case most of the complications can be
+      hidden.  A bare bones makefile for the example <i>ex1.c</i>,
+      which is going to use PETSc's Krylov Subspace Package (KSP),
+      would look like this:
+      <pre>
+include ${PETSC_DIR}/bmake/common/base
+
+ex1: ex1.o
+        -${FLINKER} -o ex1 ex1.o ${PETSC_FORTRAN_LIB} ${PETSC_LIB}
+      </pre>
+      To use this makefile, one simply types
+      <blockquote><code>
+        make ex1
+      </code></blockquote>
+      and the executable will be created.
+    </p>
+
+    <p>
+      The <b>mpirun</b> command may be used for small jobs
+      that run for a short time on a few processors.
+      Repeated use of the <b>mpirun</b> command for large long jobs
+      is an abuse of the system and will not be allowed.
+    </p>
+
+    <p>
+      To run a program that uses PETSc, the user may invoke the
+      <b>mpirun</b> command, specifying the number of processors.
+      <blockquote><code>
+        mpirun -np 4 <i>ex1</i>
+      </code></blockquote>
+      The <b>mpirun</b> command will automatically log the user into
+      3 more nodes of Phoenix, (requiring the user to type in a password
+      each time!).
+    </p>
+
+    <p>
+      To run a program that uses PETSc, the CONDOR system is
+      preferable.  This is a batch system which tries to be fair
+      and efficient in the allocation of computing resources.
+      To use CONDOR, the user should create an executable program,
+      then prepare a "CONDOR submit script" that describes how the
+      executable is to be run, and on how many processors, and submit 
+      the script.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>petsc_test</b> is available in
+      <a href = "https://people.math.sc.edu/Burkardt/cpp_src/petsc_test/petsc_test.html">a C++ version</a> and
+      <a href = "petsc_test.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/blacs/blacs.html">
+      BLACS</a>
+      is a FORTRAN90 example directory which
+      illustrates how to use the Basic Linear Algebra Communication Subroutines
+      for linear algebra computations on a distributed memory machine.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/blas1/blas1.html">
+      BLAS1</a>
+      is a FORTRAN90 library containing vector-vector routines,
+      and is included in <b>PETSC</b>.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/blas2/blas2.html">
+      BLAS2</a>
+      is a FORTRAN90 library containing matrix-vector routines,
+      and is included in <b>PETSC</b>.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/blas3/blas3.html">
+      BLAS3</a>
+      is a FORTRAN90 library containing matrix-matrix routines,
+      and is included in <b>PETSC</b>.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/examples/condor/condor.html">
+      CONDOR</a>, 
+      is a queueing system used locally to submit jobs to our
+      parallel clusters.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/lapack/lapack.html">
+      LAPACK</a>
+      is a FORTRAN90 library which
+      is an
+      extensive linear algebra library, and is included in <b>PETSC</b>.
+    </p>
+
+    <p>
+      <a href = "../linpack/linpack.html">
+      LINPACK</a>
+      is a FORTRAN90 library which is an
+      extensive linear algebra library, and is included in <b>PETSC</b>.
+    </p>
+
+    <p>
+      <a href = "../minpack/minpack.html">
+      MINPACK</a>
+      is a FORTRAN90 library which
+      handles minimization and least squares, and is included in <b>PETSC</b>.
+    </p>
+
+    <p>
+      <a href = "../mpi/mpi.html">
+      MPI</a> 
+      is used as part
+      of the <b>PETSC</b> library.  You may be interested in seeing
+      examples of that parallel programming system.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/open_mp/open_mp.html">
+      OPEN_MP</a>
+      is a directory of FORTRAN90 examples which
+      illustrate the use of the OpenMP application program interface
+      for carrying out parallel computations in a shared memory environment.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/pessl/pessl.html">
+      PESSL</a>
+      is a FORTRAN90 example directory which
+      demonstrates the use of PESSL, the parallel mathematics library 
+      developed exclusively for use with IBM systems and compilers.
+    </p>
+
+    <p>
+      <b>PETSc</b> examples are also available in
+      <a href = "https://people.math.sc.edu/Burkardt/c_src/petsc/petsc.html">a C version</a>, and
+      <a href = "https://people.math.sc.edu/Burkardt/cpp_src/petsc/petsc.html">a C++ version</a>, and
+      <a href = "https://people.math.sc.edu/Burkardt/f77_src/petsc/petsc.html">a FORTRAN77 version</a>.
+    </p>
+
+    <p>
+      <a href = "../sparsekit/sparsekit.html">
+      SPARSEKIT2</a>
+      is a FORTRAN90 library of routines by
+      Yousef Saad for sparse matrices, and is included in <b>PETSC</b>.
+    </p>
+
+    <pi>
+      <a href = "../sparsepak/sparsepak.html">
+      SPARSEPAK</a>
+      is a FORTRAN90 library
+      of sparse matrix reordering routines, and is included in
+      <b>PETSC</b>.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Edward Anderson, Zhaojun Bai, Christian Bischof, Susan Blackford, 
+          James Demmel, Jack Dongarra, Jeremy Du Croz, Anne Greenbaum, 
+          Sven Hammarling, Alan McKenney, Danny Sorensen,<br>
+          LAPACK User's Guide,<br>
+          Third Edition,<br>
+          SIAM, 1999,<br>
+          QA76.73.F25L36
+        </li>
+        <li>
+          Satish Balay, Kris Buschelman, Victor Eijkhout, William Gropp, 
+          Dinesh Kaushik, Matt Knepley, Lois Curfman McInnes, Barry Smith, 
+          Hong Zhang,<br>
+          The PETSc Users Manual, <br>
+          ANL-95/11, Revision 2.3.0, <br>
+          Argonne National Laboratory;<br>
+          A copy is available in
+          <a href = "https://people.math.sc.edu/Burkardt/pdf/petsc.pdf">a PDF version</a>.
+        </li>
+        <li>
+          Jeff Borggaard,<br>
+          A PETSc Tutorial (in C);<br>
+          A copy is available in
+          <a href = "https://people.math.sc.edu/Burkardt/pdf/petsc_tutorial.pdf">a PDF version</a>.
+        </li>
+        <li>
+          The PETSc website<br>
+          <a href = "http://www.mcs.anl.gov/petsc">
+                     http://www.mcs.anl.gov</a>
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <b>MAKEFILE</b> contains the information necessary to properly
+      compile, link and load the various user examples.  If you use
+      <b>PETSc</b>, you will have to have a similar makefile.  The makefile
+      is used by typing commands like
+      <blockquote><code>
+        make ex1
+      </code></blockquote>
+      which compiles, links and loads the program <i>ex1.F</i>, creating
+      the executable <i>ex1</i>, which may then be run by submitting a
+      Condor job.
+      <ul>
+        <li>
+          <a href = "makefile">makefile</a>, the makefile for the examples;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>HELLO</b> is the "Hello, world!" example.
+      <ul>
+        <li>
+          <a href = "hello.F">hello.F</a>, the text of the example,
+          before being passed through the C preprocessor;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>EX5</b> is an example program supplied by the PETSc people.
+      So far, I have been completely unable to use it.  I cannot
+      even get the first stage of processing going, that is,
+      I cannot pass it through the C preprocessor.  The symptom
+      seems to be that the include files are not all in existence,
+      are not in the right place, are misconfigured, and so on.
+      I am giving up on the FORTRAN90 case, and retreating to
+      C or C++, hoping for a better chance!
+      <ul>
+        <li>
+          <a href = "ex5f90.F">ex5f90.F</a>, the text of example 5,
+          before being passed through the C preprocessor;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 17 January 2006.
+    </i>
+
+    <!-- John Burkardt -->
+ 
+  </body>
+
+</html>

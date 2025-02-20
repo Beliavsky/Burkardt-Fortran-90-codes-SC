@@ -1,0 +1,7 @@
+set term png
+set output "cvt_1111133333_vol.png"
+set grid
+set data style linespoints
+set title "Areas of 10 Voronoi cells"
+plot "cvt_1111133333_vol.txt"
+

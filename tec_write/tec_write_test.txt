@@ -1,0 +1,80 @@
+May 17 2007  11:48:03.002 AM
+ 
+TEC_WRITE_PRB
+  FORTRAN90 version
+  A set of tests for TEC_WRITE.
+ 
+TEST01
+  Read my data file.
+  Write a Tecplot file with 3D cylinder data.
+ 
+  Number of copies of plane data =     17
+ 
+  Create evenly spaced R and Z data.
+ 
+  Writing the Tecplot file : cylinder_3d.tec
+ 
+  Writing the Tecplot header.
+ 
+  Read a set of data records for a sequence of times.
+ 
+  Each data record is a (VR,VZ,VT) velocity field
+  in the plane (R,Z,0).
+ 
+  The routine TEC_WRITE_CYL_V writes NT copies of
+  this data, so that TECPLOT will see a cylindically
+  symmetric filled in version of the data.
+ 
+  It also automatically converts the data from 
+  (R,Z,T) and (VR,VZ,VT) format to
+  (X,Y,Z) and (VX,VY,VZ) format.
+  Handling data for time step =      1
+  Handling data for time step =      2
+ 
+  Number of time steps was      2
+ 
+TEST02
+  Read my data file.
+  Write a Tecplot file with one plane of data.
+  Create X and Y data.
+  Writing the Tecplot file : plane_slice.tec
+ 
+  Writing the Tecplot header.
+ 
+  Begin reading sets of data.
+  Writing data for time step =      1
+  Writing data for time step =      2
+ 
+  Number of time steps was      2
+ 
+TEST03
+  Read my data file.
+  Write a Tecplot file with 3D cylinder data.
+ 
+  Number of copies of plane data =      1
+  Create R and H data.
+  Writing the Tecplot file : cylinder_slice.tec
+ 
+  Writing the Tecplot header.
+ 
+  Begin reading sets of data.
+  Writing data for time step =      1
+  Writing data for time step =      2
+ 
+  Number of time steps was      2
+ 
+TEST04
+  Assume we have PRUV data on a regular grid 
+  of XY points.
+  Do not assume any underlying finite element structure.
+  Writing the Tecplot file : channel.tec
+ 
+  Writing the Tecplot header.
+ 
+TEST04
+  The TECPLOT file has been written.
+ 
+TEC_WRITE_PRB
+  Normal end of execution.
+ 
+May 17 2007  11:48:03.282 AM

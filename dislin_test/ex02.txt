@@ -1,0 +1,21 @@
+ <<<< Warning: Startpoint ( 1096/ 2834) in MESSAG out of page - (270).
+ <<<< Warning: Endpoint   ( 1004/ 2799) in MESSAG out of page - (270).
+
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ <<                END OF DISLIN / VERSION 10.4                  <<
+ <<  Date    : 27.02.2014  Time    : 09:21:10  Pageformat: USAP  <<
+ <<  Vectors : 3649        Warnings: 2         Fileformat:  PNG  <<
+ <<  Metafile: ex02.png                                          <<
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+27 February 2014   9:21:10.014 AM
+ 
+EX02:
+  FORTRAN90 version
+  Demonstrate the use of POLAR to plot 
+  (R,Theta) data.
+ 
+EX02:
+  Normal end of execution.
+ 
+27 February 2014   9:21:10.036 AM

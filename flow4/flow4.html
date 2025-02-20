@@ -1,0 +1,542 @@
+<html>
+
+  <head>
+    <title>
+      FLOW4 - A Finite Element Code for Fluid Flow
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      FLOW4 <br> A Finite Element Code for Fluid Flow
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>FLOW4</b> 
+      is a FORTRAN90 program which 
+      uses the finite element method
+      to solve a problem involving two dimensional steady incompressible Navier Stokes flow.
+    </p>
+
+    <p>
+      <b>FLOW4</b> uses the finite element method to solve for the steady state
+      velocity and pressure of an incompressible fluid flowing in a
+      two dimensional region.  
+    </p>
+
+    <p>
+      <b>FLOW4</b> writes a graphics dump file that can be read in
+      and displayed by 
+      <a href = "../display3/display3.html">DISPLAY3</a>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>FLOW4</b> is available in 
+      <a href = "flow4.html">a FORTRAN90 version</a> 
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../bump/bump.html">
+      BUMP</a>
+      is a FORTRAN90 program which 
+      solves a fluid flow problem
+      in a channel including a bump which obstructs and redirects the flow.
+    </p>
+
+    <p>
+      <a href = "../channel/channel.html">
+      CHANNEL</a>
+      is a FORTRAN90 program which 
+      solves a fluid flow problem in a channel.
+    </p>
+
+    <p>
+      <a href = "../display3/display3.html">
+      DISPLAY3</a>,
+      a FORTRAN90 program which 
+      displays graphics from the
+      flow data computed by  <a href = "../flow3/flow3.html">FLOW3</a>, 
+      <a href = "../flow5/flow5.html">FLOW4</a>.  This program
+      used to work, but it is very out of date;
+    </p>
+
+    <p>
+      <a href = "../fem2d_pack/fem2d_pack.html">
+      FEM2D_PACK</a> 
+      is a FORTRAN90 library which
+      contains utilities for 2D finite element calculations.
+    </p>
+
+    <p>
+      <a href = "../slab/slab.html">
+      SLAB</a>, 
+      a FORTRAN90 program which
+      analyzes the optimization of a scalar function of multidimensional data
+      by examining contour lines in a selected plane.
+    </p>
+
+    <p>
+      <a href = "../slice/slice.html">
+      SLICE</a>, 
+      a FORTRAN90 program which
+      analyzes the optimization of a scalar function of multidimensional data
+      by examining contour lines in a selected plane.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/toms866/toms866.html">
+      TOMS866</a>
+      a MATLAB library which
+      is the Incompressible Flow Iterative Solution Software;<br>
+      this library is commonly called <b>IFISS</b>;<br>
+      this is ACM TOMS algorithm 866. 
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Max Gunzburger,<br>
+          Finite Element Methods for Viscous Incompressible Flows,<br>
+          A Guide to Theory, Practice, and Algorithms,<br>
+          Academic Press, 1989,<br>
+          ISBN: 0-12-307350-2,<br>
+          LC: TA357.G86.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "flow4.f90">flow4.f90</a>, the source code;
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/flow4/flow4.csh">flow4.csh</a>, 
+          commands to compile and load the source code;
+        </li>
+        <li>
+          <a href = "flow4_dictionary.txt">flow4_dictionary.txt</a>, 
+          a list of internal variables.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+
+    <p>
+      <ul>
+        <li>
+          <a href = "flow4_input001.txt">flow4_input001.txt</a>, input file for problem 1;
+        </li>
+        <li>
+          <a href = "flow4_input002.txt">flow4_input002.txt</a>, input file for problem 2;
+        </li>
+        <li>
+          <a href = "flow4_input003.txt">flow4_input003.txt</a>, input file for problem 3;
+        </li>
+        <li>
+          <a href = "flow4_input004.txt">flow4_input004.txt</a>, input file for problem 4;
+        </li>
+        <li>
+          <a href = "flow4_input006.txt">flow4_input006.txt</a>, input file for problem 6;
+        </li>
+        <li>
+          <a href = "flow4_input007.txt">flow4_input007.txt</a>, input file for problem 7;
+        </li>
+        <li>
+          <a href = "flow4_input008.txt">flow4_input008.txt</a>, input file for problem 8;
+        </li>
+        <li>
+          <a href = "flow4_input009.txt">flow4_input009.txt</a>, input file for problem 9;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The list of routines includes:
+      <ul>
+        <li>
+          <b>FLOWMAIN</b> controls a package that solves a fluid flow problem.
+        </li>
+        <li>
+          <b>BMPBC</b> computes the value of the boundary conditions for the
+        </li>
+        <li>
+          <b>BMPBC1</b> computes the value of the boundary conditions for the
+        </li>
+        <li>
+          <b>BMPBC2</b> computes the value of the boundary conditions for the
+        </li>
+        <li>
+          <b>BMPCST</b> evaluates the cost of the bump control.
+        </li>
+        <li>
+          <b>BMPDER</b> evaluates the derivative of the cost of the bump control
+        </li>
+        <li>
+          <b>BMPSEN</b> sets up the right hand side F associated with the
+        </li>
+        <li>
+          <b>BMPSPL</b> sets up or updates the spline data that describes the bump.
+        </li>
+        <li>
+          <b>BSP</b> computes the value and spatial derivatives of the linear basis
+        </li>
+        <li>
+          <b>CH_CAP</b> capitalizes a single character.
+        </li>
+        <li>
+          <b>CHKDAT</b> performs some simple checks on the input data.
+        </li>
+        <li>
+          <b>CHRCTD</b> accepts a string of characters, and tries to extract a
+        </li>
+        <li>
+          <b>CHRCTI</b> accepts a STRING of characters and reads an integer
+        </li>
+        <li>
+          <b>CHRDB1</b> accepts a string of characters and removes all
+        </li>
+        <li>
+          <b>CHRUP2</b> copies STRING into STRNG2, up to, but not including, the
+        </li>
+        <li>
+          <b>CUBSPL</b> is given data and boundary conditions for a cubic
+        </li>
+        <li>
+          <b>DISCST</b> computes the discrepancy integrals for the pressure,
+        </li>
+        <li>
+          <b>DISDER</b> computes the derivative of the discrepancy integrals for the
+        </li>
+        <li>
+          <b>FLODUV</b> sets the derivative of the parabolic inflow in terms of
+        </li>
+        <li>
+          <b>FLOSEN</b> sets up the right hand side F associated with the
+        </li>
+        <li>
+          <b>FLOSOL</b> is given a set of flow parameters in PARA, and an
+        </li>
+        <li>
+          <b>FLOSPL</b> sets up or updates the spline data that describes the inflow.
+        </li>
+        <li>
+          <b>FLOUV</b> computes the specified boundary values of velocity for a
+        </li>
+        <li>
+          <b>FP</b> computes the jacobian of the finite element Navier Stokes or
+        </li>
+        <li>
+          <b>FX</b> computes the residual of the Navier Stokes or Stokes equations,
+        </li>
+        <li>
+          <b>GETCST</b> is given the value of the solution, G, the target
+        </li>
+        <li>
+          <b>GETDER</b> returns the derivatives of the cost with respect to the parameters.
+        </li>
+        <li>
+          <b>GETDU</b> uses the finite element method to estimate the value of
+        </li>
+        <li>
+          <b>GETDU2</b> is damaged code.
+        </li>
+        <li>
+          <b>GETDU3</b> uses interpolating serendipity quadrilaterals in an attempt
+        </li>
+        <li>
+          <b>GETDU4</b> uses the Zienkiewicz-Zhou technique to attempt to improve the
+        </li>
+        <li>
+          <b>GETDU5</b> uses interpolating serendipity quadrilaterals in an attempt
+        </li>
+        <li>
+          <b>GETFIX</b> computes GRADF, a correction for the finite difference
+        </li>
+        <li>
+          <b>GETGRD</b> uses finite differences to compute GDIF, an estimate of the
+        </li>
+        <li>
+          <b>GETSEN</b> computes the sensitivities of the state variables U, V and
+        </li>
+        <li>
+          <b>GQUAD1</b> returns the weights and abscissas for a 1 dimensional,
+        </li>
+        <li>
+          <b>HELLO</b> prints the program name, date, and computer name.
+        </li>
+        <li>
+          <b>ILAENV</b> is called from the LAPACK routines to choose problem-dependent
+        </li>
+        <li>
+          <b>INIT</b> initializes the simple parameters which may be overridden
+        </li>
+        <li>
+          <b>INPUT</b> takes symbolic commands of the form "name = value" and
+        </li>
+        <li>
+          <b>INTERV</b> computes LEFT, the maximum value of I so that
+        </li>
+        <li>
+          <b>ISAMAX</b> FINDS THE INDEX OF ELEMENT HAVING MAX. ABSOLUTE VALUE.
+        </li>
+        <li>
+          <b>LBASE</b> evalualates the IVAL-th Lagrange polynomial based
+        </li>
+        <li>
+          <b>LMEMRY</b> allows the user to define the name of a logical variable,
+        </li>
+        <li>
+          <b>LSAME</b> returns .TRUE. if CA is the same letter as CB regardless of
+        </li>
+        <li>
+          <b>LSPOLY</b> evaluates a polynomial in (1, x, y, x*x, xy, y*y) at
+        </li>
+        <li>
+          <b>MARCH</b> carries out a one, two or three dimensional "march".
+        </li>
+        <li>
+          <b>MAROPN</b> opens the marching file.
+        </li>
+        <li>
+          <b>NAMELS</b> reads a line of user input which is similar in form
+        </li>
+        <li>
+          <b>NEWTON</b> seeks a solution G of the nonlinear state equations.
+        </li>
+        <li>
+          <b>PLDX</b> evaluates the derivative of a piecewise linear function with
+        </li>
+        <li>
+          <b>PLDX1</b> evaluates the X derivative of the piecewise linear
+        </li>
+        <li>
+          <b>PLTOPN</b> opens the plotting file.
+        </li>
+        <li>
+          <b>PLTWRT</b> writes information to a file which can be used to create
+        </li>
+        <li>
+          <b>PLVAL</b> evaluates a piecewise linear function at a given point.
+        </li>
+        <li>
+          <b>PLVAL1</b> evaluates the piecewise linear polynomial which is 1
+        </li>
+        <li>
+          <b>PPVALU</b> calculates the value at X of the JDERIV-th derivative of
+        </li>
+        <li>
+          <b>PQDX</b> evaluates the derivative of a piecewise quadratic function with
+        </li>
+        <li>
+          <b>PQDX1</b> evaluates the X derivative of the piecewise quadratic
+        </li>
+        <li>
+          <b>PQVAL</b> evaluates a piecewise quadratic function at a given point.
+        </li>
+        <li>
+          <b>PQVAL1</b> evaluates the piecewise quadratic polynomial which is 1
+        </li>
+        <li>
+          <b>PRCOST2</b> prints out the current cost function.
+        </li>
+        <li>
+          <b>PRCSEN</b> prints out the cost sensitivities.
+        </li>
+        <li>
+          <b>PRDAT</b> prints the user input file data.
+        </li>
+        <li>
+          <b>PRGS2</b> prints out the maximum entries in the finite difference and
+        </li>
+        <li>
+          <b>PROBAS</b> accepts N vectors of length M, when N <=  M, and
+        </li>
+        <li>
+          <b>PROJEC</b> computes the projection of an M vector into an N
+        </li>
+        <li>
+          <b>PRPAR</b> prints out the current parameters.
+        </li>
+        <li>
+          <b>PRPUV</b> prints out the nodal values of the finite differences and
+        </li>
+        <li>
+          <b>PRSOL</b> prints out information about a single solution.
+        </li>
+        <li>
+          <b>PRSPL</b> prints the raw spline data for the simple cases ISHAPE = 1 or 2.
+        </li>
+        <li>
+          <b>PRSPLN</b> prints out the value of a spline function or one of its
+        </li>
+        <li>
+          <b>QBF</b> evaluates a particular quadratic basis function at a point
+        </li>
+        <li>
+          <b>QSOLVE</b> carries out the optimization algorithm for a fixed grid,
+        </li>
+        <li>
+          <b>REFBSP</b> evaluates one of the three linear basis functions,
+        </li>
+        <li>
+          <b>REFQBF</b> evaluates one of the six quadratic basis functions,
+        </li>
+        <li>
+          <b>REYSEN</b> sets up the right hand side RHS associated with the first
+        </li>
+        <li>
+          <b>RINT_TO_RINT</b> maps a real interval to another real interval.
+        </li>
+        <li>
+          <b>S_EQI</b> is a case insensitive comparison of two strings for equality.
+        </li>
+        <li>
+          <b>SCOPY</b> copies a vector, x, to a vector, y.
+        </li>
+        <li>
+          <b>SDOT</b> forms the dot product of two vectors.
+        </li>
+        <li>
+          <b>SERENE</b> evaluates an interpolating function which is defined on
+        </li>
+        <li>
+          <b>SERTRN</b> computes the value of dUdY at the central node of an
+        </li>
+        <li>
+          <b>SETBAN</b> computes NLBAND, the lower band width of the Jacobian matrix,
+        </li>
+        <li>
+          <b>SETBAS</b> computes the value of the basis functions at each
+        </li>
+        <li>
+          <b>SETNOD</b> assigns numbers to the nodes.
+        </li>
+        <li>
+          <b>SETQ3</b> sets the abscissas and weights for a three point quadrature
+        </li>
+        <li>
+          <b>SETQ7</b> sets the abscissas and weights for a seven point quadrature
+        </li>
+        <li>
+          <b>SETXY</b> sets the X and Y coordinates of the nodes.
+        </li>
+        <li>
+          <b>SGBTF2</b> computes an LU factorization of a real m-by-n band matrix A
+        </li>
+        <li>
+          <b>SGBTRF</b> computes an LU factorization of a real m-by-n band matrix A
+        </li>
+        <li>
+          <b>SGBTRS</b> solves a system of linear equations
+        </li>
+        <li>
+          <b>SGEMM</b> performs one of the matrix-matrix operations
+        </li>
+        <li>
+          <b>SGEMV</b> performs one of the matrix-vector operations
+        </li>
+        <li>
+          <b>SGER</b> performs the rank 1 operation
+        </li>
+        <li>
+          <b>SGETF2</b> computes an LU factorization of a general m-by-n matrix A
+        </li>
+        <li>
+          <b>SGETRF</b> computes an LU factorization of a general M-by-N matrix A
+        </li>
+        <li>
+          <b>SGETRS</b> solves a system of linear equations
+        </li>
+        <li>
+          <b>SLASWP</b> performs a series of row interchanges on the matrix A.
+        </li>
+        <li>
+          <b>SSCAL</b> scales a vector by a constant.
+        </li>
+        <li>
+          <b>SSWAP</b> interchanges two vectors.
+        </li>
+        <li>
+          <b>STBSV</b>  solves one of the systems of equations
+        </li>
+        <li>
+          <b>STRSM</b>  solves one of the matrix equations
+        </li>
+        <li>
+          <b>TRANS</b> calculates the biquadratic transformation which maps the
+        </li>
+        <li>
+          <b>UPVALQ</b> evaluates the sensitivities of the velocities and pressure,
+        </li>
+        <li>
+          <b>UVAL</b> evaluates the velocities and pressure, and their X and Y
+        </li>
+        <li>
+          <b>UVALQ</b> evaluates the velocities and pressure, and their X and Y
+        </li>
+        <li>
+          <b>WHODAT</b> is damaged code.
+        </li>
+        <li>
+          <b>WRITES</b> writes out scalar data for use by SAMPLE2 when comparing
+        </li>
+        <li>
+          <b>WRITEV</b> writes out vector data for use by SAMPLE2 when comparing
+        </li>
+        <li>
+          <b>XERBLA</b>  is an error handler for the LAPACK routines.
+        </li>
+        <li>
+          <b>XOFXSI</b> is given the XSI, ETA coordinates of a point in an
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 18 January 2007.
+    </i>
+
+  </body>
+
+</html>

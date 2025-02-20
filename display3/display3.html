@@ -1,0 +1,465 @@
+<html>
+
+  <head>
+    <title>
+      DISPLAY3 - 2D Flow Graphics
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      DISPLAY3 <br> 2D Flow Graphics
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>DISPLAY3</b> 
+      is a FORTRAN90 program which
+      creates graphics
+      files from the output of one of the early <b>FLOW</b> programs.
+    </p>
+
+    <p>
+      Specifically, the early <b>FLOW</b> programs are the family of
+      FLOW3 or 
+      <a href = "../flow4/flow4.html">FLOW4</a>.
+      Each of these programs solves a 2D steady state incompressible
+      flow problem, and writes out an element and a node file,
+      describing the flow velocity and pressure in the region. 
+    </p>
+
+    <p>
+      <b>DISPLAY3</b> can NOT read data from the later <b>FLOW</b> programs
+      which include
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/flow3/flow5.html">FLOW5</a> and 
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/flow3/flow6.html">FLOW6</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/flow4/flow7.html">FLOW7</a>.
+      To plot data from those programs, see 
+      <a href = "../display4/display4.html">DISPLAY4</a>.
+    </p>
+
+    <p>
+      <b>DISPLAY3</b> can read in the element and node file, and then
+      create images of the flow region, nodes or elements, or
+      contour lines of the pressure, or vector plots of the velocity.
+      Other plots are also available.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../display4/display4.html">
+      DISPLAY4</a>,
+      a FORTRAN90 program which 
+      displays graphics from the
+      flow data computed by  <a href = "../flow3/flow3.html">FLOW3</a>, 
+      <a href = "../flow5/flow5.html">FLOW5</a> or 
+      <a href = "../flow7/flow7.html">FLOW7</a>.  This program
+      used to work, but it is very out of date;
+    </p>
+
+    <p>
+      <a href = "../display5/display5.html">
+      DISPLAY5</a>,
+      a FORTRAN90 program which 
+      displays graphics from the
+      flow data computed by  <a href = "../flow3/flow3.html">FLOW3</a>, 
+      <a href = "../flow5/flow5.html">FLOW5</a> or 
+      <a href = "../flow7/flow7.html">FLOW7</a>.  This program
+      used to work, but it is very out of date;
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/c_src/drawcgm/drawcgm.html">
+      DRAWCGM</a> 
+      is a graphics library which
+      is needed by <b>DISPLAY3</b>.
+    </p>
+
+    <p>
+      <a href = "../slab/slab.html">
+      SLAB</a>, 
+      a FORTRAN90 program which
+      analyzes the optimization of a scalar function of multidimensional data
+      by examining contour lines in a selected plane.
+    </p>
+
+    <p>
+      <a href = "../slice/slice.html">
+      SLICE</a>, 
+      a FORTRAN90 program which
+      analyzes the optimization of a scalar function of multidimensional data
+      by examining contour lines in a selected plane.
+    </p>
+
+    <h3 align = "center">
+      Source code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "display3.f90">display3.f90</a>, the source code.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/display3/display3.csh">display3.csh</a>, 
+          commands to compile and load the source code.
+        </li>
+        <li>
+          <a href = "display3.txt">display3.txt</a>,
+          a dictionary of variables, journal of changes.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "display3.inp">display3.inp</a>, 
+          sample input commands to DISPLAY;
+        </li>
+        <li>
+          <a href = "display3_elements.txt">display3_elements.txt</a>, 
+          a sample element file;
+        </li>
+        <li>
+          <a href = "display3_uvp.txt">display3_uvp.txt</a>, 
+          a sample velocity/pressure file;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>DISPLAY3</b> reads graphics data from FLOW programs and makes plots.
+        </li>
+        <li>
+          <b>ADJEFF</b> reads the node data for a Jeff plot.
+        </li>
+        <li>
+          <b>ADVANC</b> responds to a user's "A" command by asking which step we are
+        </li>
+        <li>
+          <b>ARRLIN</b> can be used to make a line drawing of an arrow at any point
+        </li>
+        <li>
+          <b>ARRGON</b> can be used to make a polygonal drawing of an arrow at any 
+        </li>
+        <li>
+          <b>BFL</b> evaluates a particular linear basis function at a point
+        </li>
+        <li>
+          <b>BFQ</b> evaluates a particular quadratic basis function at a point
+        </li>
+        <li>
+          <b>BFREFL</b> evaluates one of the three linear basis functions,
+        </li>
+        <li>
+          <b>BFREFQ</b> evaluates one of the six quadratic basis functions,
+        </li>
+        <li>
+          <b>BOUNDARY_SET</b> deduces which edges of the finite element triangle constitute 
+        </li>
+        <li>
+          <b>BOUNDARY_SHOW</b> displays the boundary.
+        </li>
+        <li>
+          <b>BOX</b> draws a rectangle whose corners are specified by the user.
+        </li>
+        <li>
+          <b>BUZZ</b> is just "busy work" to force XWS to draw the whole picture.
+        </li>
+        <li>
+          <b>CH_CAP</b> capitalizes a single character.
+        </li>
+        <li>
+          <b>CBAR</b> draws a color bar in the rectangle whose corners are 
+        </li>
+        <li>
+          <b>CBOX</b> draws a 16 by 16 box, filling each entry with a color
+        </li>
+        <li>
+          <b>CHRINT</b> accepts an integer and returns in CHRINT the 6-character
+        </li>
+        <li>
+          <b>CHRREL</b> accepts a real number in RVAL and returns in CHRREL a
+        </li>
+        <li>
+          <b>CONC3</b> uses color to indicate all the points which have a function 
+        </li>
+        <li>
+          <b>CONC4</b> uses color to indicate all the points which have a function 
+        </li>
+        <li>
+          <b>CONC6</b> uses color to indicate all the points which have a
+        </li>
+        <li>
+          <b>CONC63</b> uses color to indicate all the points which have a function 
+        </li>
+        <li>
+          <b>CONL3</b> draws a contour line of a scalar in a 3 node element.
+        </li>
+        <li>
+          <b>CONL4</b> draws a contour line of a scalar in a 4 node nonisoparametric element.
+        </li>
+        <li>
+          <b>CONL6</b> draws a contour line of a scalar in a six node triangular element.
+        </li>
+        <li>
+          <b>CONL63</b> draws a single contour line of a scalar quantity associated 
+        </li>
+        <li>
+          <b>CROSS</b> finds the two places where the value S = SCON occurs on a 
+        </li>
+        <li>
+          <b>CROSSL</b> is given the coordinates of two points in the plane, and
+        </li>
+        <li>
+          <b>CROSSR</b> is given the coordinates of the corners of a rectangle, 
+        </li>
+        <li>
+          <b>CROSST</b> is given the coordinates of the corners of a triangle, 
+        </li>
+        <li>
+          <b>DEFALT</b> sets certain data to default values.
+        </li>
+        <li>
+          <b>DELETE</b> deletes a file.
+        </li>
+        <li>
+          <b>DOAXES</b> places the title, the axes, and the axis labels.
+        </li>
+        <li>
+          <b>DSHLIN</b> draws a dashed line connecting a series of points.
+        </li>
+        <li>
+          <b>ELEMENT_CHECK</b> checks elements for correct orientation.  
+        </li>
+        <li>
+          <b>ELEMENT_COLOR</b> colors in the elements.
+        </li>
+        <li>
+          <b>ELEMENT_LINE</b> draws the elements of the grid.
+        </li>
+        <li>
+          <b>ELEMENT_VISIBILITY</b> allows the user to specify which elements are visible.
+        </li>
+        <li>
+          <b>EXDAT</b> sets up data that defines a simple example problem.
+        </li>
+        <li>
+          <b>FEGRAD</b> is given a finite element mesh, and the value of a quantity
+        </li>
+        <li>
+          <b>FILE_COLUMN_COUNT</b> counts the number of columns in the first line of a file.
+        </li>
+        <li>
+          <b>FILE_LINE_COUNT</b> counts the number of lines in a file.
+        </li>
+        <li>
+          <b>FILLIN</b> fills XARRAY with a set of values that vary linearly 
+        </li>
+        <li>
+          <b>FILLIN2</b> accepts an array X1 of NP1 points, and computes a new
+        </li>
+        <li>
+          <b>FLUSHL</b> flushes a string left.  
+        </li>
+        <li>
+          <b>FSIZE</b> computes the maximum and minimum entries of a real array 
+        </li>
+        <li>
+          <b>GET_INC</b> is used by STREAM, to compute SINC, the stream function 
+        </li>
+        <li>
+          <b>GET_MAP3</b> computes the mapping coefficients defined by the nodes
+        </li>
+        <li>
+          <b>GET_MAP6</b> computes the mapping coefficients defined by the nodes
+        </li>
+        <li>
+          <b>GET_TAB</b> gets the color table choice from the user.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>GET_WIN</b> responds to the "W" command by telling the user
+        </li>
+        <li>
+          <b>GQUAD</b> returns the weights and abscissas for a 1 dimensional,
+        </li>
+        <li>
+          <b>GRAPH</b> draws the graph.
+        </li>
+        <li>
+          <b>HELLO</b> prints out the program name, date, and purpose.
+        </li>
+        <li>
+          <b>HELP</b> prints out a list of commands.
+        </li>
+        <li>
+          <b>INIT</b> initializes the values of data.
+        </li>
+        <li>
+          <b>INSIDE</b> reports whether XMID is, or is not, between X1 and X2.
+        </li>
+        <li>
+          <b>ISOGN6</b> draws a filled polygon in a six node isoparametric element.
+        </li>
+        <li>
+          <b>ISOLN3</b> draws a line between two points in a linear isoparametric element.  
+        </li>
+        <li>
+          <b>ISOLN6</b> draws a line between two points in a quadratic isoparametric
+        </li>
+        <li>
+          <b>LIST</b> prints out the values of the variables of interest to the user.
+        </li>
+        <li>
+          <b>NODE_DATA_PRINT</b> prints values at all the visible nodes.
+        </li>
+        <li>
+          <b>OPNFIL</b> does the housekeeping associated with opening a new data file.
+        </li>
+        <li>
+          <b>PGRAF</b> makes a graph of the flow profile.
+        </li>
+        <li>
+          <b>PLOT_FILE_READ</b> reads a plot file defining the mesh and the flow variables.
+        </li>
+        <li>
+          <b>PLTBOX</b> computes a square box containing the data.
+        </li>
+        <li>
+          <b>PREPLT</b> should be called before doing each plot.
+        </li>
+        <li>
+          <b>PROFP</b> considers each node along the profile line, and copies
+        </li>
+        <li>
+          <b>PROFUV</b> considers each node along the profile line, and copies
+        </li>
+        <li>
+          <b>QUIT</b> shuts down the program.
+        </li>
+        <li>
+          <b>RDELJ</b> reads a JEFF element file, containing information about the
+        </li>
+        <li>
+          <b>RDNOD</b> reads a JEFF file containing information about data 
+        </li>
+        <li>
+          <b>RDTEC</b> reads a TECPLOT data file.
+        </li>
+        <li>
+          <b>RRANGE</b> returns the maximum and minimum values in an array.
+        </li>
+        <li>
+          <b>REGION_SIZE</b> computes the size of the region.
+        </li>
+        <li>
+          <b>S_BLANK_DELETE</b> removes blanks from a string, left justifying the remainder.
+        </li>
+        <li>
+          <b>S_BLANKS_DELETE</b> replaces consecutive blanks by one blank.
+        </li>
+        <li>
+          <b>S_EQI</b> is a case insensitive comparison of two strings for equality.
+        </li>
+        <li>
+          <b>S_PLOT</b> plots a character string onto a graphics image.
+        </li>
+        <li>
+          <b>SERENE</b> evaluates an interpolating function which is defined on
+        </li>
+        <li>
+          <b>SETREF</b> returns the values of XSI and ETA for the defining nodes
+        </li>
+        <li>
+          <b>SETSIZ</b> offers the user a chance to adjust the range of a contour
+        </li>
+        <li>
+          <b>SETTAB</b> replaces SETCTB, the DRAWCGM routine for setting up
+        </li>
+        <li>
+          <b>STREAM</b> assigns the value of the stream function to each node
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>TRANL3</b> calculates the transformation which maps the reference 
+        </li>
+        <li>
+          <b>TRANL4</b> calculates the transformation which maps the reference 
+        </li>
+        <li>
+          <b>TRANQ6</b> calculates the transformation which maps the reference 
+        </li>
+        <li>
+          <b>TRICIS</b> draws color contours for a quantity defined at three points
+        </li>
+        <li>
+          <b>TRICNO</b> is given a (non-isoperimetric) triangle, formed by nodes I1, 
+        </li>
+        <li>
+          <b>UEVAL</b> evaluates velocities at any point in a six node quadratic element.
+        </li>
+        <li>
+          <b>VECTOR</b> draws a vector field.
+        </li>
+        <li>
+          <b>VIZND</b> sets the visibility of nodes by minimum distance.
+        </li>
+        <li>
+          <b>VIZNOD</b> sets the visibility of nodes by index.
+        </li>
+        <li>
+          <b>VSIZE</b> computes the maximum visible velocity components.
+        </li>
+        <li>
+          <b>WORD_COUNT</b> counts the number of "words" in a string.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 30 August 2005.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

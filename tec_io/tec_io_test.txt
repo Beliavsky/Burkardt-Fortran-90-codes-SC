@@ -1,0 +1,114 @@
+21 March 2018   2:14:36.083 PM
+
+TEC_IO_TEST:
+  FORTRAN90 version
+  Test the TEC_IO library.
+ 
+TEC_IO_TEST01
+  TEC_HEADER_READ can read the header of a TEC file.
+  TEC_DATA_READ can read the data of a TEC file.
+ 
+  In this example, we will read data from "ell.dat".
+ 
+  Spatial dimension         =        2
+  Number of nodes           =       65
+  Number of elements        =       96
+  Element order             =        3
+  Number of node data items =        1
+ 
+  Coordinates of first 10 nodes:
+ 
+        Row        1             2      
+        Col
+ 
+         1   0.00000       0.00000    
+         2   0.00000      0.500000    
+         3  0.500000       0.00000    
+         4   0.00000       1.00000    
+         5  0.500000      0.500000    
+         6   1.00000       0.00000    
+         7   0.00000       1.50000    
+         8  0.500000       1.00000    
+         9   1.00000      0.500000    
+        10   1.50000       0.00000    
+ 
+  Nodes of first 10 elements:
+ 
+  Row        1       2       3
+  Col
+ 
+    1        1       3       2
+    2        6       5       3
+    3        4       2       5
+    4        3       5       2
+    5       23      22      10
+    6       21       9      22
+    7        6      10       9
+    8       22       9      10
+    9       19       7      20
+   10        4       8       7
+ 
+  Node data for first 10 nodes:
+ 
+        Row        1      
+        Col
+ 
+         1   0.00000    
+         2  0.250000    
+         3  0.250000    
+         4   1.00000    
+         5  0.484936    
+         6   1.00000    
+         7   2.25000    
+         8   1.22891    
+         9   1.22891    
+        10   2.25000    
+ 
+TEC_IO_TEST02
+  TEC_WRITE can write finite element data to a TEC file.
+ 
+  In this example, we will write data to "tiny.dat".
+ 
+  Spatial dimension         =        2
+  Number of nodes           =        5
+  Number of elements        =        3
+  Element order             =        3
+  Number of node data items =        2
+ 
+  Coordinates of nodes:
+ 
+        Row        1             2      
+        Col
+ 
+         1   0.00000       0.00000    
+         2   1.00000       0.00000    
+         3   2.00000       0.00000    
+         4   0.00000       1.00000    
+         5   1.00000       1.00000    
+ 
+  Nodes of elements:
+ 
+  Row        1       2       3
+  Col
+ 
+    1        1       2       4
+    2        5       4       2
+    3        2       3       5
+ 
+  Node data for nodes:
+ 
+        Row        1             2      
+        Col
+ 
+         1   1.00000       0.00000    
+         2  0.800000      0.200000    
+         3  0.600000      0.400000    
+         4  0.900000      0.100000    
+         5  0.500000      0.500000    
+ 
+TEC_WRITE wrote all data to "tiny.dat".
+
+TEC_IO_PRB:
+  Normal end of execution.
+
+21 March 2018   2:14:36.083 PM

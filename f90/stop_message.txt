@@ -1,0 +1,8 @@
+18 February 2017   8:00:11.081 PM
+ 
+STOP_MESSAGE:
+  FORTRAN90 version.
+
+STOP_MESSAGE:
+  Normal end of execution.
+18 February 2017   8:00:11.081 PM

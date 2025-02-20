@@ -1,0 +1,585 @@
+<html>
+
+  <head>
+    <title>
+      DISPLAY4 - 2D Flow Graphics
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      DISPLAY4 <br> 2D Flow Graphics
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>DISPLAY4</b> 
+       is a FORTRAN90 program which 
+       creates graphics
+      files from the output of one of the various <b>FLOW</b> programs.
+    </p>
+
+    <p>
+      Specifically, the <b>FLOW</b> programs are the family of
+      <a href = "../flow5/flow5.html">FLOW5</a> and
+      <a href = "../flow6/flow6.html">FLOW6</a>.
+      Each of these programs solves a 2D steady state incompressible
+      flow problem, and writes out an element and a node file,
+      describing the flow velocity and pressure in the region. 
+    </p>
+
+    <p>
+      <b>DISPLAY4</b> can read in the element and node file, and then
+      create images of the flow region, nodes or elements, or
+      contour lines of the pressure, or vector plots of the velocity.
+      Other plots are also available.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/direction_arrows/direction_arrows.html">
+      DIRECTION_ARROWS</a> 
+      is a MATLAB program which 
+      can be used to plot the vector direction field.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/direction_arrows_grid/direction_arrows_grid.html">
+      DIRECTION_ARROWS_GRID</a> 
+      is a MATLAB program which 
+      reads files of
+      node and velocity data, and, using interpolation, creates a 
+      velocity direction plot with arrows
+      place on a uniform grid of the user's specification.
+    </p>
+
+    <p>
+      <a href = "../display3/display3.html">
+      DISPLAY3</a>,
+      a FORTRAN90 program which 
+      displays graphics from the
+      flow data computed by  <a href = "../flow3/flow3.html">FLOW3</a>.  This program
+      used to work, but it is very out of date;
+    </p>
+
+    <p>
+      <a href = "../display5/display5.html">
+      DISPLAY5</a>,
+      a FORTRAN90 program which 
+      displays graphics from the
+      flow data computed by  <a href = "../flow3/flow3.html">FLOW3</a>, 
+      <a href = "../flow5/flow5.html">FLOW5</a> or 
+      <a href = "../flow7/flow7.html">FLOW7</a>.  This program
+      used to work, but it is very out of date;
+    </p>
+
+    <p>
+      <a href = "../element_data/element_data.html">
+      ELEMENT_DATA</a>,
+      is a FORTRAN90 program which
+      preprocesses simple element-based data on a grid into a form that the 
+      DISPLAY4 program can handle.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/data/fem/fem.html">
+      FEM</a> 
+      is a data directory which 
+      contains a description of the data files
+      that can be used to describe a finite element model.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/fem_basis_t3_display/fem_basis_t3_display.html">
+      FEM_BASIS_T3_DISPLAY</a> 
+      is a MATLAB program which 
+      displays a 
+      basis function associated with a linear triangle ("T3") mesh.
+    </p>
+
+    <p>
+      <a href = "../flow3/flow3.html">
+      FLOW3</a> 
+      is a FORTRAN90 program which
+      solves certain problems in 2D 
+      steady state incompressible Navier Stokes fluid flow.
+    </p>
+
+    <p>
+      <a href = "../flow5/flow5.html">
+      FLOW5</a> 
+      is a FORTRAN90 program which
+      is a later version of the FLOW3 program.
+    </p>
+
+    <p>
+      <a href = "../flow7/flow7.html">
+      FLOW7</a>
+      is a FORTRAN90 program which
+      is a later version of the FLOW3 program.
+    </p>
+
+    <p>
+      <a href = "../slab/slab.html">
+      SLAB</a>, 
+      a FORTRAN90 program which
+      analyzes the optimization of a scalar function of multidimensional data
+      by examining contour lines in a selected plane.
+    </p>
+
+    <p>
+      <a href = "../slice/slice.html">
+      SLICE</a>, 
+      a FORTRAN90 program which
+      analyzes the optimization of a scalar function of multidimensional data
+      by examining contour lines in a selected plane.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/triangulation_order3_contour/triangulation_order3_contour.html">
+      TRIANGULATION_ORDER3_CONTOUR</a> 
+      is a MATLAB program which
+      can display a contour plot
+      of scalar data defined on a triangulation of order 3.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/triangulation_order6_contour/triangulation_order6_contour.html">
+      TRIANGULATION_ORDER6_CONTOUR</a> 
+      is a MATLAB program which 
+      can display a contour plot
+      of scalar data defined on a triangulation of order 6.
+    </p>
+
+    <p>
+      <a href = "../triangulation_plot/triangulation_plot.html">
+      TRIANGULATION_PLOT</a> 
+      is a FORTRAN90 program which
+      can be used to plot the elements that triangulate the region.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/vector_magnitude_grid/vector_magnitude_grid.html">
+      VECTOR_MAGNITUDE_GRID</a> 
+      is a MATLAB program which 
+      reads node and vector data from a file, computes an interpolatory function,
+      evaluates on a uniform grid of points specified by the user,
+      and displays a contour plot of the vector magnitude.
+    </p>
+
+    <p>
+      <a href = "../vector_plot/vector_plot.html">
+      VECTOR_PLOT</a>
+      is a FORTRAN90 program which 
+      can be used to create vector plots
+      of the velocity and velocity direction fields.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/vector_stream_grid/vector_stream_grid.html">
+      VECTOR_STREAM_GRID</a> 
+      is a MATLAB program which 
+      reads
+      node and vector data from a file, computes an interpolatory function,
+      evaluates on a uniform grid of points specified by the user,
+      and displays a streamline plot of the vector field.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/velocity_arrows/velocity_arrows.html">
+      VELOCITY_ARROWS</a> 
+      is a MATLAB program which
+      plots a velocity vector field.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/velocity_arrows_grid/velocity_arrows_grid.html">
+      VELOCITY_ARROWS_GRID</a> 
+      is a MATLAB program which reads files of
+      node and velocity data, and, using interpolation, creates a 
+      vector plot with arrows
+      place on a uniform grid of the user's specification.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "display4.f90">display4.f90</a>, the source code;
+        </li>
+        <li>
+          <a href = "display4_dic.txt">display4_dic.txt</a>, 
+          a data dictionary;
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/display4/display4.csh">display4.csh</a>, 
+          commands to compile, link and load the source code;
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/display4/display4_ps.csh">display4_ps.csh</a>, 
+          commands to compile, link and load the source code,
+          with only PostScript output as an option;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "elements.txt">elements.txt</a>, 
+          a sample element file;
+        </li>
+        <li>
+          <a href = "nodes.txt">nodes.txt</a>, 
+          a sample node file;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>DISPLAY4</b> displays graphics for finite element data.
+        </li>
+        <li>
+          <b>ADJEFF</b> reads and checks the node data.
+        </li>
+        <li>
+          <b>ARROW_LINE</b> makes a line drawing of an arrow at any point on a graph.
+        </li>
+        <li>
+          <b>ARROW_POLY</b> makes a polygonal drawing of an arrow at any point on a graph.
+        </li>
+        <li>
+          <b>BOUND_PRINT</b> prints the edges which are boundaries of the region.
+        </li>
+        <li>
+          <b>BOUND_SET</b> finds edges which are boundaries of the region.
+        </li>
+        <li>
+          <b>BOUND_SHOW</b> displays the boundary.
+        </li>
+        <li>
+          <b>BOX</b> draws a rectangle whose corners are specified by the user.
+        </li>
+        <li>
+          <b>BUZZ</b> is just "busy work" to force XWS to draw the whole picture.
+        </li>
+        <li>
+          <b>CH_CAP</b> capitalizes a single character.
+        </li>
+        <li>
+          <b>COLOR_BAR</b> draws a color bar in a given rectangle.
+        </li>
+        <li>
+          <b>COLOR_BOX</b> draws a 16 by 16 box of colors in the current color table.
+        </li>
+        <li>
+          <b>CHRCTI2</b> finds and reads an integer from a string.
+        </li>
+        <li>
+          <b>CHRREL</b> represents a real using 14 right justified characters.
+        </li>
+        <li>
+          <b>COLOR_TABLE_CHOOSE</b> gets the color table choice from the user.
+        </li>
+        <li>
+          <b>COLOR_TABLE_SET</b> sets up the color table.
+        </li>
+        <li>
+          <b>CONTOUR_COLOR_L3</b> does color contours in a 3 node linear element.
+        </li>
+        <li>
+          <b>CONTOUR_COLOR_L4</b> does color contours for linear quadrilateral elements.
+        </li>
+        <li>
+          <b>CONTOUR_COLOR_Q6</b> uses color to indicate points with a value greater than a given value.
+        </li>
+        <li>
+          <b>CONTOUR_LEVELS</b> allows the user to set the contour levels.
+        </li>
+        <li>
+          <b>CONTOUR_LINE</b> supervises the drawing of a contour line plot.
+        </li>
+        <li>
+          <b>CONTOUR_LINE_L3</b> draws a single contour line in a single 3 node element.
+        </li>
+        <li>
+          <b>CONTOUR_LINE_L4</b> draws a contour line in a 4 node rectangular element.
+        </li>
+        <li>
+          <b>CONTOUR_LINE_Q6</b> draws a contour line in a 6 node quadratic triangular element.
+        </li>
+        <li>
+          <b>CROSS</b> finds the two places where the value S = SCON occurs on a triangle.  
+        </li>
+        <li>
+          <b>CROSS_L2</b> seeks contour crossings along a line.
+        </li>
+        <li>
+          <b>CROSS_L3</b> seeks contour crossings in a 3 node linear element.
+        </li>
+        <li>
+          <b>CROSS_Q4</b> seeks contour crossings in a 4 node linear element.
+        </li>
+        <li>
+          <b>DEGREES_TO_RADIANS</b> converts an angle from degrees to radians.
+        </li>
+        <li>
+          <b>DIGTEN</b> returns the integer value of a base 10 digit.
+        </li>
+        <li>
+          <b>DOAXES</b> places the title, the axes, and the axis labels.
+        </li>
+        <li>
+          <b>DASH_LINE</b> draws a dashed line connecting a series of points.
+        </li>
+        <li>
+          <b>ELEMENT_CHECK</b> checks elements for correct orientation.
+        </li>
+        <li>
+          <b>EXAMPLE</b> sets up the data that defines a simple example problem.
+        </li>
+        <li>
+          <b>FE_GRADIENT</b> approximates dUdX and dUdY at mesh nodes.
+        </li>
+        <li>
+          <b>FILE_COLUMN_COUNT</b> counts the number of columns in the first line of a file.
+        </li>
+        <li>
+          <b>FILE_LINE_COUNT</b> counts the number of lines in a file.
+        </li>
+        <li>
+          <b>FILLIN</b> sets array entries to rise linearly from X1 to X2.
+        </li>
+        <li>
+          <b>FILLIN2</b> "expands" a vector of data by linear interpolation.
+        </li>
+        <li>
+          <b>FLUSHL</b> flushes a string left.
+        </li>
+        <li>
+          <b>FSIZE</b> computes the maximum and minimum entries of a node array.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>GETWIN</b> reports the current window and gets new values from the user.
+        </li>
+        <li>
+          <b>GQUAD</b> returns the weights and abscissas for a 3 point Gauss rule.
+        </li>
+        <li>
+          <b>GRAPH</b> draws the graph.
+        </li>
+        <li>
+          <b>HELLO</b> prints out the program name, date, and purpose.
+        </li>
+        <li>
+          <b>HELP</b> prints out a list of commands.
+        </li>
+        <li>
+          <b>I_RANDOM</b> returns a random integer in a given range.
+        </li>
+        <li>
+          <b>I_SWAP</b> swaps two integer values.
+        </li>
+        <li>
+          <b>INIT</b> initializes the values of data.
+        </li>
+        <li>
+          <b>INTNEXRD</b> finds and reads the next integer in a string.
+        </li>
+        <li>
+          <b>ISO_POLY_Q6</b> draws a filled contour polygon in a quadratic triangle.
+        </li>
+        <li>
+          <b>ISO_LINE_L3</b> draws a line between two points in a linear isoparametric element.  
+        </li>
+        <li>
+          <b>ISO_LINE_Q6</b> draws a line between two points in a quadratic isoparametric element.  
+        </li>
+        <li>
+          <b>LINE_SEG_CONTAINS_POINT_1D</b> reports if a line segment contains a point in 1D.
+        </li>
+        <li>
+          <b>LIST</b> prints out the values of the variables of interest to the user.
+        </li>
+        <li>
+          <b>NODET3</b> returns the basis nodes for the 3 node triangle.
+        </li>
+        <li>
+          <b>NODET6</b> returns the basis nodes for a 6 node triangle.
+        </li>
+        <li>
+          <b>NODET10</b> returns the basis nodes for a 10 node triangle.
+        </li>
+        <li>
+          <b>NODEQ4</b> returns the basis nodes for a 4 node quadrilateral.
+        </li>
+        <li>
+          <b>NODEQ8</b> returns the basis nodes for an 8 node quadrilateral.
+        </li>
+        <li>
+          <b>NODEQ9</b> returns the basis nodes for a 9 node quadrilateral.
+        </li>
+        <li>
+          <b>NODEQ16</b> returns the basis nodes for a 16 node quadrilateral.
+        </li>
+        <li>
+          <b>PI</b> returns the value of pi.
+        </li>
+        <li>
+          <b>PLTBOX</b> computes a square box containing the data.
+        </li>
+        <li>
+          <b>PREPLT</b> should be called before doing each plot.
+        </li>
+        <li>
+          <b>READ_ELEMENT</b> reads an element file.
+        </li>
+        <li>
+          <b>READ_NODE</b> reads a file containing information about data at nodes.
+        </li>
+        <li>
+          <b>READ_TECPLOT</b> reads a TECPLOT data file.
+        </li>
+        <li>
+          <b>REFBF_L3</b> evaluates a reference element linear basis function.
+        </li>
+        <li>
+          <b>REFBF_L4</b> evaluates a linear basis function in the reference quadrilateral.
+        </li>
+        <li>
+          <b>REFBF_Q6</b> evaluates shape functions for a 6 node triangle.
+        </li>
+        <li>
+          <b>REFMAP_L3</b> sets reference-to-physical map for a linear triangle.
+        </li>
+        <li>
+          <b>REFMAP_L4</b> sets the reference-to-physical map for a linear quadrilateral.
+        </li>
+        <li>
+          <b>REFMAP_Q6</b> returns the interpolation map for data on a 6 node triangle.
+        </li>
+        <li>
+          <b>REFNODE</b> returns the basis nodes for any available element.
+        </li>
+        <li>
+          <b>RSIZE</b> computes the size of the region.
+        </li>
+        <li>
+          <b>S_BLANK_DELETE</b> removes blanks from a string, left justifying the remainder.
+        </li>
+        <li>
+          <b>S_EQI</b> is a case insensitive comparison of two strings for equality.
+        </li>
+        <li>
+          <b>S_PLOT</b> plots a character string onto a graphics image.
+        </li>
+        <li>
+          <b>SETVIZ</b> determines what nodes and elements should be visible.
+        </li>
+        <li>
+          <b>SHOELC</b> colors in the elements.
+        </li>
+        <li>
+          <b>SHOELM</b> draws the elements of the grid.
+        </li>
+        <li>
+          <b>STREAM</b> assigns the value of the stream function to each node.
+        </li>
+        <li>
+          <b>STREAM_INC</b> computes SINC, the stream function increment.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>TIMESTRING</b> writes the current YMDHMS date into a string.
+        </li>
+        <li>
+          <b>TRANSFORM</b> maps reference elements to image elements.
+        </li>
+        <li>
+          <b>TRIC_L3</b> colors contour regions in a linear triangle.
+        </li>
+        <li>
+          <b>TRIC_Q6</b> colors contour regions in an isoparametric quadratic triangle.
+        </li>
+        <li>
+          <b>UEVAL</b> evaluates velocity and density in any element.
+        </li>
+        <li>
+          <b>VEC_PLOT</b> draws a vector field.
+        </li>
+        <li>
+          <b>VIZELM</b> allows the user to specify which elements are visible.
+        </li>
+        <li>
+          <b>VIZND</b> sets the visibility of nodes by minimum distance.
+        </li>
+        <li>
+          <b>VIZNOD</b> sets the visibility of nodes by index.
+        </li>
+        <li>
+          <b>VELOCITY_MAX</b> computes the maximum magnitude of visible velocities.
+        </li>
+        <li>
+          <b>WRITE_ELEMENT</b> writes an element file.
+        </li>
+        <li>
+          <b>WRITE_NODE</b> writes a file containing information about data at nodes.
+        </li>
+        <li>
+          <b>WRITE_TECPLOT</b> writes solution data out to a TECPLOT data file.
+        </li>
+        <li>
+          <b>WORD_COUNT</b> counts the number of "words" in a string.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 January 2007.
+    </i>
+
+    <!-- John Burkardt -->
+ 
+  </body>
+
+</html>

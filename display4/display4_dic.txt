@@ -1,0 +1,158 @@
+DISPLAY.DIC  21 June 1998
+ 
+*********************************************************************
+ 
+DISPLAY was written especially for the output of the FLOW program,
+and has some features that will only work with such output.
+
+However, DISPLAY can be used with other programs, assuming that
+
+  You use a 3, 4 or 6 node finite element;
+
+  At each node, you have values of U, V, and P.
+
+
+If this is true, then you need to write out two kinds of files:
+
+
+An element file:
+
+  The element file contains, for each element, a list of the
+  nodes that make it up.  The information about each element
+  is written on a separate line of the file.
+
+  A program for doing this might look like:
+
+
+      subroutine wrtell(nelem,npe,node)
+
+      integer nelem
+      integer npe
+
+      integer i
+      integer j
+      integer node(npe,nelem)
+
+      open(unit=1,file='ell.dat',status='unknown')
+
+      do j=1,nelem
+        write(1,*)(node(i,j),i=1,npe)
+      enddo
+
+      close(unit=1)
+
+      return
+      end
+
+  or
+
+      subroutine wrtelj(nelem,npe,node)
+
+      integer nelem
+      integer npe
+
+      integer i
+      integer j
+      integer node(npe,nelem)
+
+      open(unit=1,file='elj.dat',status='unknown')
+
+      write(1,*)nelem
+      write(1,*)npe
+      do j=1,nelem
+        write(1,*)(node(i,j),i=1,npe)
+      enddo
+
+      close(unit=1)
+
+      return
+      end
+
+
+  The element file only has to be created once for a given problem.
+
+
+One or more "node" files
+
+  Each node file contains the values of data at all the nodes.  
+  For a time dependent problem, these values will change on each 
+  time step, and so a new copy of this file might be created
+  each step (with a different name each time).
+
+
+  A routine for doing this might look like this:
+
+
+      subroutine wrtnod(np,p,u,v,xc,yc)
+
+      integer np
+
+      integer i
+      real p(np)
+      real u(np)
+      real v(np)
+      real xc(np)
+      real yc(np)
+
+      open(unit=2,file='nod.dat',status='unknown')
+
+      do i=1,np
+        write(2,*)xc(i),yc(i),u(i),v(i),p(i)
+      enddo
+
+      close(unit=2)
+
+      return
+      end
+
+
+  Here XC and YC are the X and Y coordinates, U and V the 
+  horizontal and vertical velocities, and P the pressure,
+  at a particular node. 
+
+  If your program has more time steps, you would write out
+  the files 'node02.dat', and so on.
+
+Here is a very simple (NPE must be 6) LEE element data file "ell.dat":
+
+  1  2  3  4  5  6
+
+Here is a very simple (NPE=3) JEFF element data file "elj.dat":
+
+  4
+  3
+  1  4  6
+  4  2  5
+  6  5  3
+  5  6  4
+
+Here is a simple node file "nod.dat" that can be used with either element file:
+
+  (x)  (y)  (u)  (v)  (p)
+
+  0.0  0.0  0.0  0.0  0.0
+  0.0  2.0 -2.0  0.0  4.0 
+  2.0  0.0  0.0  2.0  4.0
+  0.0  1.0 -1.0  0.0  1.0
+  1.0  1.0 -1.0  1.0  2.0
+  1.0  0.0  0.0  1.0  1.0
+
+Once you have set up these files, you can run DISPLAY, and
+use the commands:
+
+  DE
+  ell.dat
+  DN
+  nod.dat
+
+or, for JEFF files,
+
+  DJE
+  elj.dat
+  DJN
+  nod.dat
+
+Then the program will read in your data and be ready to try
+to graph it.
+
+

@@ -1,0 +1,249 @@
+<html>
+
+  <head>
+    <title>
+      ROW_ECHELON_INTEGER - Exact Row Echelon for Integer Matrices
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      ROW_ECHELON_INTEGER <br> Exact Row Echelon for Integer Matrices
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ROW_ECHELON_INTEGER</b>
+      is a FORTRAN90 library which
+      carries out the exact computation of the integer row echelon form (IREF) 
+      and integer reduced row echelon form (IRREF) of an integer matrix.
+    </p>
+
+    <p>
+      When carried out using exact arithmetic, the REF can reveal the
+      rank of a matrix.  It exhibits a set of linearly independent rows of
+      the matrix.  It can be used to solve underdetermined systems by
+      revealing which variables can be freely assigned.  
+    </p>
+
+    <p>
+      The RREF has all the properties of the REF, but moreover exhibits 
+      linearly independent columns of the matrix.  The RREF of a matrix is
+      unique.  
+      It can be used to solve a problem in combinatorics, involving the
+      tiling of a region by a set of polyominoes.
+    </p>
+
+    <p>
+      REF and RREF algorithms rely on real arithmetic, and are susceptible to 
+      spurious results, because during the elimination process, an entry that
+      should be zero, may instead be set to a very small, but nonzero value,
+      which may then invalidate the entire procedure.  This danger exists even
+      if the matrix being analyzed consists entirely of integer values.  
+    </p>
+
+    <p>
+      By working only with integer matrices, and using only integer arithmetic,
+      such errors are avoided.  The corresponding decompositions are
+      termed the IREF and IRREF, respectively.  Because of the restriction to
+      integer values, the IREF and IRREF cannot be forced to have a leading 1 
+      in each nonzero row, since we cannot divide rows by the leading entry.  
+      Also, it is likely that the procedures will produce values of increasing
+      magnitude, especially for large, dense matrices.  Hence, at some point, 
+      the exact calculation may fail because of integer overflow.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>ROW_ECHELON_INTEGER</b> is available in
+      <a href = "https://people.math.sc.edu/Burkardt/c_src/row_echelon_integer/row_echelon_integer.html">a C version</a> and
+      <a href = "row_echelon_integer.html">a FORTRAN90 version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/row_echelon_integer/row_echelon_integer.html">a MATLAB version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/py_src/row_echelon_integer/row_echelon_integer.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../i4lib/i4lib.html">
+      I4LIB</a>,
+      a FORTRAN90 library which
+      contains many utility routines, using "I4" or "single precision integer"
+      arithmetic.
+    </p>
+
+    <p>
+      <a href = "../r8lib/r8lib.html">
+      R8LIB</a>,
+      a FORTRAN90 library which
+      contains many utility routines, using "R8" or
+      "double precision real" arithmetic.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Howard Anton, Chris Rorres,<br>
+          Elementary Linear Algebra: Applications Version,<br>
+          Wiley, 2013,<br>
+          ISBN: 9781118879160.
+        </li>
+        <li>
+          Ward Cheney, David Kincaid,<br>
+          Linear Algebra: Theory and Applications,<br>
+          Jones & Bartlett, 2010,<br>
+          ISBN: 9781449613525.
+        </li>
+        <li>
+          Charles Cullen,<br>
+          Linear Algebra with Applications,<br>
+          Second Edition,<br>
+          Pearson, 1997,<br>
+          ISBN: 978-0673993861.
+        </li>
+        <li>
+          Gilbert Strang,<br>
+          Linear Algebra and its Applications,<br>
+          Second edition,<br>
+          Academic Press, 1980,<br>
+          ISBN: 012673660X,<br>
+          LC: QA184.88.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "row_echelon_integer.f90">row_echelon_integer.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "row_echelon_integer_test.f90">row_echelon_integer_test.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "row_echelon_integer_test.txt">row_echelon_integer_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>I4_GCD</b> finds the greatest common divisor of two I4's.
+        </li>
+        <li>
+          <b>I4MAT_PRINT</b> prints an I4MAT.
+        </li>
+        <li>
+          <b>I4MAT_PRINT_SOME</b> prints some of an I4MAT.
+        </li>
+        <li>
+          <b>I4MAT_REF</b> computes the integer row echelon form (IREF) of an I4MAT.
+        </li>
+        <li>
+          <b>I4MAT_ROW_SWAP</b> swaps rows in an I4MAT.
+        </li>
+        <li>
+          <b>I4MAT_RREF</b> computes the reduced row echelon form of an I4MAT.
+        </li>
+        <li>
+          <b>I4MAT_RREF_SOLVE_SYSTEM</b> sets up an augmented IRREF linear system.
+        </li>
+        <li>
+          <b>I4MAT_U_SOLVE</b> solves an upper triangular linear system with an I4MAT matrix.
+        </li>
+        <li>
+          <b>I4ROWS_TO_I4MAT</b> converts a row-major vector to an I4MAT.
+        </li>
+        <li>
+          <b>I4VEC_BINARY_NEXT</b> generates the next binary vector.
+        </li>
+        <li>
+          <b>I4VEC_IDENTITY_ROW</b> returns the I-th row of the identity matrix.
+        </li>
+        <li>
+          <b>I4VEC_IS_BINARY</b> is true if an I4VEC only contains 0 and 1 entries.
+        </li>
+        <li>
+          <b>I4VEC_PRINT</b> prints an I4VEC.
+        </li>
+        <li>
+          <b>I4VEC_RED</b> divides out common factors in an I4VEC.
+        </li>
+        <li>
+          <b>I4VEC_TRANSPOSE_PRINT</b> prints an I4VEC "transposed".
+        </li>
+        <li>
+          <b>KSUB_NEXT4</b> generates the subsets of size K from a set of size N.
+        </li>
+        <li>
+          <b>R8VEC_IS_INTEGER</b> is TRUE if the entries of an R8VEC are integers.
+        </li>
+        <li>
+          <b>R8VEC_PRINT</b> prints an R8VEC.
+        </li>
+        <li>
+          <b>R8VEC_TRANSPOSE_PRINT</b> prints an R8VEC "transposed".
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 September 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,18 @@
+12 September 2015  12:22:50.341 PM
+ 
+QUADPACK_DOUBLE_PRB
+  FORTRAN90 version
+  Test the QUADPACK_DOUBLE library.
+ 
+DQAGI_TEST2
+  Test DQAGI
+ 
+  Integrand is log(x)/(1+100*x*x)
+  Integral left endpoint A =      0.100000E-08
+  Integral right endpoint B =    Infinity
+  Exact integral is                22.4486    
+  Estimated integral is            22.4486    
+  Estimated integral error =      0.990524E-02
+  Exact integral error =         -0.257637E-04
+  Number of function evaluations, NEVAL =      885
+  Error return code IER =        0

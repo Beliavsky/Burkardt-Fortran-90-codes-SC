@@ -1,0 +1,146 @@
+<html>
+
+  <head>
+    <title>
+      blacs_test
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      blacs_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>blacs_test</b>,
+      FORTRAN90 programs which
+      test blacs, the Basic Linear Algebra Communication Subprograms,
+      which form a linear algebra-oriented message passing interface that may be
+      implemented efficiently and uniformly across a large range of
+      distributed memory platforms.
+    </p>
+
+    <p>
+      The length of time required to implement efficient distributed memory
+      algorithms makes it impractical to rewrite programs for every new
+      parallel machine.  The BLACS exist in order to make linear algebra
+      applications both easier to program and more portable.  It is for
+      this reason that the BLACS are used as the communication layer of
+      the distributed memory linear algebra package SCALAPACK, for instance.
+    </p>
+
+    <p>
+      MPI is one example of a distributed memory system.  A program written
+      at the BLACS level can run on under MPI.  The same program should run
+      correctly on systems that use other distributed memory systems.  The
+      key is that on each system, the installation of the BLACS library
+      takes into account the interfact between the standard BLACS routines
+      and the local distributed memory system.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>blacs_test</b> is available in
+      <a href = "blacs_test.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs
+    </h3>
+
+    <p>
+      <a href = "../mpi/mpi.html">
+      MPI</a>,
+      FORTRAN90 programs which
+      demonstrate the use of MPI for parallel computing in
+      distributed memory systems.
+    </p>
+
+    <p>
+      <a href = "../openmp/openmp.html">
+      OPENMP</a>
+      FORTRAN90 programs which
+      illustrate the use of the OpenMP application program interface
+      for carrying out parallel computations in a shared memory environment.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/scalapack/scalapack.html">
+      SCALAPACK</a>,
+      FORTRAN90 programs which
+      demonstrate the use of SCALAPACK.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Jack Dongarra, Clinton Whaley,<br>
+          A User's Guide to the BLACS, v1.1,<br>
+          LAPACK Working Note 94.
+        </li>
+        <li>
+          Susan Blackford, Jaeyoung Choi, Andrew Cleary, Eduardo D'Azevedo,
+          James Demmel, Inderjit Dhillon, Jack Dongarra, Sven Hammarling,
+          Greg Henry, Antoine Petitet, Ken Stanley, David Walker,
+          Clinton Whaley,<br>
+          The ScaLAPACK User's Guide,<br>
+          SIAM, 1997,<br>
+          ISBN13: 978-0-898713-97-8.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <b>blacs_test</b> is a simple test in which a grid is set up, and each
+      process reports in to the master process:
+      <ul>
+        <li>
+          <a href = "blacs_test.f90">blacs_test.f90</a>, the sample problem;
+        </li>
+        <li>
+          <a href = "blacs_test_ubuntu.sh">blacs_test_ubuntu.sh</a>,
+          runs the problem on an Ubuntu system.
+        </li>
+        <li>
+          <a href = "blacs_test.txt">blacs_test.txt</a>,
+          the output file;
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 05 November 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

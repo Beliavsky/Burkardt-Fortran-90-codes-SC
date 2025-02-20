@@ -1,0 +1,19 @@
+ <<<< Warning: Endpoint   ( 2908/ 1933) in MESSAG out of page - (180.0[o$).
+
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ <<                END OF DISLIN / VERSION 10.4                  <<
+ <<  Date    : 27.02.2014  Time    : 09:21:37  Pageformat: USAL  <<
+ <<  Vectors : 10532       Warnings: 1         Fileformat:  PNG  <<
+ <<  Metafile: ex13.png                                          <<
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+27 February 2014   9:21:37.653 AM
+ 
+EX13:
+  FORTRAN90 version
+  Demonstrate the creation of a map plot.
+ 
+EX13:
+  Normal end of execution.
+ 
+27 February 2014   9:21:37.679 AM

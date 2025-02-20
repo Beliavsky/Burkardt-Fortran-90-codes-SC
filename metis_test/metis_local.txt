@@ -1,0 +1,46 @@
+27 February 2017   9:40:48.100 PM
+
+METIS_TEST
+  FORTRAN90 version
+  Test the METIS library for graph partitioning.
+
+PARTGRAPHKWAY_TEST:
+  METIS_PartGraphKway partitions a graph into K parts
+  using multilevel K-way partition.
+
+  Return code =    1
+  Edge cuts for partition =    3
+
+  Partition vector:
+
+  Node  Part
+
+     1     1
+     2     1
+     3     0
+     4     1
+     5     0
+     6     0
+
+PARTGRAPHRECURSIVE_TEST:
+  METIS_PartGraphRecursive partitions a graph into K parts
+  using multilevel recursive bisection.
+
+  Return code =    1
+  Edge cuts for partition =    3
+
+  Partition vector:
+
+  Node  Part
+
+     1     1
+     2     0
+     3     0
+     4     1
+     5     1
+     6     0
+
+METIS_TEST
+  Normal end of execution.
+
+27 February 2017   9:40:48.100 PM

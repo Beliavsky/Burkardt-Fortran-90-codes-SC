@@ -1,0 +1,135 @@
+ 
+HELLO_OPENMP
+  FORTRAN90/OpenMP version
+  The number of processors available =        8
+  The number of threads available    =        1
+ 
+  OUTSIDE the parallel region.
+ 
+  HELLO from process        0
+ 
+  Going INSIDE the parallel region:
+ 
+  HELLO from process        0
+ 
+  Back OUTSIDE the parallel region.
+ 
+HELLO_OPENMP
+  Normal end of execution.
+ 
+  Elapsed wall clock time =   0.770092E-04
+ 
+HELLO_OPENMP
+  FORTRAN90/OpenMP version
+  The number of processors available =        8
+  The number of threads available    =        2
+ 
+  OUTSIDE the parallel region.
+ 
+  HELLO from process        0
+ 
+  Going INSIDE the parallel region:
+ 
+  HELLO from process        0
+  HELLO from process        1
+ 
+  Back OUTSIDE the parallel region.
+ 
+HELLO_OPENMP
+  Normal end of execution.
+ 
+  Elapsed wall clock time =   0.317097E-03
+ 
+HELLO_OPENMP
+  FORTRAN90/OpenMP version
+  The number of processors available =        8
+  The number of threads available    =        4
+ 
+  OUTSIDE the parallel region.
+ 
+  HELLO from process        0
+ 
+  Going INSIDE the parallel region:
+ 
+  HELLO from process        1
+  HELLO from process        3
+  HELLO from process        0
+  HELLO from process        2
+ 
+  Back OUTSIDE the parallel region.
+ 
+HELLO_OPENMP
+  Normal end of execution.
+ 
+  Elapsed wall clock time =   0.468969E-03
+ 
+HELLO_OPENMP
+  FORTRAN90/OpenMP version
+  The number of processors available =        4
+  The number of threads available    =        2
+ 
+  OUTSIDE the parallel region.
+ 
+  HELLO from process        0
+ 
+  Going INSIDE the parallel region:
+ 
+  HELLO from process        0
+  HELLO from process        1
+ 
+  Back OUTSIDE the parallel region.
+ 
+  Elapsed wall clock time =   0.136500E-02
+ 
+HELLO_OPENMP
+  Normal end of execution.
+ 
+HELLO_OPENMP
+  FORTRAN90/OpenMP version
+  The number of processors available =        4
+  The number of threads available    =        4
+ 
+  OUTSIDE the parallel region.
+ 
+  HELLO from process        0
+ 
+  Going INSIDE the parallel region:
+ 
+  HELLO from process        0
+  HELLO from process        1
+  HELLO from process        2
+  HELLO from process        3
+ 
+  Back OUTSIDE the parallel region.
+ 
+  Elapsed wall clock time =   0.275000E-03
+ 
+HELLO_OPENMP
+  Normal end of execution.
+ 
+HELLO_OPENMP
+  FORTRAN90/OpenMP version
+  The number of processors available =        4
+  The number of threads available    =        8
+ 
+  OUTSIDE the parallel region.
+ 
+  HELLO from process        0
+ 
+  Going INSIDE the parallel region:
+ 
+  HELLO from process        0
+  HELLO from process        1
+  HELLO from process        3
+  HELLO from process        2
+  HELLO from process        4
+  HELLO from process        6
+  HELLO from process        7
+  HELLO from process        5
+ 
+  Back OUTSIDE the parallel region.
+ 
+  Elapsed wall clock time =   0.349000E-03
+ 
+HELLO_OPENMP
+  Normal end of execution.

@@ -1,0 +1,268 @@
+<html>
+
+  <head>
+    <title>
+      ELEMENT_DATA - Preprocess data for DISPLAY4
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      ELEMENT_DATA <br> Preprocess data for DISPLAY4
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ELEMENT_DATA</b> 
+      is a FORTRAN90 program which
+      preprocesses simple element-based data on a grid into a form that the 
+      DISPLAY4 program can handle.
+    </p>
+
+    <p>
+      A set of nodes are specified in a region, and groups of 4 nodes
+      comprise elements.  At each node, a set of physical quantities is
+      given, in particular, the X and Y coordinates, the fluid pressure P,
+      and the horizontal and vertical flow velocity components U and V.
+      This information has been written into a file.  That information
+      must be reformatted to work with <b>DISPLAY4</b>.
+    </p>
+
+    <p>
+      Specifically, for each node, there is at least one line of the form:
+      <pre>
+        X  Y  P  PSI  U  V  W
+      </pre>
+      where PSI (presumably the stream function) and W (the magnitude of
+      (U,V)) are not of interest to us.  
+    </p>
+
+    <p>
+      Each element is represented by
+      listing the nodes that comprise it, with the initial node repeated
+      at then end, followed by a blank line.  All elements in the current
+      data set comprise 4 nodes.  Thus, the information defining one element
+      would be the central lines of the following:
+      <pre>
+         (previous element just finishing up)
+         X1  Y1  P1  PSI1  U1  V1  W1
+
+         X1  Y1  P1  PSI1  U1  V1  W1
+         X2  Y2  P2  PSI2  U2  V2  W2
+         X3  Y3  P3  PSI3  U3  V3  W3
+         X4  Y4  P4  PSI4  U4  V4  W4
+         X1  Y1  P1  PSI1  U1  V1  W1
+
+         X1  Y1  P1 PSI1 U1 V1 W1
+         (New element being defined)
+      </pre>
+    </p>
+
+    <p>
+      DISPLAY4, on the other hand, expects two data files, a
+      <i>node data file</i>, which lists each node once, and the properties
+      U, V, and P:
+      <pre>
+        X Y U V P
+      </pre>
+      which implicitly assigns an index to each node,
+      and an <i>element data file</i>, which lists the number of elements,
+      the number of nodes per element, and then, for each element, the
+      node indices related to the element:
+      <pre>
+        1024
+        4
+        N1 N2 N3 N4
+        N1 N2 N3 N4
+        ...
+        ...(1024 records like this)
+        ...
+        N1 N2 N3 N4
+      </pre>
+    </p>
+
+    <p>
+      <b>ELEMENT_DATA</b> reads the old data, counts items, discards duplicate
+      node information, and writes out the two data files needed by
+      <b>DISPLAY4</b>.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      The name of the input file is usually specified on the command line:
+      <blockquote>
+        <b>element_data</b> <i>input_file</i>
+      </blockquote>
+      reads <i>input_file</i> and creates two files, whose names are always
+      <i>element.txt</i> and <i>node.txt</i>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../display4/display4.html">
+      DISPLAY4</a>,
+      a FORTRAN90 program which 
+      displays graphics from the
+      flow data computed by  <a href = "../flow3/flow3.html">FLOW3</a>, 
+      <a href = "../flow5/flow5.html">FLOW5</a> or 
+      <a href = "../flow7/flow7.html">FLOW7</a>.  This program
+      used to work, but it is very out of date;
+    </p>
+
+    <p>
+      <b>ELEMENT_DATA</b> is available in
+      <a href = "https://people.math.sc.edu/Burkardt/f77_src/element_data/element_data.html">a FORTRAN77 version</a> and
+      <a href = "element_data.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/element_data/element_data.f90">element_data.f90</a>, the F90 
+          source code;
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/element_data/element_data.csh">element_data.csh</a>, 
+          commands to compile and load the source code;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      A first set of test data:
+      <ul>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/element_data/values1.txt">values1.txt</a>, an input data file read by 
+          the program;
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/element_data/node1.txt">node1.txt</a>, the node data file created by  
+          the program.  An internal flag was set so that pressures were
+          copied.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/element_data/element1.txt">element1.txt</a>, the element data file 
+          created by the program.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      A second set of test data:
+      <ul>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/element_data/values2.txt">values2.txt</a>, an second example input 
+          data file;
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/element_data/node2.txt">node2.txt</a>, the node data file created by  
+          the program.  An internal flag was set so that PSI (stream function)
+          was copied into the nominal P (pressure) slot.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/element_data/element2.txt">element2.txt</a>, the element data file 
+          created by the program.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>ELEMENT_DATA</b> organizes data on a rectangular grid into finite element data.
+        </li>
+        <li>
+          <b>CH_CAP</b> capitalizes a single character.
+        </li>
+        <li>
+          <b>CH_EQI</b> is a case insensitive comparison of two characters for equality.
+        </li>
+        <li>
+          <b>CH_TO_DIGIT</b> returns the integer value of a base 10 digit.
+        </li>
+        <li>
+          <b>FILE_COLUMN_COUNT</b> counts the number of columns in the first line of a file.
+        </li>
+        <li>
+          <b>FILE_LINE_COUNT</b> counts the number of lines in a file.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>R_NEXT</b> "reads" real numbers from a string, one at a time.
+        </li>
+        <li>
+          <b>READ_ELEMENTS</b> reads Niyazi Sahin's file and constructs the elements.
+        </li>
+        <li>
+          <b>RRVEC_COMPARE</b> compares two RR vectors.
+        </li>
+        <li>
+          <b>RRVEC_INDEX_SEARCH</b> searches for an RR value in an indexed sorted list.
+        </li>
+        <li>
+          <b>RRVEC_INDEX_INSERT_UNIQUE</b> inserts a unique RR value in an indexed sorted list.
+        </li>
+        <li>
+          <b>S_TO_R</b> reads a real number from a string.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>WORD_COUNT</b> counts the number of "words" in a string.
+        </li>
+        <li>
+          <b>WRITE_ELEMENT</b> writes an element data file.
+        </li>
+        <li>
+          <b>WRITE_NODE</b> writes a node data file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 18 January 2007.
+    </i>
+
+  </body>
+
+</html>

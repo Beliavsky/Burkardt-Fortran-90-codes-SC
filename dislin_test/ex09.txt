@@ -1,0 +1,21 @@
+ <<<< Warning: Startpoint ( 2848/ 1059) in MESSAG out of page - (z-axis).
+ <<<< Warning: Endpoint   ( 2813/ 1242) in MESSAG out of page - (z-axis).
+
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ <<                END OF DISLIN / VERSION 10.4                  <<
+ <<  Date    : 27.02.2014  Time    : 09:21:25  Pageformat: USAL  <<
+ <<  Vectors : 2792        Warnings: 2         Fileformat:  PNG  <<
+ <<  Metafile: ex09.png                                          <<
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+27 February 2014   9:21:25.642 AM
+ 
+EX09:
+  FORTRAN90 version
+  Demonstrate the creation of a 
+  3D color plot.
+ 
+EX09:
+  Normal end of execution.
+ 
+27 February 2014   9:21:25.668 AM

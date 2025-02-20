@@ -1,0 +1,53 @@
+ 2 February 2017  10:23:12.959 AM
+ 
+POWER_METHOD_PRB
+  FORTRAN90 version:
+  Test the POWER_METHOD library.
+ 
+TEST01
+  Use POWER_METHOD on the Fibonacci2 matrix.
+ 
+  Matrix order N         =      100
+  Maximum iterations     =      500
+  Error tolerance        =   0.100000E-07
+ 
+  Number of iterations   =      374
+  CPU time               =    0.00000    
+  Estimated eigenvalue   =   1.6180340359
+  Correct value          =   1.6180340052
+  ||Error||              =   0.307627E-07
+ 
+  Sine of angle between true and estimated vectors =   0.0000000596
+ 
+TEST02
+  Use POWER_METHOD2 on the Fibonacci2 matrix.
+ 
+  Matrix order N         =      100
+  Maximum iterations     =      500
+  Error tolerance        =   0.100000E-07
+ 
+  Number of iterations   =      374
+  CPU time               =   0.400000E-02
+  Estimated eigenvalue   =   1.6180340359  0.0000000000
+  Correct value          =   1.6180340052
+  ||Error||              =   0.307627E-07
+ 
+  Sine of angle between true and estimated vectors =   0.0000000650
+ 
+TEST03
+  Use POWER_METHOD2 on the TRIS (tridiagonal scalar) matrix.
+ 
+  Matrix order N         =      100
+  Maximum iterations     =     4000
+  Error tolerance        =   0.100000E-07
+ 
+  Number of iterations   =     4000
+  CPU time               =   0.360000E-01
+  Estimated eigenvalue   =  10.0002470462  5.6488818663
+  Correct max eigenvalue =  10.0000000000  5.6541179289
+  ||Error||              =   0.524189E-02
+ 
+POWER_METHOD_PRB:
+  Normal end of execution.
+ 
+ 2 February 2017  10:23:13.003 AM

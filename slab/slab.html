@@ -1,0 +1,321 @@
+<html>
+
+  <head>
+    <title>
+      SLAB - Contour plots of optimization data
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      SLAB <br> Contour plots of optimization data
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>SLAB</b> 
+      is a FORTRAN90 program which
+      makes contour plots of the an optimization function.
+    </p>
+
+    <p>
+      The optimization function was defined as follows.  Given the
+      value of a flow field along some sampling line, it was desired
+      to determine the shape of an interior obstacle (a bump) which
+      would result in a flow that would match the original data
+      along the sampling line.  The shape of the bump could be described
+      in terms of a few parameters (spline coefficients, really).
+      The optimization function was the square root of the integral
+      of the difference between the measured and computed flows along
+      the sampling line.  It was desired to make plots of the 
+      behavior of the optimization function as the shape parameters
+      were varied.
+      This data came from runs of the <b>FLOW3</b> and <b>FLOW4</b> programs.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>SLAB</b> is available in
+      <a href = "slab.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/c_src/drawcgm/drawcgm.html">
+      DRAWCGM</a> 
+      is a graphics library which
+      is needed by <b>SLAB</b>.
+    </p>
+
+    <p>
+      <a href = "../flow3/flow3.html">
+      FLOW3</a> 
+      is a FORTRAN90 program which
+      solves the 2D steady (time independent) incompressible Navier Stokes equations 
+      using the finite element method.
+    </p>
+
+    <p>
+      <a href = "../flow4/flow4.html">
+      FLOW4</a> 
+      is a FORTRAN90 program which
+      solves the 2D steady (time independent) incompressible Navier Stokes equations 
+      using the finite element method.
+    </p>
+
+    <p>
+      <a href = "../slice/slice.html">
+      SLICE</a>, 
+      a FORTRAN90 program which
+      analyzes the optimization of a scalar function of multidimensional data
+      by examining contour lines in a selected plane.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "slab.f90">slab.f90</a>, the source code.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/slab/slab.csh">slab.csh</a>, 
+          commands to compile, link and load the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "marchx03.txt">marchx03.txt</a>, sample data set #3.
+        </li>
+        <li>
+          <a href = "marchx09.txt">marchx09.txt</a>, sample data set #9.
+        </li>
+        <li>
+          <a href = "figx09_input.txt">figx09_input.txt</a>, user commands to process 
+          data set #9.
+        </li>
+        <li>
+          <a href = "figx09.ps">figx09.ps</a>, the PostScript image
+          created from data set #9.
+        </li>
+        <li>
+          <a href = "marchx10.txt">marchx10.txt</a>, sample data set #10.
+        </li>
+        <li>
+          <a href = "figx10_input.txt">figx10_input.txt</a>, user commands to process 
+          data set #10.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/slab/figx10.ps">figx10.ps</a>, the PostScript image
+          created from data set #10.
+        </li>
+        <li>
+          <a href = "marchx11.txt">marchx11.txt</a>, sample data set #11.
+        </li>
+        <li>
+          <a href = "march749.txt">march749.txt</a>, sample data set #749.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>SLAB</b> presents a 2D contour plot of the cost functional, based on data
+        </li>
+        <li>
+          <b>ARROW</b> can be used to draw an arrow at any point on a graph.
+        </li>
+        <li>
+          <b>BOX</b> draws a rectangle whose corners are specified by the user.
+        </li>
+        <li>
+          <b>BUZZ</b> is a kludge routine.  For some reason, the last few graphical
+        </li>
+        <li>
+          <b>CAPCHR</b> accepts a STRING of characters and replaces any lowercase
+        </li>
+        <li>
+          <b>CBAR</b> draws a color bar in the rectangle whose corners are (X1,Y1) and (X2,Y2).
+        </li>
+        <li>
+          <b>CBOX</b> draws a 16 by 16 box, filling each entry with a color
+        </li>
+        <li>
+          <b>CHRCTI</b> accepts a STRING of characters and reads an integer
+        </li>
+        <li>
+          <b>CHRCTR</b> accepts a string of characters, and tries to extract a
+        </li>
+        <li>
+          <b>CHRDB1</b> accepts a string of characters and removes all
+        </li>
+        <li>
+          <b>CHRDB2</b> accepts a string of characters.  It replaces all nulls
+        </li>
+        <li>
+          <b>CHRREL</b> accepts a real number in RVAL and returns in CHRREL a
+        </li>
+        <li>
+          <b>DELETE</b> is used to dispose of old copies of files before opening
+        </li>
+        <li>
+          <b>DODAT</b> processes data that has been read from a file.
+        </li>
+        <li>
+          <b>DOOFUS3</b> is used by STREAM3, to compute SINC, the stream function
+        </li>
+        <li>
+          <b>GETDAT</b> reads the information from a file.
+        </li>
+        <li>
+          <b>GETIT</b> reads X and Y coordinates of the iterates.
+        </li>
+        <li>
+          <b>GRAPH</b> produces the graph.
+        </li>
+        <li>
+          <b>HELLO</b> prints a brief welcoming message.
+        </li>
+        <li>
+          <b>HELP</b> prints the list of legal commands.
+        </li>
+        <li>
+          <b>INIT</b> sets initial values for the program variables.
+        </li>
+        <li>
+          <b>INSIDE</b> reports whether XMID is between X1 and X2.
+        </li>
+        <li>
+          <b>LENCHR</b> returns the length of STRING up to the last nonblank
+        </li>
+        <li>
+          <b>LEQI</b> is a case insensitive comparison of two strings for
+        </li>
+        <li>
+          <b>LINCON</b> draws a contour plot of a scalar quantity associated with the
+        </li>
+        <li>
+          <b>LNEI</b> is a case-insensitive comparison of two strings for
+        </li>
+        <li>
+          <b>NORVEC</b> draws a normalized vector direction field.
+        </li>
+        <li>
+          <b>PRCON</b> prints the value of the contour levels.
+        </li>
+        <li>
+          <b>PREDAT</b> opens a data file, gets the first line, containing
+        </li>
+        <li>
+          <b>PRELM</b> prints the element data.
+        </li>
+        <li>
+          <b>PREPLT</b> should be called before doing each plot.
+        </li>
+        <li>
+          <b>PRCOST</b> prints X, Y and the COST.
+        </li>
+        <li>
+          <b>PRNODE</b> prints the values of certain quantities at a node.
+        </li>
+        <li>
+          <b>PRSET</b> prints the value of some of the settings.
+        </li>
+        <li>
+          <b>QUIT</b> terminates the program.
+        </li>
+        <li>
+          <b>REFBSP</b> evaluates one of the three linear basis functions,
+        </li>
+        <li>
+          <b>RRANGE</b> computes the range of an array.
+        </li>
+        <li>
+          <b>S_PLOT</b> plots a character string onto a graphics image.
+        </li>
+        <li>
+          <b>SETELM</b> sets up the element data.
+        </li>
+        <li>
+          <b>SETTAB</b> replaces SETCTB, the DRAWCGM routine for setting up
+        </li>
+        <li>
+          <b>SETXY</b> sets up the X and Y coordinates for the nodes.
+        </li>
+        <li>
+          <b>SQUARE</b> draws a square.
+        </li>
+        <li>
+          <b>STREAM3</b> assigns the value of the stream function to each node
+        </li>
+        <li>
+          <b>TRANS3</b> calculates the linear transformation which maps the
+        </li>
+        <li>
+          <b>TRICOL</b> uses color to indicate all the points which have a
+        </li>
+        <li>
+          <b>TRILHK</b> is given a (non-isoperimetric) triangle, formed by nodes I1,
+        </li>
+        <li>
+          <b>CROSS</b> finds the two places where the value S = SVAL occurs on a
+        </li>
+        <li>
+          <b>UEVAL3</b> evaluates the velocities at an arbitrary point in a
+        </li>
+        <li>
+          <b>VECTOR</b> draws a vector field.
+        </li>
+        <li>
+          <b>VRANGE</b> computes the maximum absolute value in a pair of vectors,
+        </li>
+      </ul>
+    </p>
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 October 2008.
+    </i>
+
+    <!-- John Burkardt -->
+ 
+  </body>
+
+</html>

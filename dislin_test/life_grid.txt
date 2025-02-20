@@ -1,0 +1,18 @@
+
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ <<                END OF DISLIN / VERSION 10.4                  <<
+ <<  Date    : 27.02.2014  Time    : 09:23:05  Pageformat: USAP  <<
+ <<  Vectors : 516         Warnings: 0         Fileformat:  PNG  <<
+ <<  Metafile: life_grid.png                                     <<
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+27 February 2014   9:23:05.264 AM
+ 
+LIFE_GRID:
+  FORTRAN90 version
+  Use DISLIN routines to plot a grid for Life.
+ 
+LIFE_GRID:
+  Normal end of execution.
+ 
+27 February 2014   9:23:05.283 AM

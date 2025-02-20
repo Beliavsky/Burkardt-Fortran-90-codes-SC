@@ -1,0 +1,328 @@
+<html>
+
+  <head>
+    <title>
+      TEST_INTERP_FUN - Interpolation Tests Based on Functions
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TEST_INTERP_FUN <br> Interpolation Tests Based on Functions
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TEST_INTERP_FUN</b>
+      is a FORTRAN90 library which
+      can provide the values of certain functions that are useful for
+      testing an interpolation algorithm using a varying number of points.
+    </p>
+
+    <p>
+      The related packages <b>TEST_INTERP</b> and <b>TEST_APPROX</b> provide
+      discrete data sets of (x,y) pairs.  However, when the convergence rate
+      of an interpolation process is of interest, it is important to be able
+      to sample an underlying but "unknown" function at an increasing number of
+      points.  This library provides a few functions which are known to cause
+      problems for certain kinds of interpolation schemes.
+    </p>
+
+    <p>
+      The problems available include:
+      <ol>
+        <li>
+          Runge example, f(x) = 1 / ( x * x + 1 ), [-5,5],
+          <a href = "p01_plot.png">p01_plot.png</a>;
+        </li>
+        <li>
+          Bernstein example, f(x) = abs ( x ), [-1,1],
+          <a href = "p02_plot.png">p02_plot.png</a>;
+        </li>
+        <li>
+          The Step function,
+          <a href = "p03_plot.png">p03_plot.png</a>;
+        </li>
+        <li>
+          The Doppler function,
+          <a href = "p04_plot.png">p04_plot.png</a>;
+        </li>
+        <li>
+          The Rabbit Ears function,
+          <a href = "p05_plot.png">p05_plot.png</a>;
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TEST_INTERP_FUN</b> is available in
+      <a href = "https://people.math.sc.edu/Burkardt/c_src/test_interp_fun/test_interp_fun.html">a C version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/cpp_src/test_interp_fun/test_interp_fun.html">a C++ version</a> and
+      <a href = "test_interp_fun.html">a FORTRAN90 version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/test_interp_fun/test_interp_fun.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../chebyshev/chebyshev.html">
+      CHEBYSHEV</a>,
+      a FORTRAN90 library which
+      computes the Chebyshev interpolant/approximant to a given function
+      over an interval.
+    </p>
+
+    <p>
+      <a href = "../divdif/divdif.html">
+      DIVDIF</a>,
+      a FORTRAN90 library which
+      includes many routines to construct and evaluate divided difference
+      interpolants.
+    </p>
+
+    <p>
+      <a href = "../pppack/pppack.html">
+      PPPACK</a>,
+      a FORTRAN90 library which
+      implements Carl de Boor's piecewise polynomial functions,
+      including, particularly, cubic splines.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f_src/rbf_interp/rbf_interp.html">
+      RBF_INTERP</a>,
+      a FORTRAN90 library which
+      defines and evaluates radial basis interpolants to multidimensional data.
+    </p>
+
+    <p>
+      <a href = "../spline/spline.html">
+      SPLINE</a>,
+      a FORTRAN90 library which
+      includes many routines to construct and evaluate spline
+      interpolants and approximants.
+    </p>
+
+    <p>
+      <a href = "../test_approx/test_approx.html">
+      TEST_APPROX</a>,
+      a FORTRAN90 library which
+      defines test problems for approximation,
+      provided as a set of (x,y) data.
+    </p>
+
+    <p>
+      <a href = "../test_interp/test_interp.html">
+      TEST_INTERP</a>,
+      a FORTRAN90 library which
+      defines a number of test problems for interpolation,
+      provided as a set of (x,y) data.
+    </p>
+
+    <p>
+      <a href = "../test_interp_2d/test_interp_2d.html">
+      TEST_INTERP_2D</a>,
+      a FORTRAN90 library which
+      defines a number of test problems for interpolation in 2D,
+      provided as functions v = f(x,y).
+    </p>
+
+    <p>
+      <a href = "../test_interp_4d/test_interp_4d.html">
+      TEST_INTERP_4D</a>,
+      a FORTRAN90 library which
+      defines a number of test problems for interpolation in 4D,
+      provided as functions v = f(w,x,y,z).
+    </p>
+
+    <p>
+      <a href = "../test_interp_nd/test_interp_nd.html">
+      TEST_INTERP_ND</a>,
+      a FORTRAN90 library which
+      defines test problems for interpolation of data z(x),
+      depending on an M-dimensional argument.
+    </p>
+
+    <p>
+      <a href = "../toms446/toms446.html">
+      TOMS446</a>,
+      a FORTRAN90 library which
+      manipulates Chebyshev series for interpolation and approximation;<br>
+      this is a version of ACM TOMS algorithm 446,
+      by Roger Broucke.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Samuel Conte, Carl deBoor,<br>
+          Elementary Numerical Analysis,<br>
+          Second Edition,<br>
+          McGraw Hill, 1972,<br>
+          ISBN: 07-012446-4,<br>
+          LC: QA297.C65.
+        </li>
+        <li>
+          Carl deBoor,<br>
+          A Practical Guide to Splines,<br>
+          Springer, 2001,<br>
+          ISBN: 0387953663,<br>
+          LC: QA1.A647.v27.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_interp_fun.f90">test_interp_fun.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_interp_fun_test.f90">test_interp_fun_test.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "test_interp_fun_test.txt">test_interp_fun_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>P00_FUN</b> evaluates the function for any problem.
+        </li>
+        <li>
+          <b>P00_LIM</b> returns the limits of the approximation interval for any problem.
+        </li>
+        <li>
+          <b>P00_PROB_NUM</b> returns the number of problems.
+        </li>
+        <li>
+          <b>P00_STORY</b> prints the "story" for any problem.
+        </li>
+        <li>
+          <b>P00_TITLE</b> returns the title of any problem.
+        </li>
+        <li>
+          <b>P01_FUN</b> evaluates the function for problem 1.
+        </li>
+        <li>
+          <b>P01_LIM</b> returns the limits of the approximation interval for problem 1.
+        </li>
+        <li>
+          <b>P01_STORY</b> prints the "story" for problem 1.
+        </li>
+        <li>
+          <b>P01_TITLE</b> returns the title of problem 1.
+        </li>
+        <li>
+          <b>P02_FUN</b> evaluates the function for problem 2.
+        </li>
+        <li>
+          <b>P02_LIM</b> returns the limits of the approximation interval for problem 2.
+        </li>
+        <li>
+          <b>P02_STORY</b> prints the "story" for problem 2.
+        </li>
+        <li>
+          <b>P02_TITLE</b> returns the title of problem 2.
+        </li>
+        <li>
+          <b>P03_FUN</b> evaluates the function for problem 3.
+        </li>
+        <li>
+          <b>P03_LIM</b> returns the limits of the approximation interval for problem 3.
+        </li>
+        <li>
+          <b>P03_STORY</b> prints the "story" for problem 3.
+        </li>
+        <li>
+          <b>P03_TITLE</b> returns the title of problem 3.
+        </li>
+        <li>
+          <b>P04_FUN</b> evaluates the function for problem 4.
+        </li>
+        <li>
+          <b>P04_LIM</b> returns the limits of the approximation interval for problem 4.
+        </li>
+        <li>
+          <b>P04_STORY</b> prints the "story" for problem 4.
+        </li>
+        <li>
+          <b>P04_TITLE</b> returns the title of problem 4.
+        </li>
+        <li>
+          <b>P05_FUN</b> evaluates the function for problem 5.
+        </li>
+        <li>
+          <b>P05_LIM</b> returns the limits of the approximation interval for problem 5.
+        </li>
+        <li>
+          <b>P05_STORY</b> prints the "story" for problem 5.
+        </li>
+        <li>
+          <b>P05_TITLE</b> returns the title of problem 5.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 14 February 2012.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,353 @@
+<html>
+
+  <head>
+    <title>
+      FLOW6 - An Experimental Finite Element Code for Fluid Flow
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      FLOW6 <br> A Finite Element Code for Fluid Flow
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>FLOW6</b>
+      is a FORTRAN90 program which
+      uses the finite element method to solve for the steady state
+      velocity and pressure in a two dimensional fluid flow region.
+    </p>
+
+    <p>
+      The fluid flow is presumed to be incompressible, and time-independent.
+      The governing equations are the Navier Stokes equations with the
+      continuity equation.
+    </p>
+
+    <p>
+      FLOW6 was derived from the
+      <a href = "../flow5/flow5.html">FLOW5 code</a>.
+      Alterations and new features include:
+      <ul>
+        <li>
+          Both 3 and 7 point quadrature rules;
+        </li>
+        <li>
+          The no penetration wall condition has been extended to walls that
+          are not along a coordinate direction;
+        </li>
+        <li>
+          The elements are now in "standard" form;
+        </li>
+        <li>
+          A new free slip boundary condition is being added;
+        </li>
+        <li>
+          Boundary conditions handled by BOUNDARY routine.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>FLOW6</b> writes node and element data files that may
+      be read in and plotted by
+      <a href = "../display5/display5.html">DISPLAY5</a>.
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>FLOW6</b> is available in 
+      <a href = "flow6.html">a FORTRAN90 version</a> 
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../bump/bump.html">
+      BUMP</a>
+      is a FORTRAN90 program which solves a fluid flow problem
+      in a channel including a bump which obstructs and redirects the flow.
+    </p>
+
+    <p>
+      <b>CHANNEL</b> is a program which computes the pressure
+      and velocity for a Navier Stokes flow in a channel.  It is
+      available in
+      <a href = "https://people.math.sc.edu/Burkardt/f77_src/channel/channel.html">
+      a FORTRAN77 version</a> and
+      <a href = "../channel/channel.html">
+      a FORTRAN90 version</a>.
+    </p>
+
+    <p>
+      <a href = "../fem2d_pack/fem2d_pack.html">
+      FEM2D_PACK</a>
+      is a FORTRAN90 library which
+      contains utilities for 2D finite element calculations.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/toms866/toms866.html">
+      TOMS866</a>
+      a MATLAB library which
+      is the Incompressible Flow Iterative Solution Software;<br>
+      this library is commonly called <b>IFISS</b>;<br>
+      this is ACM TOMS algorithm 866.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Max Gunzburger,<br>
+          Finite Element Methods for Viscous Incompressible Flows,<br>
+          A Guide to Theory, Practice, and Algorithms,<br>
+          Academic Press, 1989,<br>
+          ISBN: 0-12-307350-2,<br>
+          LC: TA357.G86.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/flow6/flow6.f90">flow6.f90</a>, the source code;
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/flow6/flow6.sh">flow6.sh</a>,
+          commands to compile and load the source code;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/flow6/cavity.tec">cavity.tec</a>,
+          solution data suitable
+          for input to the graphics program TECPLOT;
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/flow6/cavity.txt">cavity.txt</a>, printed output.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/flow6/cavity_elements.txt">cavity_elements.txt</a>, element information
+          suitable for input to the graphics program DISPLAY5.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/flow6/cavity_uvp.txt">cavity_uvp.txt</a>, node information
+          suitable for input to the graphics program DISPLAY5.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/flow6/cavity_u.txt">cavity_u.txt</a>, the finite element coefficient
+          vector.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>MAIN</b> solves a 2D steady incompressible flow using finite elements.
+        </li>
+        <li>
+          <b>BANDWIDTH</b> computes the lower band width of the Jacobian matrix.
+        </li>
+        <li>
+          <b>BOUNDARY_INTEGRAL</b> sets data useful for boundary integrals.
+        </li>
+        <li>
+          <b>BOUNDARY_INTEGRAL_FREESLIP</b> sets boundary integral data for the freeslip.
+        </li>
+        <li>
+          <b>BOUNDARY_INTEGRAL_STEP</b> sets boundary integral data for the step.
+        </li>
+        <li>
+          <b>BOUNDARY_INTEGRAL_PRINT</b> prints data useful for boundary integrals.
+        </li>
+        <li>
+          <b>BOUNDARY_SHAPE</b> returns the tangent and normal vectors along the boundary.
+        </li>
+        <li>
+          <b>BOUNDARY_SHAPE_CAVITY</b> returns the boundary of the cavity problem.
+        </li>
+        <li>
+          <b>BOUNDARY_SHAPE_CHANNEL</b> returns the boundary of the channel problem.
+        </li>
+        <li>
+          <b>BOUNDARY_SHAPE_FREESLIP</b> returns the boundary of the freeslip problem.
+        </li>
+        <li>
+          <b>BOUNDARY_SHAPE_STEP</b> returns the boundary of the step problem.
+        </li>
+        <li>
+          <b>BOUNDARY_VALUE</b> evaluates boundary condition functions.
+        </li>
+        <li>
+          <b>COEF_READ</b> reads the coefficient data from a file.
+        </li>
+        <li>
+          <b>COEF_WRITE</b> writes the coefficient data to a file for possible restart.
+        </li>
+        <li>
+          <b>DGB_CHECK</b> checks the dimensions of a general band matrix.
+        </li>
+        <li>
+          <b>DGB_FA</b> factors a matrix stored in LINPACK general band storage.
+        </li>
+        <li>
+          <b>DGB_PRINT</b> prints nonzero entries of a banded matrix.
+        </li>
+        <li>
+          <b>DGB_SL</b> solves a system factored by DGB_FA.
+        </li>
+        <li>
+          <b>DVEC_AMAX</b> returns the maximum absolute value in a real vector.
+        </li>
+        <li>
+          <b>ELEMENT_PRINT</b> prints out the elements.
+        </li>
+        <li>
+          <b>ELEMENT_WRITE</b> writes element information to a file.
+        </li>
+        <li>
+          <b>EQUATION_PRINT</b> prints the equation types.
+        </li>
+        <li>
+          <b>FP</b> computes the jacobian matrix A of the Navier Stokes residual.
+        </li>
+        <li>
+          <b>FP_PRINT</b> prints information about the jacobian.
+        </li>
+        <li>
+          <b>FP_DIF</b> estimates the jacobian matrix by finite differences.
+        </li>
+        <li>
+          <b>FX</b> computes the residual RES of the Navier Stokes equations.
+        </li>
+        <li>
+          <b>GEOMETRY</b> sets up the geometry for any problem.
+        </li>
+        <li>
+          <b>GEOMETRY_CAVITY</b> sets up the geometry for the cavity problem.
+        </li>
+        <li>
+          <b>GEOMETRY_CHANNEL</b> sets up the geometry for the channel problem.
+        </li>
+        <li>
+          <b>GEOMETRY_FREESLIP</b> sets up the geometry for the freeslip problem.
+        </li>
+        <li>
+          <b>GEOMETRY_STEP</b> sets up the geometry for the step problem.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>HELLO</b> says hello, prints the program name, date and limits.
+        </li>
+        <li>
+          <b>INIT</b> zeroes out data used by the program.
+        </li>
+        <li>
+          <b>NEWTON</b> applies Newton iteration, seeking a solution of FX(G) = 0.
+        </li>
+        <li>
+          <b>NODE_WRITE</b> writes solution information to a file.
+        </li>
+        <li>
+          <b>PRESS_INTERP</b> interpolates pressure values at non-pressure nodes.
+        </li>
+        <li>
+          <b>REF_BF_L3</b> evaluates a reference element linear basis function.
+        </li>
+        <li>
+          <b>REF_BF_Q6</b> evaluates shape functions for a 6 node triangle.
+        </li>
+        <li>
+          <b>REF_MAP_Q6</b> returns the interpolation map for data on a 6 node triangle.
+        </li>
+        <li>
+          <b>REF_QUAD1</b> sets abscissas and wquad1s for 1D Gauss-Legendre quadrature.
+        </li>
+        <li>
+          <b>REF_QUAD2</b> sets up the 2D reference triangle quadrature rule.
+        </li>
+        <li>
+          <b>SETBAS</b> evaluates the basis functions at each quadrature point.
+        </li>
+        <li>
+          <b>STOKES</b> solves the Stokes equations.
+        </li>
+        <li>
+          <b>TECPLOT_WRITE</b> writes out solution information for use with TECPLOT.
+        </li>
+        <li>
+          <b>TRANS_Q6</b> calculates the biquadratic reference element transformation.
+        </li>
+        <li>
+          <b>UVP_NORM_H1</b> returns the H1 norm of the solution.
+        </li>
+        <li>
+          <b>UVP_NORM_L2</b> returns the L2 norms of velocity magnitude, and pressure.
+        </li>
+        <li>
+          <b>UVP_NORM_LMAX</b> returns the infinity norms of velocity magnitude, and pressure.
+        </li>
+        <li>
+          <b>UVP_PRINT</b> prints out the solution.
+        </li>
+        <li>
+          <b>UVP_QUAD_VALUE</b> evaluates U, V and P at a quadrature point in a given element.
+        </li>
+        <li>
+          <b>UVP_VALUE</b> evaluates U, V and P at any point in a given element.
+        </li>
+        <li>
+          <b>X_OF_XSI</b> computes X and Y given XSI and ETA coordinates.
+        </li>
+        <li>
+          <b>XY_PRINT</b> prints the X and Y coordinates of the nodes.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 November 2006.
+    </i>
+
+  </body>
+
+</html>
+

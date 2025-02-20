@@ -1,0 +1,13 @@
+# raw_plot.inp
+#
+#  This file contains commands to GNUPLOT to make a plot of
+#  the data in "raw.txt".
+#
+set term post default
+set output "raw.ps"
+set data style linespoints
+set yrange [0:]
+set title "Energy versus Cluster Size"
+set grid
+plot "raw.txt"
+quit

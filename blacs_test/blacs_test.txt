@@ -1,0 +1,68 @@
+ 
+  Process:      2
+ 
+BLACS_PRB
+  Process beginning.
+ 
+  Process:      3
+ 
+BLACS_PRB
+  Process beginning.
+November  3 2018   9:31:09.399 PM
+ 
+  Process:      0
+ 
+ 
+BLACS_TEST
+  FORTRAN90 version
+  Test the BLACS library.
+ 
+  Process:      1
+ 
+BLACS_PRB
+  Process beginning.
+  A sample program for the BLACS.
+ 
+  In this simple example, we begin with a
+  certain number of processes.
+ 
+  These processes are arranged into a 2D
+  computational grid (and any left over processes
+  will exit.)
+ 
+  Then BLACS is initialized, and the (0,0) process
+  expects to receive a "check-in" message from all
+  other active processes.
+ 
+  The number of processes is            4
+ 
+BLACS_PRB - Process      0
+  Setting up the 2D process grid.
+ 
+  prow_num =   2
+  pcol_num =   2
+ 
+BLACS_PRB - Process      0
+  Calling BLACS_GRIDINIT to define the grid.
+ 
+BLACS_PRB - Process      0
+  Calling BLACS_GRIDINFO for process grid coordinates.
+ 
+BLACS_PRB - Process      0
+  Call BLACS_PNUM for process id from grid coordinates.
+ 
+Process(0,0):
+  All other processes must send me a check in message.
+ 
+    Process     BLACS
+   Row   Col    ID
+ 
+     0     0     0
+     0     1     1
+     1     0     2
+     1     1     3
+ 
+BLACS_TEST - Master (0,0) process:
+  Normal end of execution.
+ 
+November  3 2018   9:31:09.402 PM

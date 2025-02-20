@@ -1,0 +1,20 @@
+
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ <<                END OF DISLIN / VERSION 10.4                  <<
+ <<  Date    : 27.02.2014  Time    : 09:23:24  Pageformat: USAL  <<
+ <<  Vectors : 1484        Warnings: 0         Fileformat:  PNG  <<
+ <<  Metafile: quickplot_scatter.png                             <<
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+ <<<< Warning   3: Incorrect level in disfin!   (   0)
+27 February 2014   9:23:24.133 AM
+ 
+QUICKPLOT_SCATTER:
+  FORTRAN90 version
+  Demonstrate the DISLIN "quickplot" command QPLSCA
+  to make a scatter plot.
+ 
+QUICKPLOT_SCATTER:
+  Normal end of execution.
+ 
+27 February 2014   9:23:24.150 AM

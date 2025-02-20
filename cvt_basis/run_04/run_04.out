@@ -1,0 +1,1356 @@
+July 21 2005   9:22:17.972 AM
+ 
+CVT_BASIS
+  Arrange a set abstract data vectors into clusters.
+ 
+  This NEW version of the code handles up to
+    10 families of data.
+ 
+  Null cluster policy:
+  0, do nothing, accept null clusters;
+  1, reset center to a random data point;
+  2, reset center to random point in hull;
+ 
+  NULL_CLUSTER_POLICY =      1
+ 
+RANDOM_INITIALIZE
+  Initialize RANDOM_NUMBER with user SEED =    123456789
+ 
+  It is time to read sets of solution files.
+ 
+  We assume that a series of solution files exists,
+  with "consecutive" names, like
+    fred001.txt, fred002,txt, ...
+  Just specify the FIRST name in the series, and
+  the program will read them all.
+ 
+  The program can read another series of data if
+  you specify yet another first name, or you can
+  type "none" when there are no more file series.
+ 
+ 
+What is the first solution file (in the first series)?
+ 
+What is the first solution file (in the NEXT series) or "NONE"?
+ 
+  The number of initial solution files is      1
+  The total number of solution files is     40
+ 
+  The data is stored in an M by N matrix.
+ 
+  The "spatial" dimension M is       41
+  The number of data points N is     40
+ 
+ 
+  Processing files starting with "/a/fs.csit.fsu.edu/u8/users/burkardt/public_html/datasets/burgers/burgers_01.txt".
+ 
+  All the data has been read into POINT.
+ 
+Enter lower and upper number of clusters
+ DEBUG: CLUSTER_LO =            1  cluster_hi =           16
+ 
+  The program will try to determine the minimum energy
+  of a clustering, for cluster sizes in the range:
+       1    16
+ 
+Enter the number of different random cluster configurations to check
+ 
+  For each number of clusters, the number of
+  distinct initial random configurations to be checked
+  will be      15
+ 
+Enter the number of energy iterations
+ 
+  For each initial random configuration, the number of
+  times the program will recompute the cluster centers,
+  cluster components, and energy is     30
+ 
+Number of clusters allowed:      1
+ 
+     1
+Initial_RAW     128.233         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+     2
+Initial_RAW     129.103         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+     3
+Initial_RAW     128.054         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+     4
+Initial_RAW     128.430         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+     5
+Initial_RAW     129.389         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+     6
+Initial_RAW     132.352         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+     7
+Initial_RAW     129.304         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+     8
+Initial_RAW     128.124         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+     9
+Initial_RAW     128.010         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+    10
+Initial_RAW     127.883         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+    11
+Initial_RAW     129.161         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+    12
+Initial_RAW     128.211         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+    13
+Initial_RAW     129.622         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+    14
+Initial_RAW     127.940         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+    15
+Initial_RAW     128.094         0
+HMEANS_RAW      127.738         2
+KMEANS_RAW      127.738         1
+ 
+Number of clusters allowed:      2
+ 
+     1
+Initial_RAW     117.187         0
+HMEANS_RAW      53.1223         4
+KMEANS_RAW      52.9070         2
+ 
+     2
+Initial_RAW     127.555         0
+HMEANS_RAW      53.1282         5
+KMEANS_RAW      52.9070         2
+ 
+     3
+Initial_RAW     122.306         0
+HMEANS_RAW      53.1223         5
+KMEANS_RAW      52.9070         2
+ 
+     4
+Initial_RAW     127.938         0
+HMEANS_RAW      53.1223         4
+KMEANS_RAW      52.9070         2
+ 
+     5
+Initial_RAW     122.759         0
+HMEANS_RAW      53.1282         5
+KMEANS_RAW      52.9070         2
+ 
+     6
+Initial_RAW     125.877         0
+HMEANS_RAW      53.1282         3
+KMEANS_RAW      52.9070         2
+ 
+     7
+Initial_RAW     119.998         0
+HMEANS_RAW      53.1223         4
+KMEANS_RAW      52.9070         2
+ 
+     8
+Initial_RAW     122.692         0
+HMEANS_RAW      53.1282         4
+KMEANS_RAW      52.9070         2
+ 
+     9
+Initial_RAW     127.525         0
+HMEANS_RAW      53.1282         6
+KMEANS_RAW      52.9070         2
+ 
+    10
+Initial_RAW     126.089         0
+HMEANS_RAW      53.1223         7
+KMEANS_RAW      52.9070         2
+ 
+    11
+Initial_RAW     111.647         0
+HMEANS_RAW      53.1223         2
+KMEANS_RAW      52.9070         2
+ 
+    12
+Initial_RAW     108.658         0
+HMEANS_RAW      53.1223         3
+KMEANS_RAW      52.9070         2
+ 
+    13
+Initial_RAW     118.292         0
+HMEANS_RAW      53.1223         2
+KMEANS_RAW      52.9070         2
+ 
+    14
+Initial_RAW     125.256         0
+HMEANS_RAW      53.1282         5
+KMEANS_RAW      52.9070         2
+ 
+    15
+Initial_RAW     123.517         0
+HMEANS_RAW      53.1223         2
+KMEANS_RAW      52.9070         2
+ 
+Number of clusters allowed:      3
+ 
+     1
+Initial_RAW     116.893         0
+HMEANS_RAW      29.8419         8
+KMEANS_RAW      29.0412         3
+ 
+     2
+Initial_RAW     103.494         0
+HMEANS_RAW      29.2122         4
+KMEANS_RAW      29.0412         2
+ 
+     3
+Initial_RAW     108.275         0
+HMEANS_RAW      29.2346         5
+KMEANS_RAW      29.0412         2
+ 
+     4
+Initial_RAW     110.036         0
+HMEANS_RAW      29.2346         6
+KMEANS_RAW      29.0412         2
+ 
+     5
+Initial_RAW     118.063         0
+HMEANS_RAW      29.8681         7
+KMEANS_RAW      29.0412         3
+ 
+     6
+Initial_RAW     117.656         0
+HMEANS_RAW      29.8681         5
+KMEANS_RAW      29.0412         3
+ 
+     7
+Initial_RAW     120.596         0
+HMEANS_RAW      29.8681         5
+KMEANS_RAW      29.0412         3
+ 
+     8
+Initial_RAW     118.451         0
+HMEANS_RAW      29.8419         3
+KMEANS_RAW      29.0412         3
+ 
+     9
+Initial_RAW     122.228         0
+HMEANS_RAW      29.2547         5
+KMEANS_RAW      29.0412         2
+ 
+    10
+Initial_RAW     107.940         0
+HMEANS_RAW      29.2547         4
+KMEANS_RAW      29.0412         2
+ 
+    11
+Initial_RAW     118.788         0
+HMEANS_RAW      29.2346         5
+KMEANS_RAW      29.0412         2
+ 
+    12
+Initial_RAW     117.511         0
+HMEANS_RAW      29.2547         5
+KMEANS_RAW      29.0412         2
+ 
+    13
+Initial_RAW     117.322         0
+HMEANS_RAW      29.2346         6
+KMEANS_RAW      29.0412         2
+ 
+    14
+Initial_RAW     118.459         0
+HMEANS_RAW      29.8681         7
+KMEANS_RAW      29.0412         3
+ 
+    15
+Initial_RAW     119.999         0
+HMEANS_RAW      29.8681         7
+KMEANS_RAW      29.0412         3
+ 
+Number of clusters allowed:      4
+ 
+     1
+Initial_RAW     123.020         0
+HMEANS_RAW      19.1858         6
+KMEANS_RAW      18.2895         4
+ 
+     2
+Initial_RAW     103.205         0
+HMEANS_RAW      19.1015         6
+KMEANS_RAW      18.2895         4
+ 
+     3
+Initial_RAW     109.376         0
+HMEANS_RAW      18.7710         6
+KMEANS_RAW      18.2895         4
+ 
+     4
+Initial_RAW     108.178         0
+HMEANS_RAW      19.4095         6
+KMEANS_RAW      18.2895         5
+ 
+     5
+Initial_RAW     116.552         0
+HMEANS_RAW      19.1015         5
+KMEANS_RAW      18.2895         4
+ 
+     6
+Initial_RAW     110.483         0
+HMEANS_RAW      18.7710         5
+KMEANS_RAW      18.2895         4
+ 
+     7
+Initial_RAW     104.462         0
+HMEANS_RAW      19.1858         8
+KMEANS_RAW      18.2895         4
+ 
+     8
+Initial_RAW     112.390         0
+HMEANS_RAW      19.1858         9
+KMEANS_RAW      18.2895         4
+ 
+     9
+Initial_RAW     109.183         0
+HMEANS_RAW      18.7710         5
+KMEANS_RAW      18.2895         4
+ 
+    10
+Initial_RAW     101.303         0
+HMEANS_RAW      18.5937         5
+KMEANS_RAW      18.2895         3
+ 
+    11
+Initial_RAW     106.766         0
+HMEANS_RAW      18.5905         5
+KMEANS_RAW      18.2895         2
+ 
+    12
+Initial_RAW     112.957         0
+HMEANS_RAW      19.1015         6
+KMEANS_RAW      18.2895         4
+ 
+    13
+Initial_RAW     118.251         0
+HMEANS_RAW      18.7710         7
+KMEANS_RAW      18.2895         4
+ 
+    14
+Initial_RAW     109.607         0
+HMEANS_RAW      18.2923         4
+KMEANS_RAW      18.2895         2
+ 
+    15
+Initial_RAW     112.155         0
+HMEANS_RAW      18.6469         5
+KMEANS_RAW      18.2895         4
+ 
+Number of clusters allowed:      5
+ 
+     1
+Initial_RAW     120.600         0
+HMEANS_RAW      13.6101         6
+KMEANS_RAW      12.6843         3
+ 
+     2
+Initial_RAW     110.590         0
+HMEANS_RAW      12.6798         5
+KMEANS_RAW      12.6022         2
+ 
+     3
+Initial_RAW     119.716         0
+HMEANS_RAW      12.7073         6
+KMEANS_RAW      12.4463         2
+ 
+     4
+Initial_RAW     97.0827         0
+HMEANS_RAW      12.7073         5
+KMEANS_RAW      12.4463         2
+ 
+     5
+Initial_RAW     112.163         0
+HMEANS_RAW      12.6798         4
+KMEANS_RAW      12.6022         2
+ 
+     6
+Initial_RAW     110.814         0
+HMEANS_RAW      13.0950         5
+KMEANS_RAW      12.6843         2
+ 
+     7
+Initial_RAW     114.126         0
+HMEANS_RAW      12.7073         4
+KMEANS_RAW      12.4463         2
+ 
+     8
+Initial_RAW     101.934         0
+HMEANS_RAW      12.6786         6
+KMEANS_RAW      12.4942         3
+ 
+     9
+Initial_RAW     111.463         0
+HMEANS_RAW      12.7073         8
+KMEANS_RAW      12.4463         2
+ 
+    10
+Initial_RAW     106.399         0
+HMEANS_RAW      13.1938         7
+KMEANS_RAW      12.6843         2
+ 
+    11
+Initial_RAW     112.376         0
+HMEANS_RAW      12.4942         3
+KMEANS_RAW      12.4942         1
+ 
+    12
+Initial_RAW     113.216         0
+HMEANS_RAW      12.6384         5
+KMEANS_RAW      12.4463         2
+ 
+    13
+Initial_RAW     114.214         0
+HMEANS_RAW      12.8647         4
+KMEANS_RAW      12.6022         2
+ 
+    14
+Initial_RAW     116.823         0
+HMEANS_RAW      12.7073         5
+KMEANS_RAW      12.4463         2
+ 
+    15
+Initial_RAW     105.332         0
+HMEANS_RAW      13.0950         3
+KMEANS_RAW      12.6843         2
+ 
+Number of clusters allowed:      6
+ 
+     1
+Initial_RAW     116.418         0
+HMEANS_RAW      9.11929         3
+KMEANS_RAW      9.05674         2
+ 
+     2
+Initial_RAW     108.682         0
+HMEANS_RAW      9.40463         2
+KMEANS_RAW      9.05674         2
+ 
+     3
+Initial_RAW     111.931         0
+HMEANS_RAW      9.80736         8
+KMEANS_RAW      9.02208         4
+ 
+     4
+Initial_RAW     110.772         0
+HMEANS_RAW      9.23266         5
+KMEANS_RAW      9.02208         4
+ 
+     5
+Initial_RAW     107.561         0
+HMEANS_RAW      9.51518         4
+KMEANS_RAW      9.26073         2
+ 
+     6
+Initial_RAW     110.596         0
+HMEANS_RAW      11.6378         3
+KMEANS_RAW      9.26073         7
+ 
+     7
+Initial_RAW     109.398         0
+HMEANS_RAW      10.9756         6
+KMEANS_RAW      9.26073         7
+ 
+     8
+Initial_RAW     115.233         0
+HMEANS_RAW      9.48975         8
+KMEANS_RAW      9.00105         3
+ 
+     9
+Initial_RAW     119.902         0
+HMEANS_RAW      11.3244        13
+KMEANS_RAW      9.02208         7
+ 
+    10
+Initial_RAW     111.362         0
+HMEANS_RAW      9.97905         3
+KMEANS_RAW      9.02208         4
+ 
+    11
+Initial_RAW     105.680         0
+HMEANS_RAW      9.41570         6
+KMEANS_RAW      9.00105         3
+ 
+    12
+Initial_RAW     115.877         0
+HMEANS_RAW      10.6826         6
+KMEANS_RAW      9.02208         7
+ 
+    13
+Initial_RAW     108.268         0
+HMEANS_RAW      10.0478         8
+KMEANS_RAW      9.02208         5
+ 
+    14
+Initial_RAW     109.551         0
+HMEANS_RAW      9.81139         6
+KMEANS_RAW      9.02208         5
+ 
+    15
+Initial_RAW     110.492         0
+HMEANS_RAW      9.97905         7
+KMEANS_RAW      9.02208         4
+ 
+Number of clusters allowed:      7
+ 
+     1
+Initial_RAW     106.642         0
+HMEANS_RAW      6.84606         5
+KMEANS_RAW      6.77319         3
+ 
+     2
+Initial_RAW     105.367         0
+HMEANS_RAW      9.12452         6
+KMEANS_RAW      6.97395         9
+ 
+     3
+Initial_RAW     112.501         0
+HMEANS_RAW      7.69833         5
+KMEANS_RAW      7.02194         4
+ 
+     4
+Initial_RAW     111.387         0
+HMEANS_RAW      7.25165         5
+KMEANS_RAW      6.77319         3
+ 
+     5
+Initial_RAW     106.211         0
+HMEANS_RAW      7.30009         7
+KMEANS_RAW      6.80652         2
+ 
+     6
+Initial_RAW     111.845         0
+HMEANS_RAW      7.65123         5
+KMEANS_RAW      7.02194         3
+ 
+     7
+Initial_RAW     109.193         0
+HMEANS_RAW      6.83291         4
+KMEANS_RAW      6.83291         1
+ 
+     8
+Initial_RAW     108.957         0
+HMEANS_RAW      7.60244         8
+KMEANS_RAW      6.77319         4
+ 
+     9
+Initial_RAW     100.100         0
+HMEANS_RAW      7.52924         5
+KMEANS_RAW      6.77319         4
+ 
+    10
+Initial_RAW     100.269         0
+HMEANS_RAW      7.60244         6
+KMEANS_RAW      6.77319         4
+ 
+    11
+Initial_RAW     111.900         0
+HMEANS_RAW      7.37515         5
+KMEANS_RAW      6.80652         3
+ 
+    12
+Initial_RAW     105.509         0
+HMEANS_RAW      7.89593         4
+KMEANS_RAW      6.97395         6
+ 
+    13
+Initial_RAW     114.086         0
+HMEANS_RAW      7.03176         3
+KMEANS_RAW      6.78605         2
+ 
+    14
+Initial_RAW     109.668         0
+HMEANS_RAW      7.35449         9
+KMEANS_RAW      6.80652         3
+ 
+    15
+Initial_RAW     101.267         0
+HMEANS_RAW      7.87439         7
+KMEANS_RAW      6.77319         4
+ 
+Number of clusters allowed:      8
+ 
+     1
+Initial_RAW     106.206         0
+HMEANS_RAW      5.46207         4
+KMEANS_RAW      5.28829         6
+ 
+     2
+Initial_RAW     110.566         0
+HMEANS_RAW      6.32710         4
+KMEANS_RAW      5.33796         4
+ 
+     3
+Initial_RAW     117.981         0
+HMEANS_RAW      5.40512         4
+KMEANS_RAW      5.40512         1
+ 
+     4
+Initial_RAW     112.296         0
+HMEANS_RAW      5.86417         4
+KMEANS_RAW      5.38959         2
+ 
+     5
+Initial_RAW     101.952         0
+HMEANS_RAW      5.86417         4
+KMEANS_RAW      5.38959         2
+ 
+     6
+Initial_RAW     107.372         0
+HMEANS_RAW      5.94135         7
+KMEANS_RAW      5.33796         4
+ 
+     7
+Initial_RAW     110.672         0
+HMEANS_RAW      6.46467         6
+KMEANS_RAW      5.60939         3
+ 
+     8
+Initial_RAW     116.464         0
+HMEANS_RAW      6.06773         5
+KMEANS_RAW      5.45370         3
+ 
+     9
+Initial_RAW     106.012         0
+HMEANS_RAW      5.59934         2
+KMEANS_RAW      5.28829         3
+ 
+    10
+Initial_RAW     110.710         0
+HMEANS_RAW      6.64196         9
+KMEANS_RAW      5.38959         4
+ 
+    11
+Initial_RAW     104.793         0
+HMEANS_RAW      5.93789         4
+KMEANS_RAW      5.27794         3
+ 
+    12
+Initial_RAW     100.365         0
+HMEANS_RAW      7.34075        10
+KMEANS_RAW      5.38959         6
+ 
+    13
+Initial_RAW     104.326         0
+HMEANS_RAW      5.86688         5
+KMEANS_RAW      5.22789         5
+ 
+    14
+Initial_RAW     107.878         0
+HMEANS_RAW      6.03562         7
+KMEANS_RAW      5.38959         3
+ 
+    15
+Initial_RAW     101.706         0
+HMEANS_RAW      5.39287         3
+KMEANS_RAW      5.22789         2
+ 
+Number of clusters allowed:      9
+ 
+     1
+Initial_RAW     108.566         0
+HMEANS_RAW      6.26541         6
+KMEANS_RAW      4.23738         8
+ 
+     2
+Initial_RAW     98.6522         0
+HMEANS_RAW      5.40526         4
+KMEANS_RAW      4.23738         6
+ 
+     3
+Initial_RAW     107.216         0
+HMEANS_RAW      5.05429         7
+KMEANS_RAW      4.23738         5
+ 
+     4
+Initial_RAW     112.991         0
+HMEANS_RAW      4.93268         5
+KMEANS_RAW      4.23738         6
+ 
+     5
+Initial_RAW     111.944         0
+HMEANS_RAW      4.64819         5
+KMEANS_RAW      4.24121         3
+ 
+     6
+Initial_RAW     110.241         0
+HMEANS_RAW      4.56520         3
+KMEANS_RAW      4.24121         3
+ 
+     7
+Initial_RAW     115.044         0
+HMEANS_RAW      6.38846         7
+KMEANS_RAW      5.42352         3
+ 
+     8
+Initial_RAW     103.555         0
+HMEANS_RAW      6.51619         8
+KMEANS_RAW      4.23738         9
+ 
+     9
+Initial_RAW     106.427         0
+HMEANS_RAW      4.61807         6
+KMEANS_RAW      4.17935         2
+ 
+    10
+Initial_RAW     95.5215         0
+HMEANS_RAW      6.04086        10
+KMEANS_RAW      4.23738         7
+ 
+    11
+Initial_RAW     106.968         0
+HMEANS_RAW      5.47314         4
+KMEANS_RAW      4.23738         6
+ 
+    12
+Initial_RAW     109.405         0
+HMEANS_RAW      4.82353         4
+KMEANS_RAW      4.50381         4
+ 
+    13
+Initial_RAW     106.758         0
+HMEANS_RAW      4.65319         5
+KMEANS_RAW      4.26844         5
+ 
+    14
+Initial_RAW     109.338         0
+HMEANS_RAW      7.12199        10
+KMEANS_RAW      4.23738        10
+ 
+    15
+Initial_RAW     106.446         0
+HMEANS_RAW      5.46475         7
+KMEANS_RAW      4.23738         6
+ 
+Number of clusters allowed:     10
+ 
+     1
+Initial_RAW     102.277         0
+HMEANS_RAW      4.29647         6
+KMEANS_RAW      3.49135         3
+ 
+     2
+Initial_RAW     107.000         0
+HMEANS_RAW      4.54278         7
+KMEANS_RAW      3.41076         8
+ 
+     3
+Initial_RAW     99.5502         0
+HMEANS_RAW      5.13192         9
+KMEANS_RAW      3.38292         7
+ 
+     4
+Initial_RAW     106.500         0
+HMEANS_RAW      6.74015         5
+KMEANS_RAW      3.49135        10
+ 
+     5
+Initial_RAW     111.686         0
+HMEANS_RAW      3.96563         4
+KMEANS_RAW      3.49135         3
+ 
+     6
+Initial_RAW     93.7181         0
+HMEANS_RAW      5.03343         6
+KMEANS_RAW      3.50135         5
+ 
+     7
+Initial_RAW     105.067         0
+HMEANS_RAW      6.05358         7
+KMEANS_RAW      3.49135         8
+ 
+     8
+Initial_RAW     107.768         0
+HMEANS_RAW      3.88581         4
+KMEANS_RAW      3.49135         2
+ 
+     9
+Initial_RAW     105.270         0
+HMEANS_RAW      4.58825         4
+KMEANS_RAW      3.35783         7
+ 
+    10
+Initial_RAW     93.6092         0
+HMEANS_RAW      5.15132         9
+KMEANS_RAW      3.49135         6
+ 
+    11
+Initial_RAW     104.320         0
+HMEANS_RAW      4.36934         7
+KMEANS_RAW      3.91948         5
+ 
+    12
+Initial_RAW     109.195         0
+HMEANS_RAW      4.12335         4
+KMEANS_RAW      3.50135         3
+ 
+    13
+Initial_RAW     106.126         0
+HMEANS_RAW      4.93392         5
+KMEANS_RAW      3.91948         6
+ 
+    14
+Initial_RAW     110.856         0
+HMEANS_RAW      4.60603         4
+KMEANS_RAW      3.49135         6
+ 
+    15
+Initial_RAW     107.779         0
+HMEANS_RAW      4.24809         5
+KMEANS_RAW      3.64812         3
+ 
+Number of clusters allowed:     11
+ 
+     1
+Initial_RAW     101.853         0
+HMEANS_RAW      3.47096         3
+KMEANS_RAW      2.82592         9
+ 
+     2
+Initial_RAW     108.519         0
+HMEANS_RAW      4.63154         6
+KMEANS_RAW      2.90562         5
+ 
+     3
+Initial_RAW     105.590         0
+HMEANS_RAW      3.03262         3
+KMEANS_RAW      2.80788         2
+ 
+     4
+Initial_RAW     103.842         0
+HMEANS_RAW      5.70851        10
+KMEANS_RAW      2.82592        12
+ 
+     5
+Initial_RAW     100.001         0
+HMEANS_RAW      3.05016         4
+KMEANS_RAW      2.90562         2
+ 
+     6
+Initial_RAW     110.450         0
+HMEANS_RAW      3.15462         5
+KMEANS_RAW      2.77206         2
+ 
+     7
+Initial_RAW     112.265         0
+HMEANS_RAW      4.31233         5
+KMEANS_RAW      2.82592         9
+ 
+     8
+Initial_RAW     102.136         0
+HMEANS_RAW      4.17741         4
+KMEANS_RAW      2.77206         7
+ 
+     9
+Initial_RAW     103.167         0
+HMEANS_RAW      4.02177         5
+KMEANS_RAW      2.82592         7
+ 
+    10
+Initial_RAW     95.0102         0
+HMEANS_RAW      4.00325         5
+KMEANS_RAW      3.28469         6
+ 
+    11
+Initial_RAW     108.277         0
+HMEANS_RAW      6.34669         7
+KMEANS_RAW      2.82592        14
+ 
+    12
+Initial_RAW     102.044         0
+HMEANS_RAW      4.86288         5
+KMEANS_RAW      2.82592        12
+ 
+    13
+Initial_RAW     107.825         0
+HMEANS_RAW      5.62913         6
+KMEANS_RAW      2.82592        11
+ 
+    14
+Initial_RAW     96.4433         0
+HMEANS_RAW      4.09628         8
+KMEANS_RAW      2.82592         9
+ 
+    15
+Initial_RAW     105.277         0
+HMEANS_RAW      3.14876         3
+KMEANS_RAW      2.90670         4
+ 
+Number of clusters allowed:     12
+ 
+     1
+Initial_RAW     109.279         0
+HMEANS_RAW      3.60815         4
+KMEANS_RAW      2.34862         9
+ 
+     2
+Initial_RAW     104.224         0
+HMEANS_RAW      2.72931         3
+KMEANS_RAW      2.34862         4
+ 
+     3
+Initial_RAW     106.072         0
+HMEANS_RAW      3.46818         7
+KMEANS_RAW      2.34862         9
+ 
+     4
+Initial_RAW     100.978         0
+HMEANS_RAW      2.74218         3
+KMEANS_RAW      2.34862         7
+ 
+     5
+Initial_RAW     105.559         0
+HMEANS_RAW      3.76316         5
+KMEANS_RAW      2.34862         8
+ 
+     6
+Initial_RAW     100.645         0
+HMEANS_RAW      2.85751         6
+KMEANS_RAW      2.41711         9
+ 
+     7
+Initial_RAW     107.319         0
+HMEANS_RAW      2.66222         4
+KMEANS_RAW      2.34970         6
+ 
+     8
+Initial_RAW     99.8333         0
+HMEANS_RAW      3.14794         3
+KMEANS_RAW      2.35241         7
+ 
+     9
+Initial_RAW     105.447         0
+HMEANS_RAW      4.10460         6
+KMEANS_RAW      2.34862         8
+ 
+    10
+Initial_RAW     102.675         0
+HMEANS_RAW      3.92199         8
+KMEANS_RAW      2.34862         7
+ 
+    11
+Initial_RAW     104.077         0
+HMEANS_RAW      3.94161         7
+KMEANS_RAW      2.95292         4
+ 
+    12
+Initial_RAW     103.171         0
+HMEANS_RAW      3.68693         5
+KMEANS_RAW      2.34862         6
+ 
+    13
+Initial_RAW     109.762         0
+HMEANS_RAW      4.05810         6
+KMEANS_RAW      2.32598         8
+ 
+    14
+Initial_RAW     110.411         0
+HMEANS_RAW      3.73801         6
+KMEANS_RAW      3.30726         2
+ 
+    15
+Initial_RAW     100.110         0
+HMEANS_RAW      2.94242         4
+KMEANS_RAW      2.53865         2
+ 
+Number of clusters allowed:     13
+ 
+     1
+Initial_RAW     103.474         0
+HMEANS_RAW      2.36437         4
+KMEANS_RAW      1.91583         5
+ 
+     2
+Initial_RAW     104.833         0
+HMEANS_RAW      4.21310         5
+KMEANS_RAW      1.99716         7
+ 
+     3
+Initial_RAW     105.671         0
+HMEANS_RAW      2.87941         4
+KMEANS_RAW      1.95270         7
+ 
+     4
+Initial_RAW     98.8014         0
+HMEANS_RAW      2.70090         6
+KMEANS_RAW      1.95270         7
+ 
+     5
+Initial_RAW     106.648         0
+HMEANS_RAW      2.93949         5
+KMEANS_RAW      1.95270         9
+ 
+     6
+Initial_RAW     108.677         0
+HMEANS_RAW      3.14288         5
+KMEANS_RAW      1.95225         6
+ 
+     7
+Initial_RAW     100.051         0
+HMEANS_RAW      3.10445         5
+KMEANS_RAW      2.52475         4
+ 
+     8
+Initial_RAW     107.860         0
+HMEANS_RAW      2.48321         4
+KMEANS_RAW      1.95270         5
+ 
+     9
+Initial_RAW     106.608         0
+HMEANS_RAW      2.94814         3
+KMEANS_RAW      1.99716         7
+ 
+    10
+Initial_RAW     107.786         0
+HMEANS_RAW      2.45205         3
+KMEANS_RAW      1.95225         5
+ 
+    11
+Initial_RAW     101.468         0
+HMEANS_RAW      3.44797         7
+KMEANS_RAW      1.95452         9
+ 
+    12
+Initial_RAW     108.834         0
+HMEANS_RAW      4.08609         4
+KMEANS_RAW      1.99716         8
+ 
+    13
+Initial_RAW     95.6517         0
+HMEANS_RAW      3.88964         5
+KMEANS_RAW      1.99716         8
+ 
+    14
+Initial_RAW     98.0479         0
+HMEANS_RAW      2.76891         4
+KMEANS_RAW      1.95270         6
+ 
+    15
+Initial_RAW     101.663         0
+HMEANS_RAW      2.52377         6
+KMEANS_RAW      1.91583         6
+ 
+Number of clusters allowed:     14
+ 
+     1
+Initial_RAW     92.8323         0
+HMEANS_RAW      2.18387         2
+KMEANS_RAW      1.60078         4
+ 
+     2
+Initial_RAW     91.6486         0
+HMEANS_RAW      1.97278         3
+KMEANS_RAW      1.61500        12
+ 
+     3
+Initial_RAW     105.481         0
+HMEANS_RAW      3.51977         4
+KMEANS_RAW      1.60078        11
+ 
+     4
+Initial_RAW     90.4861         0
+HMEANS_RAW      2.78752         5
+KMEANS_RAW      1.62479         8
+ 
+     5
+Initial_RAW     105.122         0
+HMEANS_RAW      2.02763         3
+KMEANS_RAW      1.62297         7
+ 
+     6
+Initial_RAW     105.344         0
+HMEANS_RAW      2.60199         7
+KMEANS_RAW      1.72614        14
+ 
+     7
+Initial_RAW     106.366         0
+HMEANS_RAW      1.95074         3
+KMEANS_RAW      1.76572         3
+ 
+     8
+Initial_RAW     104.843         0
+HMEANS_RAW      2.06443         3
+KMEANS_RAW      1.66048         5
+ 
+     9
+Initial_RAW     106.422         0
+HMEANS_RAW      2.19090         4
+KMEANS_RAW      1.61500        11
+ 
+    10
+Initial_RAW     98.0337         0
+HMEANS_RAW      2.72872         4
+KMEANS_RAW      1.61500         7
+ 
+    11
+Initial_RAW     111.075         0
+HMEANS_RAW      2.05858         4
+KMEANS_RAW      1.99115         4
+ 
+    12
+Initial_RAW     101.083         0
+HMEANS_RAW      2.96859         5
+KMEANS_RAW      1.72614         7
+ 
+    13
+Initial_RAW     100.746         0
+HMEANS_RAW      2.69568         5
+KMEANS_RAW      1.61500         9
+ 
+    14
+Initial_RAW     101.840         0
+HMEANS_RAW      2.31001         3
+KMEANS_RAW      1.62297         4
+ 
+    15
+Initial_RAW     98.6948         0
+HMEANS_RAW      2.00679         4
+KMEANS_RAW      1.62297         7
+ 
+Number of clusters allowed:     15
+ 
+     1
+Initial_RAW     97.1396         0
+HMEANS_RAW      2.37411         6
+KMEANS_RAW      1.43208         6
+ 
+     2
+Initial_RAW     106.762         0
+HMEANS_RAW      1.63906         5
+KMEANS_RAW      1.37067        10
+ 
+     3
+Initial_RAW     99.7906         0
+HMEANS_RAW      2.98176         6
+KMEANS_RAW      1.39641         7
+ 
+     4
+Initial_RAW     94.6771         0
+HMEANS_RAW      1.82491         5
+KMEANS_RAW      1.39641         7
+ 
+     5
+Initial_RAW     100.869         0
+HMEANS_RAW      1.75426         4
+KMEANS_RAW      1.38982         5
+ 
+     6
+Initial_RAW     104.502         0
+HMEANS_RAW      2.17702         4
+KMEANS_RAW      1.47935         6
+ 
+     7
+Initial_RAW     96.0716         0
+HMEANS_RAW      1.97221         5
+KMEANS_RAW      1.47935         6
+ 
+     8
+Initial_RAW     101.522         0
+HMEANS_RAW      1.70404         4
+KMEANS_RAW      1.37067         8
+ 
+     9
+Initial_RAW     111.927         0
+HMEANS_RAW      2.00094         3
+KMEANS_RAW      1.61380         6
+ 
+    10
+Initial_RAW     103.725         0
+HMEANS_RAW      1.84386         4
+KMEANS_RAW      1.43026         4
+ 
+    11
+Initial_RAW     105.300         0
+HMEANS_RAW      2.88436         8
+KMEANS_RAW      1.39641        13
+ 
+    12
+Initial_RAW     102.444         0
+HMEANS_RAW      3.33859         4
+KMEANS_RAW      1.43208         9
+ 
+    13
+Initial_RAW     110.616         0
+HMEANS_RAW      2.26476         5
+KMEANS_RAW      1.45871         6
+ 
+    14
+Initial_RAW     93.3196         0
+HMEANS_RAW      2.24460         5
+KMEANS_RAW      1.39641        14
+ 
+    15
+Initial_RAW     105.537         0
+HMEANS_RAW      1.74909         3
+KMEANS_RAW      1.37067         6
+ 
+Number of clusters allowed:     16
+ 
+     1
+Initial_RAW     103.574         0
+HMEANS_RAW      1.90945         4
+KMEANS_RAW      1.26560         4
+ 
+     2
+Initial_RAW     103.233         0
+HMEANS_RAW      2.35425         4
+KMEANS_RAW      1.18954         7
+ 
+     3
+Initial_RAW     91.8431         0
+HMEANS_RAW      1.62791         4
+KMEANS_RAW      1.20371        10
+ 
+     4
+Initial_RAW     108.144         0
+HMEANS_RAW      1.59725         4
+KMEANS_RAW      1.20371        10
+ 
+     5
+Initial_RAW     97.3442         0
+HMEANS_RAW      3.13648         3
+KMEANS_RAW      1.18954        10
+ 
+     6
+Initial_RAW     102.755         0
+HMEANS_RAW      2.49894         5
+KMEANS_RAW      1.20371        11
+ 
+     7
+Initial_RAW     107.484         0
+HMEANS_RAW      2.57035         5
+KMEANS_RAW      1.20371        11
+ 
+     8
+Initial_RAW     98.0494         0
+HMEANS_RAW      1.81279         3
+KMEANS_RAW      1.20371         9
+ 
+     9
+Initial_RAW     94.6626         0
+HMEANS_RAW      1.51209         3
+KMEANS_RAW      1.18954         6
+ 
+    10
+Initial_RAW     98.3418         0
+HMEANS_RAW      1.69745         3
+KMEANS_RAW      1.20371        11
+ 
+    11
+Initial_RAW     96.9434         0
+HMEANS_RAW      1.55869         4
+KMEANS_RAW      1.20371         9
+ 
+    12
+Initial_RAW     97.0717         0
+HMEANS_RAW      2.61878         6
+KMEANS_RAW      1.20371        12
+ 
+    13
+Initial_RAW     103.811         0
+HMEANS_RAW      2.09851         4
+KMEANS_RAW      1.20371        12
+ 
+    14
+Initial_RAW     97.7886         0
+HMEANS_RAW      1.98445         5
+KMEANS_RAW      1.20371        11
+ 
+    15
+Initial_RAW     102.903         0
+HMEANS_RAW      2.22701         6
+KMEANS_RAW      1.20371        10
+ 
+ANALYSIS_RAW:
+  Computed energy range for given cluster size:
+ 
+  (The minimum and maximum should be close if
+  we're taking enough iterations.)
+ 
+  Number
+  of       Minimum      Maximum
+  Clusters Energy       Energy
+ 
+      1      127.7383      127.7383
+      2       52.9070       52.9070
+      3       29.0412       29.0412
+      4       18.2895       18.2895
+      5       12.4463       12.6843
+      6        9.0010        9.2607
+      7        6.7732        7.0219
+      8        5.2279        5.6094
+      9        4.1793        5.4235
+     10        3.3578        3.9195
+     11        2.7721        3.2847
+     12        2.3260        3.3073
+     13        1.9158        2.5247
+     14        1.6008        1.9912
+     15        1.3707        1.6138
+     16        1.1895        1.2656
+ 
+  Energy table:
+ 
+Number
+of                   Energy
+Clusters  Energy     /point      Sqrt(E/Pt)
+ 
+      1      127.7383        3.1935        1.7870
+      2       52.9070        1.3227        1.1501
+      3       29.0412        0.7260        0.8521
+      4       18.2895        0.4572        0.6762
+      5       12.4463        0.3112        0.5578
+      6        9.0010        0.2250        0.4744
+      7        6.7732        0.1693        0.4115
+      8        5.2279        0.1307        0.3615
+      9        4.1793        0.1045        0.3232
+     10        3.3578        0.0839        0.2897
+     11        2.7721        0.0693        0.2633
+     12        2.3260        0.0581        0.2411
+     13        1.9158        0.0479        0.2189
+     14        1.6008        0.0400        0.2000
+     15        1.3707        0.0343        0.1851
+     16        1.1895        0.0297        0.1724
+ 
+CPU_TIME (seconds):
+  CVT:           0.285156    
+ 
+CVT_BASIS
+  Normal end of execution.
+ 
+July 21 2005   9:22:18.317 AM

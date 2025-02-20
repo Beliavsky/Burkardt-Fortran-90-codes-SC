@@ -1,0 +1,654 @@
+20 March 2018   1:19:03.840 PM
+
+VANDERMONDE_APPROX_1D_TEST:
+  FORTRAN90 version
+  Test the VANDERMONDE_APPROX_1D library.
+  The R8LIB library is needed.
+  The QR_SOLVE library is needed.
+  The test needs the CONDITION library.
+  The test needs the TEST_INTERP libary.
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   1
+  Number of data points =   18
+  Using polynomial approximant of degree    0
+
+  L2 data approximation error =   0.785674    
+
+  Normalized length of piecewise linear interpolant =    3.13553    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   1
+  Number of data points =   18
+  Using polynomial approximant of degree    1
+
+  L2 data approximation error =   0.804423    
+
+  Normalized length of piecewise linear interpolant =    3.13553    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   1
+  Number of data points =   18
+  Using polynomial approximant of degree    2
+
+  L2 data approximation error =    36.7573    
+
+  Normalized length of piecewise linear interpolant =    3.13553    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   1
+  Number of data points =   18
+  Using polynomial approximant of degree    3
+
+  L2 data approximation error =    1.97672    
+
+  Normalized length of piecewise linear interpolant =    3.13553    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   1
+  Number of data points =   18
+  Using polynomial approximant of degree    4
+
+  L2 data approximation error =    1.97672    
+
+  Normalized length of piecewise linear interpolant =    3.13553    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   1
+  Number of data points =   18
+  Using polynomial approximant of degree    5
+
+  L2 data approximation error =    51.3192    
+
+  Normalized length of piecewise linear interpolant =    3.13553    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   1
+  Number of data points =   18
+  Using polynomial approximant of degree    9
+
+  L2 data approximation error =    13149.1    
+
+  Normalized length of piecewise linear interpolant =    3.13553    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   1
+  Number of data points =   18
+  Using polynomial approximant of degree   12
+
+  L2 data approximation error =    571.546    
+
+  Normalized length of piecewise linear interpolant =    3.13553    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   2
+  Number of data points =   18
+  Using polynomial approximant of degree    0
+
+  L2 data approximation error =    3.35621    
+
+  Normalized length of piecewise linear interpolant =    2.66086    
+  Normalized length of polynomial approximant       =    1.65971    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   2
+  Number of data points =   18
+  Using polynomial approximant of degree    1
+
+  L2 data approximation error =    3.35621    
+
+  Normalized length of piecewise linear interpolant =    2.66086    
+  Normalized length of polynomial approximant       =    1.65971    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   2
+  Number of data points =   18
+  Using polynomial approximant of degree    2
+
+  L2 data approximation error =    100.335    
+
+  Normalized length of piecewise linear interpolant =    2.66086    
+  Normalized length of polynomial approximant       =    1.65971    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   2
+  Number of data points =   18
+  Using polynomial approximant of degree    3
+
+  L2 data approximation error =    2.51953    
+
+  Normalized length of piecewise linear interpolant =    2.66086    
+  Normalized length of polynomial approximant       =    1.63600    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   2
+  Number of data points =   18
+  Using polynomial approximant of degree    4
+
+  L2 data approximation error =    2.51953    
+
+  Normalized length of piecewise linear interpolant =    2.66086    
+  Normalized length of polynomial approximant       =    1.63023    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   2
+  Number of data points =   18
+  Using polynomial approximant of degree    5
+
+  L2 data approximation error =    141.125    
+
+  Normalized length of piecewise linear interpolant =    2.66086    
+  Normalized length of polynomial approximant       =    1.62447    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   2
+  Number of data points =   18
+  Using polynomial approximant of degree    9
+
+  L2 data approximation error =    106510.    
+
+  Normalized length of piecewise linear interpolant =    2.66086    
+  Normalized length of polynomial approximant       =    1.60140    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   2
+  Number of data points =   18
+  Using polynomial approximant of degree   12
+
+  L2 data approximation error =    2671.31    
+
+  Normalized length of piecewise linear interpolant =    2.66086    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   3
+  Number of data points =   11
+  Using polynomial approximant of degree    0
+
+  L2 data approximation error =    7.06939    
+
+  Normalized length of piecewise linear interpolant =    1.68472    
+  Normalized length of polynomial approximant       =    1.39201    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   3
+  Number of data points =   11
+  Using polynomial approximant of degree    1
+
+  L2 data approximation error =    7.85440    
+
+  Normalized length of piecewise linear interpolant =    1.68472    
+  Normalized length of polynomial approximant       =    1.39201    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   3
+  Number of data points =   11
+  Using polynomial approximant of degree    2
+
+  L2 data approximation error =    15165.9    
+
+  Normalized length of piecewise linear interpolant =    1.68472    
+  Normalized length of polynomial approximant       =    1.39201    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   3
+  Number of data points =   11
+  Using polynomial approximant of degree    3
+
+  L2 data approximation error =    10.6870    
+
+  Normalized length of piecewise linear interpolant =    1.68472    
+  Normalized length of polynomial approximant       =    1.39201    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   3
+  Number of data points =   11
+  Using polynomial approximant of degree    4
+
+  L2 data approximation error =    10.6824    
+
+  Normalized length of piecewise linear interpolant =    1.68472    
+  Normalized length of polynomial approximant       =    1.39201    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   3
+  Number of data points =   11
+  Using polynomial approximant of degree    5
+
+  L2 data approximation error =    10.6934    
+
+  Normalized length of piecewise linear interpolant =    1.68472    
+  Normalized length of polynomial approximant       =    1.39201    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   3
+  Number of data points =   11
+  Using polynomial approximant of degree    9
+
+  L2 data approximation error =    10.8130    
+
+  Normalized length of piecewise linear interpolant =    1.68472    
+  Normalized length of polynomial approximant       =    1.37757    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   3
+  Number of data points =   11
+  Using polynomial approximant of degree   12
+
+  L2 data approximation error =    10.8179    
+
+  Normalized length of piecewise linear interpolant =    1.68472    
+  Normalized length of polynomial approximant       =    1.37345    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   4
+  Number of data points =    8
+  Using polynomial approximant of degree    0
+
+  L2 data approximation error =   0.171560    
+
+  Normalized length of piecewise linear interpolant =    3.25908    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   4
+  Number of data points =    8
+  Using polynomial approximant of degree    1
+
+  L2 data approximation error =   0.172436    
+
+  Normalized length of piecewise linear interpolant =    3.25908    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   4
+  Number of data points =    8
+  Using polynomial approximant of degree    2
+
+  L2 data approximation error =   0.172436    
+
+  Normalized length of piecewise linear interpolant =    3.25908    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   4
+  Number of data points =    8
+  Using polynomial approximant of degree    3
+
+  L2 data approximation error =    6414.18    
+
+  Normalized length of piecewise linear interpolant =    3.25908    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   4
+  Number of data points =    8
+  Using polynomial approximant of degree    4
+
+  L2 data approximation error =   0.172436    
+
+  Normalized length of piecewise linear interpolant =    3.25908    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   4
+  Number of data points =    8
+  Using polynomial approximant of degree    5
+
+  L2 data approximation error =   0.172436    
+
+  Normalized length of piecewise linear interpolant =    3.25908    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   4
+  Number of data points =    8
+  Using polynomial approximant of degree    9
+
+  L2 data approximation error =   0.306301    
+
+  Normalized length of piecewise linear interpolant =    3.25908    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   4
+  Number of data points =    8
+  Using polynomial approximant of degree   12
+
+  L2 data approximation error =   0.172436    
+
+  Normalized length of piecewise linear interpolant =    3.25908    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   5
+  Number of data points =    9
+  Using polynomial approximant of degree    0
+
+  L2 data approximation error =   0.144913    
+
+  Normalized length of piecewise linear interpolant =    3.22180    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   5
+  Number of data points =    9
+  Using polynomial approximant of degree    1
+
+  L2 data approximation error =   0.164377    
+
+  Normalized length of piecewise linear interpolant =    3.22180    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   5
+  Number of data points =    9
+  Using polynomial approximant of degree    2
+
+  L2 data approximation error =   0.164377    
+
+  Normalized length of piecewise linear interpolant =    3.22180    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   5
+  Number of data points =    9
+  Using polynomial approximant of degree    3
+
+  L2 data approximation error =    43.3098    
+
+  Normalized length of piecewise linear interpolant =    3.22180    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   5
+  Number of data points =    9
+  Using polynomial approximant of degree    4
+
+  L2 data approximation error =   0.164377    
+
+  Normalized length of piecewise linear interpolant =    3.22180    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   5
+  Number of data points =    9
+  Using polynomial approximant of degree    5
+
+  L2 data approximation error =   0.164377    
+
+  Normalized length of piecewise linear interpolant =    3.22180    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   5
+  Number of data points =    9
+  Using polynomial approximant of degree    9
+
+  L2 data approximation error =   0.164377    
+
+  Normalized length of piecewise linear interpolant =    3.22180    
+  Normalized length of polynomial approximant       =    81.6223    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   5
+  Number of data points =    9
+  Using polynomial approximant of degree   12
+
+  L2 data approximation error =   0.164377    
+
+  Normalized length of piecewise linear interpolant =    3.22180    
+  Normalized length of polynomial approximant       =    81.2293    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   6
+  Number of data points =   49
+  Using polynomial approximant of degree    0
+
+  L2 data approximation error =   0.114942    
+
+  Normalized length of piecewise linear interpolant =    2.68209    
+  Normalized length of polynomial approximant       =    23.8490    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   6
+  Number of data points =   49
+  Using polynomial approximant of degree    1
+
+  L2 data approximation error =    15.0307    
+
+  Normalized length of piecewise linear interpolant =    2.68209    
+  Normalized length of polynomial approximant       =    21.9694    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   6
+  Number of data points =   49
+  Using polynomial approximant of degree    2
+
+  L2 data approximation error =    18.3533    
+
+  Normalized length of piecewise linear interpolant =    2.68209    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   6
+  Number of data points =   49
+  Using polynomial approximant of degree    3
+
+  L2 data approximation error =    14227.5    
+
+  Normalized length of piecewise linear interpolant =    2.68209    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   6
+  Number of data points =   49
+  Using polynomial approximant of degree    4
+
+  L2 data approximation error =   0.112608E+08
+
+  Normalized length of piecewise linear interpolant =    2.68209    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   6
+  Number of data points =   49
+  Using polynomial approximant of degree    5
+
+  L2 data approximation error =   0.915707E+10
+
+  Normalized length of piecewise linear interpolant =    2.68209    
+  Normalized length of polynomial approximant       =    1.00000    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   6
+  Number of data points =   49
+  Using polynomial approximant of degree    9
+
+  L2 data approximation error =   0.527545E+22
+
+  Normalized length of piecewise linear interpolant =    2.68209    
+  Normalized length of polynomial approximant       =    3.17486    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   6
+  Number of data points =   49
+  Using polynomial approximant of degree   12
+
+  L2 data approximation error =   0.428460E+31
+
+  Normalized length of piecewise linear interpolant =    2.68209    
+  Normalized length of polynomial approximant       =    5161.54    
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   7
+  Number of data points =    4
+  Using polynomial approximant of degree    0
+
+  L2 data approximation error =   0.695971    
+
+  Normalized length of piecewise linear interpolant =    2.63961    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   7
+  Number of data points =    4
+  Using polynomial approximant of degree    1
+
+  L2 data approximation error =    178.251    
+
+  Normalized length of piecewise linear interpolant =    2.63961    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   7
+  Number of data points =    4
+  Using polynomial approximant of degree    2
+
+  L2 data approximation error =    190.751    
+
+  Normalized length of piecewise linear interpolant =    2.63961    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   7
+  Number of data points =    4
+  Using polynomial approximant of degree    3
+
+  L2 data approximation error =   0.790569    
+
+  Normalized length of piecewise linear interpolant =    2.63961    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   7
+  Number of data points =    4
+  Using polynomial approximant of degree    4
+
+  L2 data approximation error =   0.790569    
+
+  Normalized length of piecewise linear interpolant =    2.63961    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   7
+  Number of data points =    4
+  Using polynomial approximant of degree    5
+
+  L2 data approximation error =   0.612372    
+
+  Normalized length of piecewise linear interpolant =    2.63961    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   7
+  Number of data points =    4
+  Using polynomial approximant of degree    9
+
+  L2 data approximation error =   0.790569    
+
+  Normalized length of piecewise linear interpolant =    2.63961    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   7
+  Number of data points =    4
+  Using polynomial approximant of degree   12
+
+  L2 data approximation error =    1.06428    
+
+  Normalized length of piecewise linear interpolant =    2.63961    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   8
+  Number of data points =   12
+  Using polynomial approximant of degree    0
+
+  L2 data approximation error =   0.132096    
+
+  Normalized length of piecewise linear interpolant =    2.31939    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   8
+  Number of data points =   12
+  Using polynomial approximant of degree    1
+
+  L2 data approximation error =   0.210411    
+
+  Normalized length of piecewise linear interpolant =    2.31939    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   8
+  Number of data points =   12
+  Using polynomial approximant of degree    2
+
+  L2 data approximation error =   0.147601    
+
+  Normalized length of piecewise linear interpolant =    2.31939    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   8
+  Number of data points =   12
+  Using polynomial approximant of degree    3
+
+  L2 data approximation error =   0.147567    
+
+  Normalized length of piecewise linear interpolant =    2.31939    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   8
+  Number of data points =   12
+  Using polynomial approximant of degree    4
+
+  L2 data approximation error =   0.147555    
+
+  Normalized length of piecewise linear interpolant =    2.31939    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   8
+  Number of data points =   12
+  Using polynomial approximant of degree    5
+
+  L2 data approximation error =   0.228450    
+
+  Normalized length of piecewise linear interpolant =    2.31939    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   8
+  Number of data points =   12
+  Using polynomial approximant of degree    9
+
+  L2 data approximation error =   0.147554    
+
+  Normalized length of piecewise linear interpolant =    2.31939    
+  Normalized length of polynomial approximant       =   0.425869E+37
+
+TEST01:
+  Approximate data from TEST_INTERP problem #   8
+  Number of data points =   12
+  Using polynomial approximant of degree   12
+
+  L2 data approximation error =   0.147556    
+
+  Normalized length of piecewise linear interpolant =    2.31939    
+  Normalized length of polynomial approximant       =   0.425859E+37
+
+VANDERMONDE_APPROX_1D_TEST:
+  Normal end of execution.
+
+20 March 2018   1:19:03.842 PM

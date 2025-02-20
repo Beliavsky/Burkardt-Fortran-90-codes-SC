@@ -1,0 +1,20 @@
+
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ <<                END OF DISLIN / VERSION 10.4                  <<
+ <<  Date    : 27.02.2014  Time    : 09:23:37  Pageformat: USAL  <<
+ <<  Vectors : 2806        Warnings: 0         Fileformat:  PNG  <<
+ <<  Metafile: quickplot_bar.png                                 <<
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+ <<<< Warning   3: Incorrect level in disfin!   (   0)
+27 February 2014   9:23:37.383 AM
+ 
+QUICKPLOT_BAR:
+  FORTRAN90 version
+  Demonstrate the DISLIN "quickplot" command QPLBAR
+  to plot a bar chart.
+ 
+QUICKPLOT_BAR:
+  Normal end of execution.
+ 
+27 February 2014   9:23:37.404 AM

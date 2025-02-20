@@ -1,0 +1,25 @@
+ 7 September 2018   8:27:48.372 PM
+ 
+ALLOCATABLE:
+  FORTRAN90 version
+  Show how a main program can declare an allocatable array
+  which can then be allocated and set in a subroutine,
+  and then returned to the main program.
+ 
+  The array size is N =        8
+ 
+  The array contents:
+ 
+         1       101
+         2       202
+         3       303
+         4       404
+         5       505
+         6       606
+         7       707
+         8       808
+ 
+ALLOCATABLE:
+  Normal end of execution.
+ 
+ 7 September 2018   8:27:48.372 PM

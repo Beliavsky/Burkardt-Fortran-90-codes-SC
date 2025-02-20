@@ -1,0 +1,20 @@
+dev=ps
+file=figx10.ps
+dat=marchx10.txt
+c
+bar
+pl
+pc
+mark=26,26,1,1
+jcmin=100
+jcmax=200
+pcmax=0.0016
+pcmin=0.0
+npcon=41
+vecscl=-1.0
+np
+x
+.25, 1.0, .25, 1.0
+g
+q
+y

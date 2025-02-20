@@ -1,0 +1,160 @@
+ 5 January 2019   2:50:18.508 PM
+ 
+AITCH
+  FORTRAN90 version.
+ 
+  Geometry model for time-dependent fluid flow
+  in a 2-D H-shaped region.
+ 
+  Region widths:
+ 
+        0.0000    0.6250    0.7500    1.0000
+ 
+  Region heights
+ 
+        0.0000    0.2500    0.3750    0.5000
+ 
+  Element counts in X direction:
+         5     1     2
+ 
+  Element counts in Y direction:
+         4     2     2
+ 
+AITCH_NODE_NUM:
+  Number of nodes =    247
+ 
+  Nodes in top row, middle column.
+ 
+  NODE         X              Y
+ 
+   153    0.625000      0.375000    
+   154    0.625000      0.406250    
+   155    0.625000      0.437500    
+   156    0.625000      0.468750    
+   157    0.625000      0.500000    
+   170    0.687500      0.375000    
+   171    0.687500      0.406250    
+   172    0.687500      0.437500    
+   173    0.687500      0.468750    
+   174    0.687500      0.500000    
+   187    0.750000      0.375000    
+   188    0.750000      0.406250    
+   189    0.750000      0.437500    
+   190    0.750000      0.468750    
+   191    0.750000      0.500000    
+ 
+NODE_EPS:
+  An encapsulated PostScript file was created
+  containing an image of the nodes.
+  The file is named "aitch_test_node.eps".
+ 
+AITCH_DOF_NUM:
+  Number of degrees of freedom =    568
+ 
+  Nodes 1 through 5, and 100 through 120.
+ 
+NODE_DOF_PRINT:
+ 
+  Nodes and associated degrees of freedom
+ 
+  Table of types:
+ 
+    Horizontal velocity:
+ 
+    UM:  momentum equation;
+    UD0: zero value;
+    UDC: constant value;
+    UDT: value depends on time;
+    UN0: normal derivative is zero;
+    UNC: normal derivative constant;
+    UNT: normal derivative depends on time;
+ 
+    Vertical velocity:
+ 
+    VM:  momentum equation;
+    VD0: zero value;
+    VDC: constant value;
+    VDT: value depends on time;
+    VN0: normal derivative is zero;
+    VNC: normal derivative constant;
+    VNT: normal derivative depends on time;
+ 
+    Pressure:
+ 
+    PC:  continuity equation;
+    PD0: zero value;
+    PDC: constant value;
+    PDT: value depends on time;
+    PN0: normal derivative is zero;
+    PNC: normal derivative constant;
+    PNT: normal derivative depends on time;
+ 
+ 
+  Table of nodes and associated degrees of freedom:
+ 
+  NODE   Horizontal   Vertical     Pressure
+         velocity     velocity             
+ 
+  Index  Type   Index  Type   Index  Type   Index
+ 
+      1   UM        1   VM        2   PD0       3
+      2   UM        4   VM        5
+      3   UM        6   VM        7   PC        8
+      4   UM        9   VM       10
+      5   UM       11   VM       12   PC       13
+    100   UM      231   VM      232
+    101   UM      233   VM      234
+    102   UM      235   VM      236
+    103   UM      237   VM      238
+    104   UM      239   VM      240
+    105   UM      241   VM      242
+    106   UM      243   VM      244
+    107   UM      245   VM      246
+    108   UM      247   VM      248
+    109   UM      249   VM      250
+    110   UM      251   VM      252
+    111   UM      253   VM      254
+    112   UM      255   VM      256
+    113   UM      257   VM      258   PC      259
+    114   UM      260   VM      261
+    115   UM      262   VM      263   PC      264
+    116   UM      265   VM      266
+    117   UM      267   VM      268   PC      269
+    118   UM      270   VM      271
+    119   UM      272   VM      273   PC      274
+    120   UM      275   VM      276
+ 
+AITCH_ELEMENT_NUM:
+  Number of elements =    100
+ 
+ELEMENT6_EPS:
+  An encapsulated PostScript file was created
+  containing an image of the nodes and elements.
+  The file is named "aitch_test_element.eps".
+ 
+ELEMENT_NODE_PRINT:
+  Element -> Node table.
+ 
+  Elements containing node 155.
+ 
+  Number of elements =    100
+  Number of nodes per element =      6
+ 
+    #      1   2   3   4   5   6
+ 
+   58    155 124 153 138 137 154
+   59    124 155 126 138 139 125
+   60    157 126 155 140 139 156
+   73    153 187 155 170 171 154
+   74    189 155 187 172 171 188
+   75    155 189 157 172 173 156
+ 
+ELEMENT_NODE_BANDWIDTH:
+  Lower half bandwidth =     79
+  Upper half bandwidth =     79
+  Total bandwidth =         159
+ 
+AITCH
+  Normal end of execution.
+ 
+ 5 January 2019   2:50:18.512 PM

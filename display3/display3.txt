@@ -1,0 +1,1689 @@
+*********************************************************************
+ 
+DISPLAY was written especially for the output of the FLOW program,
+and has some features that will only work with such output.
+
+However, DISPLAY can be used with other programs, assuming that
+
+  You use a 3, 4 or 6 node finite element;
+
+  At each node, you have values of U, V, and P.
+
+
+If this is true, then you need to write out two kinds of files:
+
+
+An element file:
+
+  The element file contains, for each element, a list of the
+  nodes that make it up.  The information about each element
+  is written on a separate line of the file.
+
+  A program for doing this might look like:
+
+
+      subroutine wrtell(nelem,npe,node)
+
+      integer nelem
+      integer npe
+
+      integer i
+      integer j
+      integer node(npe,nelem)
+
+      open(unit=1,file='ell.dat',status='unknown')
+
+      do j=1,nelem
+        write(1,*)(node(i,j),i=1,npe)
+      enddo
+
+      close(unit=1)
+
+      return
+      end
+
+  or
+
+      subroutine wrtelj(nelem,npe,node)
+
+      integer nelem
+      integer npe
+
+      integer i
+      integer j
+      integer node(npe,nelem)
+
+      open(unit=1,file='elj.dat',status='unknown')
+
+      write(1,*)nelem
+      write(1,*)npe
+      do j=1,nelem
+        write(1,*)(node(i,j),i=1,npe)
+      enddo
+
+      close(unit=1)
+
+      return
+      end
+
+
+  The element file only has to be created once for a given problem.
+
+
+One or more "node" files
+
+  Each node file contains the values of data at all the nodes.  
+  For a time dependent problem, these values will change on each 
+  time step, and so a new copy of this file might be created
+  each step (with a different name each time).
+
+
+  A routine for doing this might look like this:
+
+
+      subroutine wrtnod(np,p,u,v,xc,yc)
+
+      integer np
+
+      integer i
+      real p(np)
+      real u(np)
+      real v(np)
+      real xc(np)
+      real yc(np)
+
+      open(unit=2,file='nod.dat',status='unknown')
+
+      do i=1,np
+        write(2,*)xc(i),yc(i),u(i),v(i),p(i)
+      enddo
+
+      close(unit=2)
+
+      return
+      end
+
+
+  Here XC and YC are the X and Y coordinates, U and V the 
+  horizontal and vertical velocities, and P the pressure,
+  at a particular node. 
+
+  If your program has more time steps, you would write out
+  the files 'node02.dat', and so on.
+
+Here is a very simple (NPE must be 6) LEE element data file "ell.dat":
+
+  1  2  3  4  5  6
+
+Here is a very simple (NPE=3) JEFF element data file "elj.dat":
+
+  4
+  3
+  1  4  6
+  4  2  5
+  6  5  3
+  5  6  4
+
+Here is a simple node file "nod.dat" that can be used with either element file:
+
+  (x)  (y)  (u)  (v)  (p)
+
+  0.0  0.0  0.0  0.0  0.0
+  0.0  2.0 -2.0  0.0  4.0 
+  2.0  0.0  0.0  2.0  4.0
+  0.0  1.0 -1.0  0.0  1.0
+  1.0  1.0 -1.0  1.0  2.0
+  1.0  0.0  0.0  1.0  1.0
+
+Once you have set up these files, you can run DISPLAY, and
+use the commands:
+
+  DE
+  ell.dat
+  DN
+  nod.dat
+
+or, for JEFF files,
+
+  DJE
+  elj.dat
+  DJN
+  nod.dat
+
+Then the program will read in your data and be ready to try
+to graph it.
+
+
+*********************************************************************
+ 
+
+List of DISPLAY modules:
+ 
+ADVANCE reads next step from data file.
+ 
+BOX     draws a box.
+ 
+BUZZ    used to "slow down" the graphics for X windows.
+ 
+CAPCHR  capitalizes a string.
+ 
+CHRDB2  replaces double blanks by one.
+ 
+CHRINT  converts an integer into a character string.
+ 
+DELETE  deletes a file.
+ 
+ESIZE   finds suitable X, Y limits on a set of elements.
+ 
+FILLIN  fills in an array with equally spaced data.
+ 
+FSIZE   determines maximum and minimum entries of a real
+        quantity defined at the nodes.
+ 
+GETCMP  reads the desired component to be plotted.
+ 
+GETDAT  reads the data from a finite element run.
+ 
+GETMAP  computes the coefficients of the quadratic map defined
+        for a 6 node element.
+ 
+GETNOD  gets the coordinates of the nodes of a 6 node element.
+ 
+GETWIN  gets the new window size.
+ 
+GQUAD   gets the weights and abscissas for 3 point Gauss quadrature.
+ 
+GRAPH   controls the drawing of the graph.
+ 
+HELP    prints the list of legal commands.
+ 
+INIT    initializes data.
+ 
+INSIDE  determines if a quantity is between two other values.
+ 
+ISOLIN  draws a "straight" line between two points in an
+        isoparametric element.
+ 
+ISOPLY  draws a filled polygon inside a six node isoparametric
+        element.
+ 
+LENCHR  determines the length of a string.
+ 
+LEQI    determines whether two strings are lexically equal,
+        but is case insensitive.
+ 
+LIST    prints the value of "interesting" variables for the
+        user.
+ 
+LNEI    determines whether two strings are lexically not equal,
+        but is case insensitive.
+ 
+NCIRC   draws a number of circles.
+ 
+NDUMP   debugging routine, prints physical variable values
+        at all nodes.
+ 
+OPNFIL  opens a new data file.
+ 
+PLTBOX  computes a box surrounding the plot.
+ 
+REFQBF  evaluates a basis function and its derivatives at
+        a point.
+ 
+REFQBF2 same as REFQBF, but for the "right" triangle.
+ 
+RSIZE   computes the size of the region.
+ 
+SETBND  determines the shape of the boundary.
+ 
+SETJB   helps SETBND do its work.
+ 
+SETPRM  allows user to change various parameters.
+ 
+SETREF  returns the XSI and ETA values for the six node
+        reference element.
+ 
+SHOBND  draws the boundary.
+ 
+SHOELM  draws the elements.
+ 
+SIXCOL  draws a color contour plot for quantities associated
+        with all six element nodes.
+ 
+SIXCON  draws a contour plot, for quantities associated with
+        all six element nodes.
+ 
+STREAM  assign stream function value to nodes.
+ 
+TRANS   evaluates the determinant and derivatives of the
+        transformation between the reference element and
+        a particular element.
+ 
+TRANS2  same as TRANS, but for the "right" element.
+ 
+TRICOL  draws a contour plot using colors, for quantities
+        associated with three nodes.
+ 
+TRICON  draws a contour plot using lines, for quantities
+        associated with three nodes.
+ 
+UEVAL   evaluates the velocities U and V at any point in an
+        element.
+ 
+VECTOR  draws a vector plot.
+ 
+VORTIC  assign vorticity function value to nodes.
+ 
+*********************************************************************
+ 
+COMMAN CHARACTER*1 COMMAN.
+       The most recent command given by the user.
+ 
+COST   REAL COST.
+       The value of the function to be minimized.
+ 
+DELX   REAL DELX.
+       The X spacing between nodes.  In some cases,
+       this spacing is modified to create isoparametric elements.
+ 
+DELY   REAL DELY.
+       The Y spacing between nodes.  In some cases,
+       this spacing is modified to create isoparametric elements.
+ 
+DEV    CHARACTER*10 DEV.
+       The graphics output device to be used.  Current legal
+       values for DEV include:
+ 
+       cgmb - CGM binary file.
+       ps   - PostScript file.
+       xws  - X window screen (interactive).
+
+DUDXN  DOUBLE PRECISION DUDXN(NP), an estimate for the
+       partial derivative dUdX at each node.
+
+DUDXY  DOUBLE PRECISION DUDXY(NP), an estimate for the
+       partial derivative dUdY at each node.
+
+DVDXN  DOUBLE PRECISION DVDXN(NP), an estimate for the
+       partial derivative dVdX at each node.
+
+DVDXY  DOUBLE PRECISION DVDXY(NP), an estimate for the
+       partial derivative dVdY at each node.
+
+ECHO   Logical ECHO.
+       .FALSE., user input is not echoed to the output file.
+       .TRUE., use input is echoed to the output file.
+ 
+EFLAG  LOGICAL EFLAG(MAXELM).
+       EFLAG is used to "flag" which elements are to be displayed.
+       If EFLAG(I) is TRUE, then element I should be displayed.
+ 
+EFLAGU LOGICAL EFLAGU(NELEM).
+       EFLAGU is used to "flag" which elements the user wants to see.
+       If EFLAGU(I) is TRUE, then element I should be displayed.
+
+EQN    CHARACTER*2 EQN(3,NP).
+       EQN records the "type" of each equation that will be generated, and
+       which is associated with an unknown.  Note that most boundary 
+       conditions do not result in an equation.  The current values are:
+
+       'U'  The horizontal momentum equation.
+       'UW' The condition U=0 applied at a node on a fixed wall.
+       'V'  The vertical momentum equation.
+       'VW' The condition V=0 applied at a node on a fixed wall.
+       'P'  The continuity equation.
+       'PB' The condition P=0 applied at (XMAX,YMAX).
+
+ETAREF REAL ETAREF(MAXNPE).
+       The ETA coordinates of the nodes of the reference
+       triangle.
+ 
+FILDAT CHARACTER*40 FILDAT.
+       The name of the data file to be read in, which contains
+       the information defining the mesh and the physical
+       parameters.
+ 
+FILGRF CHARACTER*80 FILGRF, the name of the output
+       graphics file.
+
+FILINP CHARACTER*40 FILINP.
+       The name of a file in which will be placed a copy of the
+       input typed by the user while running DISPLAY.
+
+FILTYP CHARACTER*20 FILTYP.
+       FILTYP reports on the type of input file being read.
+         'FLOW'     means output from FLOW3D or ARBY.
+         'JEFF'     means output from Jeff's programs.
+         'TECPLOT'  means output from Justin's programs.
+
+GRACE  REAL GRACE.
+       The size of the "grace" margin on the plot.
+ 
+ICMAX,
+ICMIN  INTEGER ICMAX, ICMIN.
+       The maximum and minimum color indices to be used from
+       the color table.  The color table contains 256 colors,
+       but color indices 1 and 2 are black and white, and for some
+       reason, the predefined DRAWCGM tables generally only
+       use 2-200 for sensible colors.
+ 
+       Of course the entries in the color table are "off by one".
+       The first entry is for color 0, and the 256-th entry for
+       color 255.
+ 
+ICOLOR INTEGER ICOLOR(MAXOBJ).
+       Contains the color indexes for each object.
+       However, in some cases, ICOLOR is actual a color table
+       index.
+ 
+ICOMP  INTEGER ICOMP.
+       The component of the flow to be studied.
+ 
+       ICOMP=0 studies the basic flow.
+       ICOMP=I studies the sensitivity with respect to
+               parameter I.
+ 
+IDATA  INTEGER IDATA.
+       0, no problem has been defined.
+       nonzero, a problem has been defined.
+
+IFILE  INTEGER IFILE.
+       Records the status of the data file whose name is FILDAT.
+ 
+       -2, an error occurred while reading from the file.
+       -1, the file could not be opened.
+        0, no file is currently open.
+        1, a file has been opened, but not read from.
+        2, data has been read from a file.
+ 
+INDX   INTEGER INDX(3,MAXNP).
+ 
+       If INDX(1,I) is positive, a horizontal velocity is
+       associated with node I.
+ 
+       If INDX(2,I) is positive, a vertical velocity is
+       associated with node I.
+ 
+       If INDX(3,I) is positive, a pressure is associated
+       with node I.
+ 
+IPLOT  INTEGER IPLOT.
+       The number of plots made so far.
+ 
+ISET   INTEGER ISET.
+       The data set being examined from the file.  If no file
+       is open, or if no data set has been read, then ISET is
+       zero.
+ 
+ISOTRI INTEGER ISOTRI(MAXELM).
+ 
+       0, if element I is not isoparametric.
+       1, if element I is isoparametric.
+ 
+ITABLE INTEGER ITABLE, the desired color table.
+
+       1: low black to high white
+       2: low blue to high yellow
+       3: low red, high blue, with bands between.
+       4: low red, yellow, green, blue, high white.
+       5: low white, blue, green, yellow, high red.
+       6: low blue to high red
+       7: linear table between 2 user colors.
+       8: linear table between N user colors.
+       9: low white to high black.
+
+IWRITE INTEGER IWRITE.
+       Controls debugging output.
+ 
+       0 means no such output.
+       1 means some.
+       2 means a lot.
+ 
+JBOUND INTEGER JBOUND(5,MAXBOU)
+ 
+       For each line segment of the boundary:
+ 
+       JBOUND(1,I) contains the element number;
+ 
+       JBOUND(2,I) contains the local node number of one corner 
+         of the element, which forms the edge;
+
+       JBOUND(2,I) contains the "next" node along the edge.
+         If the element is linear, this is the other corner node.
+         If the element is quadratic, this is the midside node along
+           the edge.
+
+       JBOUND(4,I) contains the "next" node along the edge.
+         If the element is linear, this is 0.
+         If the element is quadratic, this is the other corner node 
+           along the edge.
+
+       JBOUND(5,I) contains:
+         0 if the boundary is a wall (U=V=0);
+         1 if the boundary is open.
+
+JCMAX,
+JCMIN  INTEGER JCMAX, JCMIN, the maximum and minimum color
+       indices to use for contours.
+
+JFILE  INTEGER JFILE, an error indicator.
+       JFILE is 2 if the file was successfully opened and read.
+       (If not, then RdNod actually halts execution!)
+
+LABELX,
+LABELY CHARACTER*30 LABELX, LABELY.  For profile plots, these 
+       contain labels for the X and Y axes.
+
+LBAR   LOGICAL LBAR, .TRUE. if the color bar may be shown,
+       .FALSE. if it should not be shown.
+
+LINE   INTEGER LINE(MAXOBJ).
+       LINE allows the user to specify or change the line type
+       for each object.  Only some objects actually have a line
+       type, and the choices for a line type depend on the object.
+
+       Here is the list:
+
+         0, solid black lines.
+         1, dashed black lines.
+         2, solid lines of current color.
+         3, dashed lines of current color.
+
+LONG   LOGICAL LONG.
+ 
+       .TRUE. means nodes and elements are numbered up first,
+       then across.
+ 
+       .FALSE. means nodes and elements are numbered across
+       first, then up.
+ 
+LPPRO  LOGICAL LPPRO.
+       If TRUE, then the computed pressure should be displayed
+       in profile plots.
+
+LPTPRO LOGICAL LPTPRO.
+       If TRUE, then the target pressure should be displayed
+       in profile plots.
+
+LUPRO  LOGICAL LUPRO.
+       If TRUE, then the computed horizontal velocity should be displayed
+       in profile plots.
+
+LUTPRO LOGICAL LUTPRO.
+       If TRUE, then the target horizontal velocity should be displayed
+       in profile plots.
+
+LVPRO  LOGICAL LVPRO.
+       If TRUE, then the computed vertical velocity should be displayed
+       in profile plots.
+
+LVTPRO LOGICAL LVTPRO.
+       If TRUE, then the target vertical velocity should be displayed
+       in profile plots.
+
+MAXBOU INTEGER MAXBOU.
+       MAXBOU is the amount of storage available for the IBOUND array.
+ 
+MAXELM INTEGER MAXELM.
+       MAXELM is the maximum number of elements which the program can
+       handle.  MAXELM is derived from other maxima:
+
+         MAXELM = 2 * (MAXNX-1) * (MAXNY-1)
+ 
+MAXMY  INTEGER MAXMY.
+       MAXMY is the maximum value allowed for MY, the total number of nodes
+       along a line in the Y direction.
+
+MAXNP  INTEGER MAXNP.
+       MAXNP is the maximum number of nodes which the program can handle.
+ 
+         MAXNP = (2 * MAXNX - 1) * (2 * MAXNY - 1)
+
+MAXNPE INTEGER MAXNPE.
+       MAXNPE is the maximum number of nodes per element, that is,
+       the maximum legal value for NPE.  
+
+       Currently, MAXNPE is set to 6, and the program expects NPE
+       to be 3 or 6.
+ 
+MAXNX  INTEGER MAXNX.
+       MAXNX is the maximum value allowed for NX, the number of nodes
+       in the X direction.
+
+MAXNY  INTEGER MAXNY.
+       MAXNY is the maximum value allowed for NY, the number of nodes
+       in the Y direction.
+
+MAXOBJ INTEGER MAXOBJ.
+       MAXOBJ is the number of graphical "objects".
+
+MAXPAR INTEGER MAXPAR.
+       MAXPAR is the maximum number of parameters the program can handle.
+ 
+MY     INTEGER MY.
+       MY is the number of nodes along the profile line.
+
+NBOUND INTEGER NBOUND.
+       The number of points (XBOUND(I),YBOUND(I)) used to
+       define the boundary.
+ 
+NCON   INTEGER NCON.
+       The number of contour lines to be drawn.  This is
+       initialized to 12, but may be changed by the user.
+ 
+NELEM  INTEGER NELEM.
+       The number of elements.
+ 
+NFLAG0 LOGICAL NFLAG0(MAXNP).
+       NFLAG0(I) is .TRUE. if node I has been selected by the user
+       to remain visible via the VN or VND commands.
+ 
+NFLAG1 LOGICAL NFLAG1(MAXNP).
+       NFLAG1(I) is .TRUE. if node I is within the window of visibility
+       defined by XSMIN <= XC(I) <= XSMAX and YSMIN <= YC(I) <= YSMAX.
+ 
+NFLAG2 LOGICAL NFLAG2(MAXNP).
+       NFLAG2(I) is .TRUE. if node I is in a visible row and column
+       according to the values of NXSKIP and NYSKIP.
+ 
+NODE   INTEGER NODE(MAXNPE,MAXELM), or NODE(MAXNPE,NELEM).
+       NODE contains, for each element, the global node numbers
+       of its NPE nodes.  
+
+       For linear triangular elements (NPE=3), the order of the nodes 
+       probably doesn't matter, but we will draw them this way:
+
+                     2
+                    /|
+                  /  |
+                /    |
+              /      |
+             1-------3
+
+       For linear rectangular elements (NPE=4), the node ordering is:
+
+             2-------3
+             |       |
+             |       |
+             |       |
+             |       |
+             1-------4
+
+       For quadratic elements (NPE=6), the nodes must be given in a 
+       particular order, which is as follows:
+
+                     2
+                    /|
+                  /  |
+                4    5
+              /      |
+             1---6---3
+ 
+NP     INTEGER NP.
+       NP is the total number of nodes.
+ 
+NPAR   INTEGER NPAR.
+       The number of parameters.
+ 
+NPE    INTEGER NPE.
+       NPE is the number of nodes per element, which should be
+         3 for linear triangular elements;
+         4 for bilinear rectangular elements;
+         6 for quadratic triangular elements.
+
+NPROF  INTEGER NPROF(MY).
+       Records the indices of the nodes that lie along the profile line.
+
+NSET   INTEGER NSET.
+       The number of sets of data contained in the data file.
+ 
+NX     INTEGER NX.
+       Determines the number of nodes and elements in the X
+       direction.  There will be 2*NX-1 nodes, 2*NX-2 elements.
+ 
+NXSKIP INTEGER NXSKIP.
+       NXSKIP is used to "thin" out a vector plot.  
+
+       If NXSKIP=1, then a standard vector plot is made.
+
+       Otherwise, in the X direction, vectors are drawn only
+       in columns 1, 1+NXSKIP, 1+2*NXSKIP and so on.
+  
+NY     INTEGER NY.
+       Determines the number of nodes and elements in the Y
+       direction.  There will be 2*NY-1 nodes, 2*NY-2 elements.
+ 
+NYSKIP INTEGER NYSKIP.
+       NYSKIP is used to "thin" out a vector plot.  
+
+       If NYSKIP=1, then a standard vector plot is made.
+
+       Otherwise, in the Y direction, vectors are drawn only
+       in rows 1, 1+NYSKIP, 1+2*NYSKIP and so on.
+  
+OBJECT CHARACTER*25 OBJECT(MAXOBJ).
+       The names of the graphical objects.
+ 
+         1 the boundary
+         2 the elements
+         3 the frame
+         4 the nodes
+         5 the pressure contours
+         6 the streamlines
+         7 the title
+         8 the velocity vectors
+         9 the velocity direction vectors
+         10 the velocity magnitude contours.
+         11 the vorticity contours
+         12 the pressure color contours,
+         13 the vorticity color contours,
+         14 the velocity magnitude contours.
+         15 X velocity
+         16 Y velocity
+         17 X velocity color contours
+         18 Y velocity color contours
+         19 Profile line
+         20 Element colors
+         21 The background
+         22 Streamline color contours
+         23 X coordinate colors
+         24 Y coordinate colors
+         25 X coordinate contours
+         26 Y coordinate contours
+
+OVRLAY LOGICAL OVRLAY.
+       If OVRLAY is true, then the next time that a plot is
+       requested, a "new frame" command is suppressed, so that
+       the new plot is shown on top of the previous one.
+ 
+P      REAL P(MAXNP,0:MAXPAR).
+ 
+       P(I,0) is the pressure at node I.
+ 
+       P(I,J) is the sensitivity of the pressure with respect
+       to parameter J.
+ 
+       However, these values are nonzero only if INDX(I,3) is
+       positive.
+ 
+PARA   REAL PARA(MAXPAR).
+       The value of the parameters.
+ 
+PFLAG  LOGICAL PFLAG(MAXNP).
+       PFLAG is used to "flag" which nodes are active and are
+       associated with a pressure.
+ 
+PTAR   REAL PTAR(MAXNP).
+       The pressure field associated with the target solution, at 
+       node I.
+
+RHO    REAL RHO(MAXNP).
+       RHO(I) is the fluid density at node I.
+
+RMACH  REAL RMACH(MAXNP).
+       RMACH(I) is the Mach number at node I.
+
+S      REAL S(MAXNP).
+       S is used to store the stream function, or certain other
+       scalar functions derived from the basic flow.
+ 
+SCALEE REAL SCALEE.
+       The scale factor for the element numbers, with default value 1.
+
+SCALEN REAL SCALEN.
+       The scale factor for the node numbers, with default value 1.
+
+SCALEV REAL SCALEV.
+       A scale factor for velocity vectors, with default value 1.
+
+SFLAG  LOGICAL PFLAG(MAXNP).
+       SFLAG is used to "flag" which nodes are active in plots of
+       the function whose values are stored in S.
+
+SHOW   LOGICAL SHOW(MAXOBJ).
+       Contains, for each object, a flag determining whether it
+       is to be shown or not.
+ 
+SRANGE REAL SRANGE.
+       The maximum of XSMAX-XSMIN and YSMAX-YSMIN.
+       This gives the size of a square containing the data
+       window.
+ 
+TITLE  CHARACTER*40 TITLE.
+       A title for the plots.
+ 
+TITLE2 CHARACTER*40 TITLE2.
+       A subtitle used in the profile plots.
+
+U      REAL U(MAXNP,MAXPAR).
+ 
+       U(I,0) is the horizontal fluid velocity at node I.
+ 
+       U(I,J) is the sensitivity of the horizontal velocity with 
+       respect to parameter J.
+ 
+       These values are generally nonzero only if INDX(I,1) is
+       positive.
+ 
+UTAR   REAL UTAR(MAXNP)
+       The horizontal velocity field associated with the target solution, 
+       at node I.
+
+V      REAL V(MAXNP,MAXPAR).
+ 
+       V(I,0) is the vertical fluid velocity at node I.
+ 
+       V(I,J) is the sensitivity of the vertical velocity with
+       respect to parameter J.
+ 
+       These values are generally nonzero only if INDX(I,1) is
+       positive.
+ 
+VFLAG  LOGICAL VFLAG(MAXNP).
+       The user can control the display of velocity vectors, using the
+       "VN" option.  Then the user specifies a minimum distance that
+       displayed nodes must be separated by.  Then the program sets VFLAG(I)
+       to FALSE if node I should not be displayed because it is too
+       close to a displayed node.
+  
+X1MAX,
+X1MIN  REAL X1MAX, X1MIN, the maximum and minimum X coordinates of 
+       the screen.  
+ 
+       For profile graphs, X1MIN=0, X1MAX=1
+
+X2MAX,
+X2MIN  REAL X2MAX, X2MIN, the maximum and minimum X coordinates that
+       should be used for plotting.  No plotting commands should 
+       exceed these values.  This is where the "frame" might be drawn.
+
+       For profile graphs, X2MIN=0.05, X2MAX=0.95.
+
+X3MAX,
+X3MIN  REAL X3MAX, X3MIN, the maximum and minimum X coordinates that
+       are used for the plot plus the axes.
+
+       For profile graphs, X2MIN=0.15, X2MAX=0.85.
+
+X4MAX,
+X4MIN  REAL X4MAX, X4MIN, the maximum and minimum X coordinates that
+       are used for the plot, not including axes.
+
+       For profile graphs, X2MIN=0.20, X2MAX=0.80.
+
+XC     REAL XC(MAXNP).
+       The X coordinates of the nodes.
+ 
+XDMAX,
+XDMIN  REAL XDMAX, XDMIN, the maximum and minimum values
+       to print out on the X axis.
+
+XMAX   REAL XMAX.
+       The maximum X coordinate of all the nodes.
+       The maximum entry in the XC array.
+ 
+XMIN   REAL XMIN.
+       The minimum X coordinate of all the nodes.
+       The minimum entry in the XC array.
+ 
+XPROF  REAL XPROF.
+       The X coordinate of the profile line.
+ 
+XSIREF REAL XSIREF(MAXNPE).
+       The XSI coordinates of the nodes of the reference
+       triangle.
+ 
+XSMAX  REAL XSMAX.
+       The maximum X coordinate of the data to be displayed.
+       XSMAX defaults to XMAX, but can be made smaller to
+       focus on a portion of the region.
+ 
+XSMIN  REAL XSMIN.
+       The minimum X coordinate of the data to be displayed.
+       XSMIN defaults to XMIN, but can be made larger to
+       focus on a portion of the region.
+ 
+Y1MAX,
+Y1MIN  REAL Y1MAX, Y1MIN, the maximum and minimum Y coordinates of 
+       the screen.  
+ 
+       For profile graphs, Y1MIN=0, Y1MAX=1
+
+Y2MAX,
+Y2MIN  REAL Y2MAX, Y2MIN, the maximum and minimum Y coordinates that
+       should be used for plotting.  No plotting commands should 
+       exceed these values.  This is where the "frame" might be drawn.
+
+       For profile graphs, Y2MIN=0.05, Y2MAX=0.95.
+
+Y3MAX,
+Y3MIN  REAL Y3MAX, Y3MIN, the maximum and minimum Y coordinates that
+       are used for the plot plus the axes.
+
+       For profile graphs, Y2MIN=0.15, Y2MAX=0.85.
+
+Y4MAX,
+Y4MIN  REAL Y4MAX, Y4MIN, the maximum and minimum Y coordinates that
+       are used for the plot, not including axes.
+
+       For profile graphs, Y2MIN=0.20, Y2MAX=0.80.
+
+YC     REAL YC(MAXNP).
+       The Y coordinates of the nodes.
+ 
+YDMAX,
+YDMIN  REAL YDMAX, YDMIN, the maximum and minimum values
+       to print out on the Y axis.
+
+YMAX   REAL YMAX.
+       The maximum Y coordinate of all the nodes.
+       The maximum value attained by the YC array.
+ 
+YMIN   REAL YMIN.
+       The minimum Y coordinate of all the nodes.
+       The minimum value attained by the YC array.
+  
+YSMAX  REAL YSMAX.
+       The maximum Y coordinate of the data to be displayed.
+       YSMAX defaults to YMAX, but can be made smaller to
+       focus on a portion of the region.
+ 
+YSMIN  REAL YSMIN.
+       The minimum Y coordinate of the data to be displayed.
+       YSMIN defaults to YMIN, but can be made larger to
+       focus on a portion of the region.
+ 
+ 
+Changes to the code:
+
+ 
+12 June 1997
+
+  Changed the input to match the help listing (e.g. uy -> kvy).
+  I need to set the visible elements every time, there must be a bug
+  here that needs fixin'.
+
+13 June 1996
+
+  Made a correction to EXDAT.
+ 
+12 June 1996
+
+  I am trying to test out DISPLAY using OPENWIN, but if I just
+  type:
+
+    dev=ps
+    ex
+    g
+
+  I get an array index out of bounds.
+ 
+11 June 1996
+
+  In order to better accommodate ARBY, I changed the plot file format
+  so that the "extra" P, U, V data is counted by NSEN instead of
+  2*NPAR.  
+
+  I added a switch "ECHO", inspired by the same variable in ARBY,
+  which causes user input to be echoed to the output file.
+ 
+ 
+12 May 1996
+
+  I tried to rationalize code, by calling CROSST wherever possible.
+  Besides shortening, simplifying, and cleaning, this will also make
+  subdivision easier.
+
+
+11 May 1996
+
+  Justin's data is kinematic velocity and density.  That means that
+  the stream function should be defined using rho*u and rho*v.
+  In other words, I have to be careful to set up rho for other
+  cases like mine, where it is constant, and then combine the
+  right things for certain plots...Then maybe his stream function
+  plots will come out right.
+
+  I added an ARROW= option to allow choice of filled arrows or
+  lines.
+
+  I corrected a mistake in GRAPH which chose IROW and ICOL in
+  a funny way that only worked for FLOW data files.
+
+  I am tracking down an error that causes tilted arrows to
+  be drawn incorrectly, in ARRGON.  FIXED.
+
+  Dropped LEE plots.
+
+  Renamed UX, UXC, UY, UYC commands to KVX, KVXC, KVY, KVYC.
+
+  Sketched out code for CROSSL, calling it from CONL4.
+  (Noticed I have CROSS for triangle, but I'll look at that later).
+  Want to write CROSST now.
+
+  Wrote CROSST.  It makes CONL4 look just BEAUTIFUL.  I hope it works.
+  If so, it will make subdivisioning easy.
+
+
+10 May 1996
+
+  Corrected ELMCHK to handle the case NPE=4 and others.
+
+  Two problems today:
+    I seem to be making the TECPLOT elements incorrectly.  There
+      are 29 elements with zero area.  FIXED this one.
+    The contour plot of RHO seems to miss a few elements.
+
+  New problem:
+    Stream function not working for Justin.
+      DOOFUS (renamed GETINC) needed work.
+      TRANL4 needed work.
+    Now, stream lines are starting to appear correctly, except for
+      the same sort of "holes" that appeared in the RHO plot.
+    Also, stream colors are messed up, but I'll take a look at
+      CONC4 now.
+    Naw, CONC4 looks great, so the error is subtle.  I'll look
+      at CONL4 first.
+    The very strange feature of the plot is this:  if the contour
+      line enters and leaves the rectangle through the same 
+      subtriangle, the contour segment is shown.  If it enters
+      one subtriangle, and leaves the other, it is not shown!
+    That was the key.  I was getting ICROSS > 2, because it was
+      outside a particular loop. 
+    Now the contours come out OK, I just don't believe them.
+      Is Justin's flow not satisfying continuity?
+
+
+09 May 1996
+
+  Added TECPLOT data file option for Justin.
+     VMAGC plots messed up.  Also, MACHC contours not convincing.
+     Also, boundary display is bad.
+     RHO plots are picking zero as a possible density.
+
+
+07 May 1996
+
+  Added a "GRACE=" command.
+
+  Renamed routines to CONC3, CONC6 and CONC63.
+
+  Set up proper color contour codes for P.
+
+
+06 May 1996
+
+  Made some very simple LEE and JEFF plot input files for testing.
+
+  Trying out CONL3 on "P" plots first.
+  I compared CONL3, CONL6 and CONL63.  The first two try to give
+    quadratic plots, the last linear.  This is correct.  Now I'll
+    look at graphing the other quantities.  
+
+
+05 May 1996
+
+  Need to be able to handle linear or quadratic triangles.
+    Specifically, Voronoi is only going to give you linears.
+    Started this by added MAXNPE and NPE, and redimensioning
+      ETAREF, NODE, and XSIREF.
+
+    Routines that need major work:
+      DOOFUS;  (done)
+      FEGRAD;  (done)
+      SHOBND;  (done)
+      STREAM.  (done)
+
+    Add:
+      BFL;     (done)
+      BFREFL;  (done)
+      GETMP3;  <--  not done yet!!!
+      TRANSL.  (done)
+
+  Also: TRICON was falsely named...
+
+    For mixed element problems, Pressure should already be interpolated
+    at the midside nodes, or it should be so immediately.
+
+    Then TRICON goes to contours of true three node data in three
+    node elements.  And boy, does it get simplified!  To lead up
+    to this, I'll:
+
+      renamed TRICON to CONL63.
+      renamed SIXCON to CONL6
+      copied TRICON to CONL3.
+
+    and these can all be called by a master routine, "CONL".
+
+   
+01 May 1996
+
+  Added NPE to input list of GETDAT.
+
+  You can't really use the "NPE" command to alter NPE, you know.
+    That would require completely reworking the entries in NODE, for
+    instance.  So take that out.
+
+
+29 April 1996
+
+  Rename:
+    QBF --> BFQ;
+    REFQBF --> REFBFQ;
+    TRANS --> TRANSQ.
+
+  Modify:
+    DOOFUS;
+    FEGRAD;
+    SHOBND;
+    TRANSQ.
+
+  Add:
+    BFL;
+    REFBFL;
+    TRANSL.
+
+  I got TransL done.  
+
+28 April 1996
+
+  Jeff requested printout of maxima through HELLO, so he can increase
+  number of elements...
+
+
+27 April 1996
+
+  Found (FORTRAN) Voronoi code.
+
+  Need to be able to handle linear or quadratic triangles.
+    Specifically, Voronoi is only going to give you linears.
+
+
+17 April 1996
+
+  I improved the way the code handles an error during the "dat=file"
+  command.  If the file can't be opened, or there's an end of file
+  or error while reading, a specific message to that effect is 
+  printed out, and the command line is erased.
+
+
+12 April 1996
+
+  I renamed the VSCALE command to SCALEV.
+ 
+  I added the SCALEE and SCALEN commands to control the scaling of the
+  element and node numbers.
+
+  I modified the treatment of color bars so that the gray scale
+  is the default color scheme, and extremely white or black colors
+  are not used.
+ 
+
+Unknown date
+
+  I tried to restore the meaning of X1MIN, X1MAX, Y1MIN and Y1MAX
+  which would allow me to control the shape of the plot better,
+  and get the color bar moved up.  But I really haven't settled how
+  I want the titles and color bar to show up, and where...
+
+
+28 March 1996
+
+  I am trying to improve the computation of vorticities, by averaging
+  the values from each element's definition of dUdX, dUdY, etc.  I
+  finally got nice vorticity plots for the Poiseuille flow, so I believe
+  the vorticity computation is acceptable now.
+
+  I added the "EN" command to display element numbers.
+
+
+07 March 1996
+
+  Jeff used the CC command, chose a new color table, and got the
+  message "YMIN=YMAX, SETWCD command ignored."  The error only
+  occurs on SGI2.  When the same executable is run on SGI, it doesn't
+  happen.  I added more error output to SETWCD, but that's it.
+
+
+05 February 1996
+
+  At Jeff's request, I removed the element number input from the LEE
+  element data files.  
+
+  Changed the "VN" command to "VND" to specify visible nodes by minimum
+  distance.
+
+  Added a "VN" command that allows the user to specify visible nodes
+  by index.
+
+  I added the following commands:
+    LL, LM, LR, UL, UM, UR, ML, MM, MR, for "lower left", "lower middle", 
+    ... "middleright".
+    Each command blows up a quarter of the current screen.
+
+  I added the FULL command to return to the full data screen.
+
+  I added the SMAX= and SMIN= commands, to allow the user to set the
+  contour limits.
+
+  The contouring limits menu now offers T for total data limits,
+  V for visible, P for previous, and U for user.
+
+
+31 January 1996
+
+  I added a variable LINE for each object, that lets me start to control
+  solid versus dashed, and black versus colored.  Right now, it's only
+  used on the boundary.
+
+  Added NN, node numbering option.
+
+
+26 January 1996
+
+  Added low white to high black color table.
+
+
+06 September 1995
+
+  I made big progress with DISPLAY today.  I had an error in the
+  new version of STREAM.  Once I fixed it, most of the bogus saw tooth
+  lines in the stream function plot disappeared, (whether or not I
+  corrected for negative element orientation.  I didn't think I had
+  to do that!)  The only remaining problem is a strange diagonal
+  blur of contour lines running through a single file of elements.
+  This has got to be something that Lee's elements are doing wrong.
+
+
+05 September 1995
+
+  Jennifer is having problems with her vector plots.  Her mesh is 
+  not regular, so I can't use NXSKIP or NYSKIP to weed out some nodes.
+  And she has so many nodes that the plot is a blur.
+
+  I added routine VIZNOD, and option "VN", to set the visibility of nodes 
+  by using a minimum spacing.
+
+
+04 September 1995
+
+  While trying to get streamlines for Jennifer, I discovered a problem.
+  It seems to be caused by the fact that odd numbered elements are not
+  "properly" formed, that is, XSI and ETA don't end up perpendicular.
+  Well, I don't know if that can be true, but renumbering the elements
+  fixes the problem.
+ 
+ 
+30 August 1995
+
+  Jennifer showed me that for a problem based on Mr Lee's code,
+  the streamlines don't show up properly.
+
+
+18 February 1995
+
+  I had to add NEQN and EQN to the plotfile, so that I could handle
+  the new treatment of boundary conditions.  I think I did this
+  in a way that allows me to still read old format files.
+
+
+09 February 1995
+
+  I print out the vector norm computed by VSIZE so that I can
+  do certain adjustments via VSCALE if necessary.  Also, I changed
+  VSIZE to use the Euclidean norm rather than the Max norm.
+
+
+?? December 1994
+
+  I wrote the routine VSIZE to compute the maximum norm of the
+  vectors to be displayed.  Previously, I computed the maximum norm
+  of all the vectors, but with NFLAG and NXSKIP and NYSKIP, many
+  vectors won't be shown, and they shouldn't be included in the
+  calculation.
+
+
+08 September 1994
+
+  I am conducting some simple experiments to see if I can cut down on
+  the ridiculous enormity of color contour plots drawn by DISPLAY.
+  I am creating PostScript files that are 4 Megabytes in size, or more,
+  when drawing just 2 or three plots.
+
+
+30 August 1994
+
+  Many of the color graphics options (WC, UXC, UYC) didn't draw a
+  color bar, so I pasted in that code from the PC option.
+ 
+
+29 August 1994
+
+  Added PROGRAF option to display profile plots.
+
+  Added XPROF= option, allowing user to move profile line around.
+  This is only effective until the next step is read.
+ 
+ 
+14 August 1994
+
+  DISPLAY automatically writes a copy of the user input to DISPLAY.INP.
+
+
+11 August 1994
+
+  Added PROF option, to display profile line.
+
+  Added TITLE2 option, for second title.
+
+  Change to IRIS operating system required me to recompile DRAWCGM.
+
+
+26 July 1994
+
+  I changed CBAR so that there are lines around each individual
+  color box.  Also, I corrected a mistake that had meant that
+  the left label was not placed correctly.
+
+
+25 July 1994
+
+  I added SETTAB, which replaces SETCTB.  SETCTB, which sets up
+  a color table by repeated calls to SETCLR, seems to fail on the
+  IRIS.  Colors beyond 201 don't come out properly.  That may be
+  the IRIS's fault, but I want to be able to control the 
+  indices ICMIN and ICMAX which are the range of the colors I am
+  setting.
+
+
+20 July 1994
+ 
+  I tried to correct the streamline algorithm.  My previous 
+  algorithm was incorrect in the case of curved elements, or even 
+  elements whose X and Y sides differed in length.  The new 
+  algorithm should be perfectly general for 6 node quadratic 
+  elements...The symptom was that streamlines over the bump would
+  behave as though there was a shadow or mirror bump on the top of 
+  the channel, above the bump.  That is, the lines would bend in 
+  both bottom AND top.
+ 
+  Things seem MUCH improved now!
+ 
+ 
+17 March 1994
+
+  I've been preoccuppied.  So I took the file
+
+    d_form_cray.dat
+
+  and ran it through CRAY2IRIS (10 words per record) and made
+ 
+    d_uform_iris.dat
+
+  and ran DISPLAY and saw nice pressure plots.  Now I'm going to
+  try to set NPSKIP so I don't get overwhelmed by velocity vectors.
+
+  Yes, NPSKIP works.  But I think I need to be able to control
+  both the row and column, since otherwise I'm just thinning out
+  in one direction.  Let me think.
+
+  OK, I thought.  I replaced NPSKIP by NCSKIP and NRSKIP, so I can
+  specify separate row and column skips.  I haven't tested this yet.
+
+
+22 February 1994
+
+  So I wrote a little program that reads a Cray formatted "direct
+  access" file (which is really "sequential access!) and converts
+  it to an unformatted direct access file, and I used it on the
+  file I grabbed from the Cray, and it worked.
+
+
+21 February 1994
+
+  It's a waste of time trying to deal with the Cray and graphics.
+  After I spent all that time setting up to write a formatted
+  direct access file, it turns out the Cray pads it all to hell
+  with junk, so why bother?
+
+  I'm ready to boot the whole of BUFPAK as well, except that it
+  works fine as long as I stay on one machine.  So my strategy
+  now should be to write a one time, plug-ugly routine to convert
+  a Cray graphics file to text mode, transfer it, and convert it
+  back to direct access unformatted.   
+
+
+20 February 1994
+
+  I modified NUFLOW and NUFLOWSUB by adding the new BUFPAK routines.
+  I also changed NUFLOW so that IWFORM is read from the input file,
+  allowing me to decide at runtime to create formatted or 
+  unformatted graphics files.
+
+  Now I will have to make a simple run on the Iris, and see if
+  DISPLAY can read formatted or unformatted graphics files from
+  NUFLOW, so that I can then repeat the experiment on the Cray.
+
+  The new DISPLAY can read unformatted files from the new NUFLOW.
+
+  I got DISPLAY to read a FORMATTED file from NUFLOW, but I
+  thought I would only have to have IRFORM and possibly
+  NWORDR correct.  Actually, I also needed WFORMT...
+  This has been a bug for a while.  Can't I put NWORDR and
+  NFFAC together and make WFORMT?
+
+  Now I am trying to generate on the Cray and display on the Iris.
+  I just submitted a Cray job...
+
+
+19 February 1994
+
+I got my plot file routines rewritten so that it is fairly easy
+to read or write a formatted or unformatted file on the Cray
+or Iris.  
+
+My plan, then, is to rerun the 16 February problem, create
+a formatted graphics file, transfer that to the Iris,
+convert that to an unformatted graphics file, and use that
+with DISPLAY to draw a picture...
+
+Naturally, before I run the huge problem, I'll want to test
+a smaller version...
+
+
+16 February 1994
+
+I reached REYNLD=1000 with NX=81, NY=25, computing on LARRY,
+the Army Cray YMP.
+
+Now I want to generate a plot file at that point so I can look
+at stuff.  I just realized that, right now, I don't compute
+the sensitivities, for instance, so I won't be able to plot
+them.
+
+On top of that, I realized that I write the plot file as an
+unformatted, fixed length file.  I can't transfer that from the
+Cray to the Iris.  So I will try to rewrite BUFPAK so that I
+can choose at run time to write formatted or unformatted files.
+This should be possible through subroutine MEMORY.
+
+
+18 November 1993
+
+The new files seem to work fine.  They're smaller (by a factor
+of 4 to 8) and much faster to access.  
+
+17 November 1993
+
+Made changes to complete conversion to BUFPAK routines.  Time
+to try it out!
+
+15 November 1993
+
+I added the preliminary BUFPAK routines required to read the file
+created by FLOW.  However, I am concerned that BUFPAK right now
+cannot detect errors like end-of-file, and so DISPLAY can't count
+the number of steps, so BUFPAK should write that in an initial 
+record.  I am thinking about how to go about doing this.
+ 
+11 November 1993
+
+I am trying to rationalize the plot file format.  I have
+now removed the lines that stored the names of the data.
+
+08 November 1993
+ 
+I noticed that the boundary lines are drawn across the inlet and
+outlet.  I realized that this is because I rewrote my original
+boundary code to be more general, and to mark as a boundary any
+edge which occurs only in one element.  Now I think I can rewrite
+this so that a boundary edge is one which has that property, and
+along which no velocity variable is specified.  I will try to
+program this now.
+ 
+Tried to make the routines that read the simple data files sturdier,
+because Pavel will be using them soon.
+ 
+10 October 1993
+ 
+ 
+Dropped labeling of most DO statements.
+ 
+Made it possible to change the number of contour lines with
+the command NCON=10.
+ 
+ 
+09 October 1993
+ 
+ 
+Modified the CC command so that 0 allows you to read in a
+color table.
+ 
+ 
+07 October 1993
+ 
+ 
+Added CBOX, which is automatically called when color table is
+specified.  Displays a box showing all 256 colors.
+ 
+ 
+05 October 1993
+ 
+ 
+Added variables ICMAX and ICMIN, which control the maximum
+and minimum color indices to use for area fill.  This allows
+me to compute JCOLOR, the color to use for the current area,
+as a proportion of the current contour level ICON to [1,NCON].
+ 
+ 
+30 September 1993
+ 
+ 
+The merged code seems to handle Lee's problems.  I haven't
+checked all the possibilities, nor even looked at the code
+all that carefully yet, but I am getting nice plots of elements,
+pressures, color contours and so on.
+ 
+ 
+28 September 1993
+ 
+ 
+Trying to merge code for Lee's problem into main copy.
+ 
+ 
+24 September 1993
+ 
+ 
+You are now asked to respecify the ranges of all contoured
+quantities.
+ 
+ 
+23 September 1993
+ 
+ 
+Added ITABLE, an explicit variable to control selection of
+color table.
+ 
+Wrote the revised version of TRICOL, called "SIXCOL", which
+will do color contours for six node quantities.
+ 
+Linked this up to do vorticities and velocity magnitudes.
+ 
+ 
+22 September 1993
+ 
+ 
+In order to also be able to handle Lee's problem, I changed
+the very problem specific computation of the location of the
+boundary elements to be more general.
+ 
+While debugging this feature, I also had to modify the LIST
+command so that you specify which variable to print out.
+ 
+Also, I changed the definitions of DELX and DELY, to be independent
+of NX and NY, which assumes a regular grid.  Instead, I made them
+the (equal) sides of a typical square element.
+ 
+ 
+09 September 1993
+ 
+ 
+Added simple overlay capability via the "Z" command.
+ 
+ 
+06 September 1993
+ 
+ 
+Next on the agenda:
+ 
+  A) fix the streamline code so that it is correct for
+     isoparametric elements.
+ 
+  B) make a routine SIXCOL that calls TRICOL for color
+     contours.
+ 
+ 
+01 September 1993
+ 
+ 
+Tried adding a scheme to allow user to control visibility of
+elements.
+ 
+It looks like TRICOL is working properly, for both isoparametric
+and "plain" elements.
+ 
+ 
+30 August 1993
+ 
+ 
+I've got the three-node element code done.
+ 
+I dealt with the retarded color table changes by issuing a
+"call newfrm" right after calling "setctb".
+ 
+Now my only remaining problem is to deal with isoparametric
+elements.
+ 
+ 
+28 August 1993
+ 
+ 
+Trying to put in a color contour option.  It's starting to work.
+ 
+ 
+23 July 1993
+ 
+ 
+Conversations with Lee about:
+ 
+  a) the computation of vorticity.
+ 
+     To do this, I need versions of REFQBF and TRANS, as in
+     the FLOW code.  However, Lee noted the strange names
+     of variables in both routines.  He also pointed out that
+     he uses a more "standard" reference element which does not
+     include (1,1) as a node.
+ 
+  b) the computation of stream function.
+ 
+     I am not correctly taking curvature of isoparametric
+     elements into account, and this makes my streamline plots
+     incorrect.  Lee and I will discuss this some more.
+ 
+ 
+21 July 1993
+ 
+ 
+Wrote "SIXCON", which draws contours for quantities associated
+with all six nodes of the element.
+ 
+ 
+23 April 1993
+ 
+ 
+Now reading in XPROF, location of sampling line.
+ 
+ 
+21 April 1993
+ 
+ 
+Trying to handle boundary in a better way.  Added a new column
+to JBOUND, containing the type of the boundary.  Added code to
+SHOBND to draw boundary as a double line.
+ 
+12 April 1993
+ 
+Created ADVANCE routine.
+ 
+21 March 1993
+ 
+Changed "A" command to require a particular step.
+ 
+19 March 1993
+ 
+Changed SETBND so that inflow and outflow boundary lines
+are NOT drawn.
+ 
+22 January 1993
+ 
+Added "I" command to count number of timesteps in file.
+Maybe this should be done simply as part of the "D" command!
+Then you automatically have NSTEPS available every time.
+ 
+16 December 1992
+ 
+How about, if a side of an element has u=v=0, drawing the
+boundary as a double line, otherwise a dashed line.
+ 
+05 November 1992
+ 
+Added "ARROW" to NEWDRAW, and moved that functionality out of
+here.
+ 
+30 October 1992
+ 
+Added a preliminary version of SETPRM, to allow easy setting
+of parameters by name.
+ 
+21 October 1992
+ 
+  I increased the size of MAXELM and MAXNP so that I could
+  display problems from a 41 by 13 mesh.
+ 
+17 October 1992
+ 
+  Added velocity magnitudes.
+ 
+16 October 1992
+ 
+  Adding velocity direction field command, "u".
+ 
+09 October 1992
+ 
+  "INSC" became the third column of INDX.
+ 
+23 September 1992
+ 
+  Added "ISOLIN", which draws a "straight" line across an
+  isoparametric element.  I needed this to improve the
+  contour plotting routine.
+ 
+Stuck in a first draft of a streamline code.
+ 
+  Results: the boundary is NOT being drawn properly by ISOLIN.
+  On the other hand, the streamlines don't seem too horrible.
+  These are only linear, right now.
+ 
+14 September 1992
+ 
+  Added sensitivities.
+  DISPLAY.DAT now contains internal labels.
+ 
+7 September 1992:
+ 
+  Graph is not displayed properly, it seems, if X range is
+  smaller than Y range!  I fixed this by forcing the graph to
+  lie inside a square.
+ 
+  Pressure contours are not aware of the existence of
+  isoparametric elements, I believe!

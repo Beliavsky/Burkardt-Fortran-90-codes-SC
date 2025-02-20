@@ -1,0 +1,20 @@
+14 August 2017  10:47:05.988 AM
+ 
+BICYCLE_LOCK_TEST
+  FORTRAN90 version
+  BICYCLE_LOCK seeks the combination of a bicycle lock.
+  A bicycle combination lock consists of 3 dials,
+  each having 10 symbols, 0 through 9.
+  We seek to determine the combination C.
+ 
+  The number of dials is M =    3
+  The number of symbols is N =   10
+  The number of possible combinations is M^N =     1000
+  The "secret" combination is 445
+ 
+  The combination was found on step      446
+ 
+BICYCLE_LOCK_TEST
+  Normal end of execution.
+ 
+14 August 2017  10:47:05.988 AM

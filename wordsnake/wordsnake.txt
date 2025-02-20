@@ -1,0 +1,207 @@
+21 June 2018   8:09:23.548 AM
+ 
+WORDSNAKE
+  FORTRAN90 version
+  Call WORDSNAKE to create a high scoring wordsnake
+  from a given set of words.
+ 
+FILE_RECORD_COUNT:
+  Number of lines:               48
+  Number of data records:        39
+  Number of comment records:      9
+ 
+  Number of records in the input file is     39
+ 
+  The word list:
+ 
+   1  alas
+   2  ally
+   3  blemish
+   4  blend
+   5  certain
+   6  dense
+   7  denude
+   8  eloped
+   9  emerge
+  10  essential
+  11  eternal
+  12  geriatric
+  13  gerund
+  14  icer
+  15  incredible
+  16  ingrate
+  17  invent
+  18  lasting
+  19  later
+  20  lending
+  21  merger
+  22  mishapen
+  23  pediatric
+  24  penultimate
+  25  rates
+  26  sea
+  27  seem
+  28  stinger
+  29  sudden
+  30  tense
+  31  terrestrial
+  32  terrible
+  33  tessilate
+  34  trials
+  35  trice
+  36  tricky
+  37  underdevelop
+  38  yes
+  39  yet
+ 
+  Trial number      1
+ 
+WORDSNAKE
+  Number of words =       39
+ 
+       2       4       4  y ET ernal
+       2       4       8  etern AL as
+       3       9      17  a LAS ting
+       5      25      42  la STING er
+       3       9      51  stin GER iatric
+       4      16      67  geria TRIC e
+       3       9      76  tr ICE r
+       3       9      85  i CER tain
+       2       4      89  certa IN credible
+       3       9      98  incredi BLE nd
+       4      16     114  b LEND ing
+       3       9     123  lend ING rate
+       4      16     139  ing RATE s
+       3       9     148  ra TES silate
+       4      16     164  tessi LATE r
+       3       9     173  la TER rible
+       3       9     182  terri BLE mish
+       4      16     198  ble MISH apen
+       3       9     207  misha PEN ultimate
+       2       4     211  penultima TE rrestrial
+       5      25     236  terres TRIAL s
+       1       1     237  trial S ea
+       1       1     238  se A lly
+       1       1     239  all Y es
+       2       4     243  y ES sential
+       0       0     243  essential  denude
+       2       4     247  denu DE nse
+       2       4     251  den SE em
+       2       4     255  se EM erge
+       5      25     280  e MERGE r
+       3       9     289  mer GER und
+       3       9     298  ger UND erdevelop
+       4      16     314  underdev ELOP ed
+       3       9     323  elo PED iatric
+       4      16     339  pedia TRIC ky
+       0       0     339  tricky  tense
+       0       0     339  tense  sudden
+       0       0     339  sudden  invent
+       0       0     339  invent  yet
+ 
+  Total number of characters =      254
+  Reduced number of characters =      153
+  The wordsnake score is    339
+ 
+  Trial number      2
+ 
+WORDSNAKE
+  Number of words =       39
+ 
+       3       9       9  misha PEN ultimate
+       2       4      13  penultima TE rrestrial
+       5      25      38  terres TRIAL s
+       1       1      39  trial S tinger
+       3       9      48  stin GER und
+       3       9      57  ger UND erdevelop
+       4      16      73  underdev ELOP ed
+       3       9      82  elo PED iatric
+       4      16      98  pedia TRIC e
+       3       9     107  tr ICE r
+       3       9     116  i CER tain
+       2       4     120  certa IN vent
+       1       1     121  inven T ense
+       2       4     125  ten SE em
+       2       4     129  se EM erge
+       5      25     154  e MERGE r
+       3       9     163  mer GER iatric
+       4      16     179  geria TRIC ky
+       1       1     180  trick Y es
+       2       4     184  y ES sential
+       2       4     188  essenti AL as
+       3       9     197  a LAS ting
+       3       9     206  last ING rate
+       4      16     222  ing RATE s
+       3       9     231  ra TES silate
+       4      16     247  tessi LATE r
+       3       9     256  la TER rible
+       3       9     265  terri BLE nd
+       4      16     281  b LEND ing
+       0       0     281  lending  ally
+       1       1     282  all Y et
+       2       4     286  y ET ernal
+       0       0     286  eternal  denude
+       2       4     290  denu DE nse
+       2       4     294  den SE a
+       0       0     294  sea  blemish
+       0       0     294  blemish  incredible
+       0       0     294  incredible  sudden
+       0       0     294  sudden  mishapen
+ 
+  Total number of characters =      254
+  Reduced number of characters =      162
+  The wordsnake score is    294
+ 
+  Trial number      3
+ 
+WORDSNAKE
+  Number of words =       39
+ 
+       3       9       9  tr ICE r
+       3       9      18  i CER tain
+       2       4      22  certa IN vent
+       1       1      23  inven T rials
+       1       1      24  trial S ea
+       1       1      25  se A lly
+       1       1      26  all Y es
+       2       4      30  y ES sential
+       2       4      34  essenti AL as
+       3       9      43  a LAS ting
+       5      25      68  la STING er
+       3       9      77  stin GER iatric
+       4      16      93  geria TRIC ky
+       1       1      94  trick Y et
+       2       4      98  y ET ernal
+       1       1      99  eterna L ending
+       3       9     108  lend ING rate
+       4      16     124  ing RATE s
+       3       9     133  ra TES silate
+       4      16     149  tessi LATE r
+       3       9     158  la TER restrial
+       0       0     158  terrestrial  blemish
+       4      16     174  ble MISH apen
+       3       9     183  misha PEN ultimate
+       2       4     187  penultima TE nse
+       2       4     191  ten SE em
+       2       4     195  se EM erge
+       5      25     220  e MERGE r
+       3       9     229  mer GER und
+       3       9     238  ger UND erdevelop
+       4      16     254  underdev ELOP ed
+       3       9     263  elo PED iatric
+       0       0     263  pediatric  blend
+       1       1     264  blen D ense
+       0       0     264  dense  denude
+       0       0     264  denude  sudden
+       0       0     264  sudden  terrible
+       0       0     264  terrible  incredible
+       0       0     264  incredible  trice
+ 
+  Total number of characters =      254
+  Reduced number of characters =      170
+  The wordsnake score is    264
+ 
+WORDSNAKE
+  Normal end of execution.
+ 
+21 June 2018   8:09:26.545 AM

@@ -1,0 +1,167 @@
+<html>
+
+  <head>
+    <title>
+      AITCH - Flow in an H-Shaped Region
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      AITCH<br>
+      Flow in an H-Shaped Region
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>AITCH</b>,
+      a FORTRAN90 program which 
+      solves for flow in an H-shaped region.
+    </p>
+
+    <p>
+      More specifically, AITCH is intended to model the
+      geometry needed for a time-dependent flow of an incompressible fluid in a 2D
+      region, under the Navier Stokes equations.
+    </p>
+
+    <p>
+      This program is simply an initial sketch of how to divide up the
+      the region in a way that makes it possible to generate a consistent
+      account of the nodes and elements needed to implement a finite element
+      representation of the solution.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>AITCH</b> is available in
+      <a href = "aitch.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h2 align = "center">
+      Related Data and Programs
+    </h2>
+
+    <p>
+      <a href = "../aitch_test/aitch_test.html">
+      aitch_test</a> 
+    </p>
+
+    <p>
+      <a href = "../flow3/flow3.html">
+      FLOW3</a> 
+      is a FORTRAN90 program which
+      solving the 2D steady incompressible Navier Stokes equations 
+      using the finite element method.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f77_src/inout/inout.html">
+      INOUT</a> 
+      is a FORTRAN77 program which 
+      computes the pressure and velocity for a Navier Stokes flow in a 
+      square region with an inlet and an outlet.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/f77_src/tcell/tcell.html">
+      TCELL</a> 
+      is a FORTRAN77 program which 
+      solves the Navier Stokes fluid flow equations in a "T"-shaped region.  
+    </p>
+
+    <h2 align = "center">
+      Source Code:
+    </h2>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "aitch.f90">aitch.f90</a>, the source code.
+        </li>
+      </ul>
+    </p>
+
+    <h2 align = "center">
+      List of Routines:
+    </h2>
+
+    <p>
+      <ul>
+        <li>
+          <b>AITCH</b> tests the AITCH geometry routines.
+        </li>
+        <li>
+          <b>AITCH_DOF_NUM</b> determines the number of degrees of freedom in the region.
+        </li>
+        <li>
+          <b>AITCH_ELEMENT_NODE</b> determines the nodes that make up each element.
+        </li>
+        <li>
+          <b>AITCH_ELEMENT_NUM</b> determines the number of elements in the region.
+        </li>
+        <li>
+          <b>AITCH_NODE_DOF_SET</b> assigns degrees of freedom to each node.
+        </li>
+        <li>
+          <b>AITCH_NODE_NUM</b> determines the number of nodes in the region.
+        </li>
+        <li>
+          <b>AITCH_NODE_XY</b> assigns coordinates to each node.
+        </li>
+        <li>
+          <b>ELEMENT6_EPS</b> creates an EPS file containing an image of the mesh.
+        </li>
+        <li>
+          <b>ELEMENT_NODE_BANDWIDTH</b> determines the bandwidth associated with the grid.
+        </li>
+        <li>
+          <b>ELEMENT_NODE_PRINT</b> prints the elements.
+        </li>
+        <li>
+          <b>GET_UNIT</b> returns a free FORTRAN unit number.
+        </li>
+        <li>
+          <b>NODE_DOF_INDEX_PRINT</b> prints the nodal degrees of freedom.
+        </li>
+        <li>
+          <b>NODE_EPS</b> creates an EPS file containing an image of the nodes.
+        </li>
+        <li>
+          <b>NODE_XY_PRINT</b> prints the node coordinates.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+        <li>
+          <b>TIMESTRING</b> writes the current YMDHMS date into a string.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 05 January 2019.
+    </i>
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

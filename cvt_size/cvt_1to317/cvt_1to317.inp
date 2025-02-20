@@ -1,0 +1,6 @@
+set term post portrait
+set output "cvt_1to317_vol.ps"
+set grid
+set data style linespoints
+set title "Areas of 80 Voronoi cells"
+plot "cvt_1to317_vol.txt" title "Area", "cvt_1to317_des.txt" title "Desired"

@@ -1,0 +1,25 @@
+#! /bin/bash
+#
+mkdir temp
+cd temp
+rm -f *
+~/bin/f90split ../cvt_size.f90
+#
+for FILE in `ls -1 *.f90`;
+do
+  gfortran -c -Wall $FILE
+  if [ $? -ne 0 ]; then
+    echo "Errors compiling " $FILE
+    exit
+  fi
+done
+rm *.f90
+#
+ar qc libcvt_size.a *.o
+rm *.o
+#
+mv libcvt_size.a ~/lib
+cd ..
+rmdir temp
+#
+echo "Normal end of execution."

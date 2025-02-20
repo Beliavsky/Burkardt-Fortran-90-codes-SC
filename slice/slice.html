@@ -1,0 +1,225 @@
+<html>
+
+  <head>
+    <title>
+      SLICE - Analyze optimization data
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      SLICE <br> Analyze optimization data
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>SLICE</b> 
+      is a FORTRAN90 program which 
+      accepts a data file of
+      values of a function, sampled in several directions, 
+      and produces plots of the value of the function along a line.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>SLICE</b> is available in
+      <a href = "slice.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/c_src/drawcgm/drawcgm.html">
+      DRAWCGM</a> 
+      is a graphics library which
+      is needed by <b>SLICE</b>.
+    </p>
+
+    <p>
+      <a href = "../flow3/flow3.html">
+      FLOW3</a> 
+      is a FORTRAN90 program which
+      solves the 2D steady (time independent) incompressible Navier Stokes equations 
+      using the finite element method.
+    </p>
+
+    <p>
+      <a href = "../flow4/flow4.html">
+      FLOW4</a> 
+      is a FORTRAN90 program which
+      solves the 2D steady (time independent) incompressible Navier Stokes equations 
+      using the finite element method.
+    </p>
+
+    <p>
+      <a href = "../slab/slab.html">
+      SLAB</a>, 
+      a FORTRAN90 program which
+      analyzes the optimization of a scalar function of multidimensional data
+      by examining contour lines in a selected plane.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <P>
+      <UL>
+        <LI>
+          <A HREF = "slice.f90">slice.f90</A>, the source code.
+        </LI>
+        <LI>
+          <A HREF = "https://people.math.sc.edu/Burkardt/f_src/slice/slice.csh">slice.csh</A>, 
+          commands to compile, link and load the source code.
+        </LI>
+      </UL>
+    </P>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <P>
+      <UL>
+        <LI>
+          <A HREF = "pfg.dat">pfg.dat</A>, a sample input file.
+        </LI>
+      </UL>
+    </P>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <P>
+      <UL>
+        <LI>
+          <B>SLICE</B> is the main program for SLICE.
+        </LI>
+        <LI>
+          <B>BOX</B> draws a rectangle whose corners are specified by the user.
+        </LI>
+        <LI>
+          <B>BUZZ</B> is a kludge routine.  For some reason, the last few graphical
+        </LI>
+        <LI>
+          <B>CH_CAP</B> capitalizes a single character.
+        </LI>
+        <LI>
+          <B>CHRINT</B> accepts an integer and returns in CHRINT the 6-character
+        </LI>
+        <LI>
+          <B>CHRRAT</B> accepts a pair of integers IVAL and JVAL, and returns a 
+        </LI>
+        <LI>
+          <B>CHRREL</B> accepts a real number in RVAL and returns in CHRREL a
+        </LI>
+        <LI>
+          <B>DELETE</B> is used to dispose of old copies of files before opening
+        </LI>
+        <LI>
+          <B>DROP2</B> "crops" points that fall outside a given rectangle.
+        </LI>
+        <LI>
+          <B>EXHEAP</B> externally sorts a list of items into linear order.
+        </LI>
+        <LI>
+          <B>FGRAPH</B> draws a graph of the function values versus values of
+        </LI>
+        <LI>
+          <B>FLUSHR</B> flushes a string right.  
+        </LI>
+        <LI>
+          <B>GETDAT</B> reads in data. 
+        </LI>
+        <LI>
+          <B>HELP</B> prints out a list of commands.
+        </LI>
+        <LI>
+          <B>INIT</B> initializes the values of data.
+        </LI>
+        <LI>
+          <B>LNEI</B> is a case-insensitive comparison of two strings for non-equality.
+        </LI>
+        <LI>
+          <B>NCIRCLE</B> draws circles at a set of points.
+        </LI>
+        <LI>
+          <B>PRANGE</B> prints the ranges of the data.
+        </LI>
+        <LI>
+          <B>PRCOST</B> prints out the visibility of the various costs.
+        </LI>
+        <LI>
+          <B>PRINTR</B> ???
+        </LI>
+        <LI>
+          <B>RANGE2</B> sets the ranges of an array.
+        </LI>
+        <LI>
+          <B>RHEAP2</B> sorts an array of reals into nondecreasing order, and
+        </LI>
+        <LI>
+          <B>RRANGE</B> computes the range of a real array.
+        </LI>
+        <LI>
+          <B>S_BLANK_DELETE</B> removes blanks from a string, left justifying the remainder.
+        </LI>
+        <LI>
+          <B>S_CAP</B> replaces any lowercase letters by uppercase ones in a string.
+        </LI>
+        <LI>
+          <B>S_EQI</B> is a case insensitive comparison of two strings for equality.
+        </LI>
+        <LI>
+          <B>S_PLOT</B> plots a character string onto a graphics image.
+        </LI>
+        <LI>
+          <B>SCALE</B> resets the current coordinate system for the picture.
+        </LI>
+        <LI>
+          <B>SETPRM</B> allows the user to reset various parameters.
+        </LI>
+        <LI>
+          <B>SGRAPH</B> draws a graph of the sequence of function values.
+        </LI>
+        <LI>
+          <B>VCOST</B> allows the user to choose which cost functions will be visible.
+        </LI>
+      </UL>
+    </P>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 30 August 2005.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+ 

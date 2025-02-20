@@ -1,0 +1,408 @@
+<html>
+
+  <head>
+    <title>
+      GRAPHICS_EXAMPLES - Sample Data for Graphics Demonstrations
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      GRAPHICS_EXAMPLES <br> Sample Data for Graphics Demonstrations
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>GRAPHICS_EXAMPLES</b>,
+      FORTRAN90 programs which
+      illustrate how various kinds of data can be displayed and analyzed graphically.
+    </p>
+
+    <p>
+      Some common plot types include:
+      <ul>
+        <li>
+          <b>plot</b>, a display of a single curve defined by a sequence of 
+          functional pairs (x,y(x)), or a function y=f(x) sampled over an
+          interval, or a sequence of related pairs (x,y).
+        </li>
+        <li>
+          <b>plots</b>, several curves on a single display.
+        </li>
+        <li>
+          <b>plot3d</b>, a 3D display of a single curve defined by a sequence of 
+          triples (x(i),y(i),z(i)), or a parametric function (x(t),y(t),z(t)) 
+          sampled over an interval.
+        </li>
+        <li>
+          <b>scatter</b>, a display of unconnected pairs (x,y), whose
+          positions are indicated by markers.
+        </li>
+        <li>
+          <b>scatters</b>, a scatter plot involving several distinct sets of
+          (x,y) pairs are displayed, distinguished by markers of different
+          size, shape or color.
+        </li>
+        <li>
+          <b>scatter3d</b>, a 3D display of unconnected triples (x,y,z), whose
+          positions are indicated by markers.
+        </li>
+        <li>
+          <b>bar</b>, a display of values y(1:n) in which every value
+          y(i) is represented by a bar of that height.
+        </li>
+        <li>
+          <b>histogram</b>, a display of values x in which the x range
+          is divided into intervals, and the value y(i) represents the
+          number of x values in the i-th interval, and a bar plot of
+          intervals versus count is displayed.
+        </li>
+        <li>
+          <b>fill</b>, a shape composed of polygons, each of which is
+          filled with a particular color.
+        </li>
+        <li>
+          <b>contour</b>, a display of values z(x,y) in which the values of
+          z are suggested by coloring, or by contour lines.
+        </li>
+        <li>
+          <b>surface</b>, a 3D display of values z(x,y), represented
+          as a surface.
+        </li>
+        <li>
+          <b>subplots</b>, a display involving two or more separate plots,
+          shown as a single figure.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>GRAPHICS_EXAMPLES</b> programs are available in
+      <a href = "https://people.math.sc.edu/Burkardt/c_src/graphics_examples/graphics_examples.html">a C version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/cpp_src/graphics_examples/graphics_examples.html">a C++ version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/datasets/graphics_examples/graphics_examples.html">a dataset version</a> and
+      <a href = "graphics_examples.html">a FORTRAN90 version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/graphics_examples/graphics_examples.html">a MATLAB version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/examples/graphics_examples_octave/graphics_examples_octave.html">an Octave version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/py_src/graphics_examples/graphics_examples.html">a Python version</a>.   
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/examples/graphics_examples_convert/graphics_examples_convert.html">
+      GRAPHICS_EXAMPLES_CONVERT</a>,
+      examples which
+      illustrate how various kinds of data can be processed and modified using
+      the ImageMagick program convert() and its related tools.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/examples/graphics_examples_gnuplot/graphics_examples_gnuplot.html">
+      GRAPHICS_EXAMPLES_GNUPLOT</a>,
+      examples which
+      illustrate how various kinds of data can be displayed and analyzed 
+      graphically using the interactive executable graphics program gnuplot().
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/examples/graphics_examples_grace/graphics_examples_grace.html">
+      GRAPHICS_EXAMPLES_GRACE</a>,
+      examples which
+      illustrate how various kinds of data can be displayed and analyzed 
+      graphically using the interactive executable graphics program grace().
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/examples/graphics_examples_plotly1/graphics_examples_plotly1.html">
+      GRAPHICS_EXAMPLES_PLOTLY1</a>,
+      examples which
+      illustrate how various kinds of data can be displayed and analyzed
+      graphically, using version 1 of the plotly() program from a browser.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Philipp Janert,<br>
+          Gnuplot in Action: Understanding Data with Graphs,<br>
+          Manning, 2010,<br>
+          ISBN13: 978-1-933988-39-8,<br>
+          LC: QA276.4.J37.
+        </li>
+        <li>
+          Helmut Michels,<br>
+          The Data Plotting Software DISLIN - version 10.4, <br>
+          Shaker Media GmbH, January 2010,<br>
+          ISBN13: 978-3-86858-517-9.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <b>CIRCLE_SCATTERS</b> depicts 500 pairs of (X,Y) data points in the unit square,
+      395 of which lie inside the unit circle, and 105 outside.  If possible,
+      the "inside" points should be blue, the "outside" points red, and the
+      circle itself should also be drawn.
+      The dislin library is used.
+      <ul>
+        <li>
+          <a href = "circle1_data.txt">circle1_data.txt</a>, 
+          the coordinates of points inside the circle.
+        </li>
+        <li>
+          <a href = "circle2_data.txt">circle2_data.txt</a>, 
+          the coordinates of points outside the circle.
+        </li>
+        <li>
+          <a href = "circle_scatters.f90">circle_scatters.f90</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "circle_scatters.png">circle_scatters.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CORKSCREW_PLOT3D</b> generates (X,Y,Z) points that lie along a 3D curve
+      looking something like a corkscrew.  
+      The gnuplot() program is used.
+      <ul>
+        <li>
+          <a href = "corkscrew_plot3d.f90">corkscrew_plot3d.f90</a>,
+          creates the data, and writes the GNUPLOT files.
+        </li>
+        <li>
+          <a href = "corkscrew_data.txt">corkscrew_data.txt</a>,
+          the X, Y, Z coordinates.
+        </li>
+        <li>
+          <a href = "corkscrew_commands.txt">corkscrew_commands.txt</a>,
+          commands to gnuplot that will create a plot.
+        </li>
+        <li>
+          <a href = "corkscrew_plot3d.png">corkscrew_plot3d.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>GEYSER_BAR</b> works with measurements of the waiting time in 
+      minutes between successive eruptions of the Old Faithful geyser.  The
+      data has been grouped into bins.  The bin counts are displayed as a bar 
+      chart.
+      The dislin library is used.
+      <ul>
+        <li>
+          <a href = "geyser_bar_data.txt">geyser_bar_data.txt</a>, 
+          bin centers, and occupancy counts, for waiting times.
+        </li>
+        <li>
+          <a href = "geyser_bar.f90">geyser_bar.f90</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "geyser_bar.png">geyser_bar.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>GRID_SURFACE</b> records, on a 41x41 grid over [-2,2]x[-2,+2], the values
+      z = exp(-(x^2+y^2)) * cos(0.25*x) * sin(y) * cos(2*(x^2+y^2)).
+      The data is to be plotted as a surface.
+      The dislin library is used.
+      <ul>
+        <li>
+          <a href = "grid_data.txt">grid_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "grid_surface.f90">grid_surface.f90</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "grid_surface.png">grid_surface.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>LISSAJOUS_PLOT</b> records 1000 points on a Lissajous curve defined by
+      x=sin(3*t+pi/2), y=sin(4t).  The curve is to be plotted and every tenth 
+      point marked.
+      The dislin library is used.
+      <ul>
+        <li>
+          <a href = "lissajous_data.txt">lissajous_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "lissajous_plot.f90">lissajous_plot.f90</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "lissajous_plot.png">lissajous_plot.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>LYNX_PLOT</b> records the yearly lynx harvest from 1821 to 1934.
+      The graph should plot the data points as circles, and connect consecutive
+      data points with straight line segments to suggest a curve.
+      The dislin library is used.
+      <ul>
+        <li>
+          <a href = "lynx_data.txt">lynx_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "lynx_plot.f90">lynx_plot.f90</a>,
+          creates the data and displays a scatter plot.
+        </li>
+        <li>
+          <a href = "lynx_plot.png">lynx_plot.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>MARIO_FILL</b> makes a simple image of Mario,
+      by constructing a grid of squares filled with color.
+      The gnuplot() program is used.
+      <ul>
+        <li>
+          <a href = "mario_fill.f90">mario_fill.f90</a>,
+          makes a command file for input to gnuplot.
+        </li>
+        <li>
+          <a href = "mario_commands.txt">mario_commands.txt</a>,
+          the gnuplot command file.
+        </li>
+        <li>
+          <a href = "mario_fill.png">mario_fill.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>ORBITAL_CONTOUR</b> records, on a 101x101 grid over [0,4*pi]x[0,4*pi], 
+      the minimum distance between two planets given a pair of orbital angles.  
+      The data is presented as a color contour plot.
+      The dislin library is used.
+      <ul>
+        <li>
+          <a href = "orbital_data.txt">orbital_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "orbital_contour.f90">orbital_contour.f90</a>,
+          reads the data and makes a plot.
+        </li>
+        <li>
+          <a href = "orbital_contour.png">orbital_contour.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>PREDATOR_PLOT3D</b> models the populations of predators (foxes) and prey 
+      (rabbits) over time.  A 3D plot of (time, rabbits, foxes) is created.
+      The gnuplot() program is used.
+      <ul>
+        <li>
+          <a href = "predator_plot3d.f90">predator_plot3d.f90</a>,
+          creates the data, and writes the GNUPLOT files.
+        </li>
+        <li>
+          <a href = "predator_data.txt">predator_data.txt</a>,
+          a list of time, prey, and predator.
+        </li>
+        <li>
+          <a href = "predator_commands.txt">predator_commands.txt</a>,
+          commands to gnuplot that will create a plot.
+        </li>
+        <li>
+          <a href = "predator_plot3d.png">predator_plot3d.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>RANDOM_SCATTER</b> generates 500 pairs of (X,Y) data, which lie in 
+      the unit square, and tend to cluster around (0.5,0.5).
+      The dislin library is used.
+      <ul>
+        <li>
+          <a href = "random_data.txt">random_data.txt</a>, 
+          the data.
+        </li>
+        <li>
+          <a href = "random_scatter.f90">random_scatter.f90</a>,
+          creates the data and displays a scatter plot.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/graphics_examples/random_scatter.txt">random_scatter.txt</a>, 
+          the output file.
+        </li>
+        <li>
+          <a href = "random_scatter.png">random_scatter.png</a>,
+          a PNG image of the plot.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 27 April 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+

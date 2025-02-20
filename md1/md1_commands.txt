@@ -1,0 +1,29 @@
+set term png
+set output "temperature.png"
+set grid
+set style data lines
+unset key
+set xlabel "<---Time--->"
+set ylabel "<---Temperature--->"
+set title "Temperature over Time"
+set timestamp
+plot "md1_data.txt" using 1:2 with lines
+set output "kinetic.png"
+set xlabel "<---Time--->"
+set ylabel "<---Kinetic Energy--->"
+set title "Kinetic Energy over Time"
+set timestamp
+plot "md1_data.txt" using 1:3 with lines
+set output "potential.png"
+set xlabel "<---Time--->"
+set ylabel "<---Potential Energy--->"
+set title "Potential Energy over Time"
+set timestamp
+plot "md1_data.txt" using 1:4 with lines
+set output "pressure.png"
+set xlabel "<---Time--->"
+set ylabel "<---Pressure--->"
+set title "Pressure over Time"
+set timestamp
+plot "md1_data.txt" using 1:6 with lines
+quit

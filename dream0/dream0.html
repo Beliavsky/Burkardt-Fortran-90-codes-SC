@@ -1,0 +1,284 @@
+<html>
+
+  <head>
+    <title>
+      DREAM0 - Markov Chain Monte Carlo acceleration by Differential Evolution
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      DREAM0 <br> Markov Chain Monte Carlo acceleration by Differential Evolution
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>DREAM0</b>
+      is a FORTRAN90 library which
+      is the original implementation of the DREAM algorithm for accelerating 
+      Markov Chain Monte Carlo (MCMC) convergence using differential evolution,
+      by Guannan Zhang.
+    </p>
+
+    <p>
+      Using the <b>DREAM0</b> library to solve a problem requires:
+      <ul>
+        <li>
+          compiling the main program MAIN.FOR; 
+        </li>
+        <li>
+          linking the main program with the DREAM, RAND_GENERATOR, 
+          LINPACK and PDF_DENSITY libraries;
+        </li>
+        <li>
+          supplying two text files that define the input parameters and the
+          prior probability density function, such as the examples
+          given below.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      A more recent version of the algorithm, with a simplified interface
+      involving 5 user functions, is available as DREAM.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>DREAM0</b> is available in
+      <a href = "../dream1/dream1.html">a FORTRAN90 version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../dream/dream.html">
+      DREAM</a>,
+      a FORTRAN90 program which
+      implements the DREAM algorithm for accelerating 
+      Markov Chain Monte Carlo (MCMC)
+      convergence using differential evolution, 
+      using five user functions to define the problem, by Guannan Zhang.
+    </p>
+
+    <p>
+      <a href = "../dream1/dream1.html">
+      DREAM1</a>,
+      a FORTRAN90 library which
+      is an older implementation of the DREAM algorithm for accelerating 
+      Markov Chain Monte Carlo (MCMC)
+      convergence using differential evolution, 
+      using a user function main program and two input files
+      to define the problem, by Guannan Zhang.
+    </p>
+
+    <p>
+      <a href = "../ranlib/ranlib.html">
+      RANLIB</a>,
+      a FORTRAN90 library which
+      produces random samples from Probability Density Functions (PDF's), 
+      including Beta, Chi-square Exponential, F, Gamma, Multivariate normal,
+      Noncentral chi-square, Noncentral F, Univariate normal, 
+      random permutations, Real uniform, Binomial, Negative Binomial,
+      Multinomial, Poisson and Integer uniform,
+      by Barry Brown and James Lovato.
+    </p>
+
+    <p>
+      <a href = "../rnglib/rnglib.html">
+      RNGLIB</a>,
+      a FORTRAN90 library which
+      implements a random number generator (RNG) with splitting facilities,
+      allowing multiple independent streams to be computed,
+      by L'Ecuyer and Cote.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Guannan Zhang.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Pierre LEcuyer, Serge Cote,<br>
+          Implementing a Random Number Package with Splitting Facilities,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 17, Number 1, March 1991, pages 98-111.
+        </li>
+        <li>
+          Jasper Vrugt, CJF ter Braak, CGH Diks, Bruce Robinson, James Hyman, 
+          Dave Higdon,<br>
+          Accelerating Markov Chain Monte Carlo Simulation by Differential 
+          Evolution with Self-Adaptive Randomized Subspace Sampling,<br>
+          International Journal of Nonlinear Sciences and Numerical
+          Simulation,<br>
+          Volume 10, Number 3, March 2009, pages 271-288.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "main.f90">main.f90</a>, the main program.
+        </li>
+        <li>
+          <a href = "dream.f90">dream.f90</a>, 
+          source code for the DREAM algorithm.
+        </li>
+        <li>
+          <a href = "linpack.f">linpack.f</a>, 
+          FORTRAN77 source code for the LINPACK linear algebra library.
+        </li>
+        <li>
+          <a href = "rand_generator.f90">rand_generator.f90</a>, 
+          a random number generator package.
+        </li>
+        <li>
+          <a href = "pdf_density.f90">pdf_density.f90</a>, 
+          a package for evaluating common probability density functions.
+        </li>
+        <li>
+          <a href = "makefile">makefile</a>,
+          a makefile for compiling the source codes and creating an executable.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/dream0/dream_test.f90">dream_test.f90</a>,
+          a sample calling program.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/dream0/dream_test.sh">dream_test.sh</a>,
+          BASH commands to compile and run the sample program.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/dream0/dream_test.txt">dream_test.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Input files:
+      <ul>
+        <li>
+          <a href = "DreamTest.in">DreamTest.in</a>,
+          an input file, containing parameter values.
+        </li>
+        <li>
+          <a href = "prior.in">prior.in</a>,
+          an input file, defining the prior density functions for
+          the parameters.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Output files:
+      <ul>
+        <li>
+          <a href = "ParSamples._chain01">ParSamples._chain01</a>,
+          successive sample values for chain 1.
+        </li>
+        <li>
+          <a href = "ParSamples._chain02">ParSamples._chain02</a>,
+          successive sample values for chain 2.
+        </li>
+        <li>
+          <a href = "ParSamples._chain03">ParSamples._chain03</a>,
+          successive sample values for chain 3.
+        </li>
+        <li>
+          <a href = "ParSamples._chain04">ParSamples._chain04</a>,
+          successive sample values for chain 4.
+        </li>
+        <li>
+          <a href = "ParSamples._chain05">ParSamples._chain05</a>,
+          successive sample values for chain 5.
+        </li>
+        <li>
+          <a href = "ParSamples._chain06">ParSamples._chain06</a>,
+          successive sample values for chain 6.
+        </li>
+        <li>
+          <a href = "ParSamples._chain07">ParSamples._chain07</a>,
+          successive sample values for chain 7.
+        </li>
+        <li>
+          <a href = "ParSamples._chain08">ParSamples._chain08</a>,
+          successive sample values for chain 8.
+        </li>
+        <li>
+          <a href = "ParSamples._chain09">ParSamples._chain09</a>,
+          successive sample values for chain 9.
+        </li>
+        <li>
+          <a href = "ParSamples._chain10">ParSamples._chain10</a>,
+          successive sample values for chain 10.
+        </li>
+        <li>
+          <a href = "Gel_Ru.out">Gel_Ru.out</a>,
+          an output file, the Gelman-Rubin statistic file.
+        </li>
+        <li>
+          <a href = "Restart.out">Restart.out</a>,
+          an output file, containing restart information.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 May 2013.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

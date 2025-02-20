@@ -1,0 +1,236 @@
+<html>
+
+  <head>
+    <title>
+      TEST_PARTIAL_DIGEST - Test Problems for Partial Digest
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TEST_PARTIAL_DIGEST <br> Test Problems for Partial Digest
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TEST_PARTIAL_DIGEST</b>
+      is a FORTRAN90 library which
+      can generate example cases of the partial digest problem.
+    </p>
+
+    <p>
+      In the partial digest problem, we assume that there are <b>N</b>
+      objects arranged along a line.  We denote the position of object <b>I</b>
+      by <b>X(I)</b>.  The positions of the objects are unknown.  Instead,
+      we have a list of the distances between every distinct pair of objects.
+      Note that the distances are not "tagged"; that is, if there is a 175
+      on the list of distances, we don't know which two objects are separated
+      by that distance.  In the partial digest problem, we start with the
+      <b>(N*(N-1))/2</b> distances D, and must come up with at least one
+      linear arrangement of <b>N</b> objects that corresponds to the distances.
+    </p>
+
+    <p>
+      To use this library, the user specifies a number of objects N, and
+      a maximum separation DMAX.  The library will generate N object locations
+      in an array called LOCATE, and the corresponding list of distances D.
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          N must be at least 2.           
+        </li>
+        <li>
+          DMAX must be at least N - 1.
+        </li>
+        <li>
+          The entries in LOCATE will be distinct integers in ascending order.
+        </li>     
+        <li>
+          LOCATE(1) = 0 and LOCATE(N) = DMAX. 
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://people.math.sc.edu/Burkardt/txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>TEST_PARTIAL_DIGEST</b> is available in
+      <a href = "https://people.math.sc.edu/Burkardt/c_src/test_partial_digest/test_partial_digest.html">a C version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/cpp_src/test_partial_digest/test_partial_digest.html">a C++ version</a> and
+      <a href = "test_partial_digest.html">a FORTRAN90 version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/m_src/test_partial_digest/test_partial_digest.html">a MATLAB version</a> and
+      <a href = "https://people.math.sc.edu/Burkardt/py_src/test_partial_digest/test_partial_digest.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Software and Data:
+    </h3>
+
+    <p>
+      <a href = "../cities/cities.html">
+      CITIES</a>,
+      a FORTRAN90 library which
+      carries out various
+      computations involving the locations or relative distances
+      of cities on a map.
+    </p>
+
+    <p>
+      <a href = "https://people.math.sc.edu/Burkardt/datasets/cities/cities.html">
+      CITIES</a>,
+      a dataset directory which
+      defines the locations or relative distances
+      of cities on a map.
+    </p>
+
+    <p>
+      <a href = "../combo/combo.html">
+      COMBO</a>,
+      a FORTRAN90 library which
+      carries out various combinatorial computations.
+    </p>
+
+    <p>
+      <a href = "../distance_to_position/distance_to_position.html">
+      DISTANCE_TO_POSITION</a>,
+      a FORTRAN90 program which
+      estimates the positions of cities based on a city-to-city distance table.
+    </p>
+
+    <p>
+      <a href = "../partial_digest/partial_digest.html">
+      PARTIAL_DIGEST</a>,
+      a FORTRAN90 program which
+      seeks solutions of the partial digest problem.
+    </p>
+
+    <p>
+      <a href = "../subset/subset.html">
+      SUBSET</a>,
+      a FORTRAN90 library which
+      carries out various combinatorial computations.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Pavel Pevzner,<br>
+          Computational Molecular Biology,<br>
+          MIT Press, 2000,<br>
+          ISBN: 0-262-16197-4,<br>
+          LC: QH506.P47.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "test_partial_digest.f90">test_partial_digest.f90</a>, the source code.
+        </li>
+        <li>
+          <a href = "https://people.math.sc.edu/Burkardt/f_src/test_partial_digest/test_partial_digest.txt">test_partial_digest.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      List of Routines:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <b>MAIN</b> tests the TEST_PARTIAL_DIGEST library.
+        </li>
+        <li>
+          <b>I4_UNIFORM_AB</b> returns a scaled pseudorandom I4 between A and B.
+        </li>
+        <li>
+          <b>I4_UNIFORM_AB_TEST</b> tests I4_UNIFORM_AB.
+        </li>
+        <li>
+          <b>I4VEC_DISTANCES</b> computes a pairwise distance table.
+        </li>
+        <li>
+          <b>I4VEC_DISTANCES_TEST</b> tests I4VEC_DISTANCES.
+        </li>
+        <li>
+          <b>I4VEC_HEAP_D</b> reorders an I4VEC into an descending heap.
+        </li>
+        <li>
+          <b>I4VEC_HEAP_D_TEST</b> tests I4VEC_HEAP_D.
+        </li>
+        <li>
+          <b>I4VEC_PRINT</b> prints an I4VEC, with an optional title.
+        </li>
+        <li>
+          <b>I4VEC_PRINT_TEST</b> tests I4VEC_PRINT.
+        </li>
+        <li>
+          <b>I4VEC_SORT_HEAP_A</b> ascending sorts an I4VEC using heap sort.
+        </li>
+        <li>
+          <b>I4VEC_SORT_HEAP_A_TEST</b> tests I4VEC_SORT_HEAP_A.
+        </li>
+        <li>
+          <b>KSUB_RANDOM</b> selects a random subset of size K from a set of size N.
+        </li>
+        <li>
+          <b>KSUB_RANDOM_TEST</b> tests KSUB_RANDOM.
+        </li>
+        <li>
+          <b>TEST_PARTIAL_DIGEST</b> returns a partial digest test problem.
+        </li>
+        <li>
+          <b>TEST_PARTIAL_DIGEST_TEST</b> tests TEST_PARTIAL_DIGEST.
+        </li>
+        <li>
+          <b>TIMESTAMP</b> prints the current YMDHMS date as a time stamp.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../f_src.html">
+      the FORTRAN90 source codes</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 07 January 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

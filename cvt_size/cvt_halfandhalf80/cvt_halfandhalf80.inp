@@ -1,0 +1,6 @@
+set term post portrait
+set output "cvt_halfandhalf80_vol.ps"
+set grid
+set data style linespoints
+set title "Areas of 80 Voronoi cells"
+plot "cvt_halfandhalf80_vol.txt"
